@@ -22,25 +22,25 @@ public class StoryCommandDispatcher : MonoBehaviour
     public void Receive(IStoryCommand command)
     {
 
-        if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardConcurrent) != 0)
+        if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardConcurrent))
         {
-            if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardAlike) != 0)
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
             {
                 concurrentStoryCommandList.RemoveAll(_command => _command.GetType() == command.GetType());
             }
-            if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardNonAlike) != 0)
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
             {
                 concurrentStoryCommandList.RemoveAll(_command => _command.GetType() != command.GetType());
             }
         }
 
-        if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardBlocking) != 0)
+        if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardBlocking))
         {
-            if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardAlike) != 0)
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
             {
                 blockingStoryCommandList.RemoveAll(_command => _command.GetType() == command.GetType());
             }
-            if ((command.ExecutionFlags & StoryCommandExecutionFlags.DiscardNonAlike) != 0)
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
             {
                 blockingStoryCommandList.RemoveAll(_command => _command.GetType() != command.GetType());
             }

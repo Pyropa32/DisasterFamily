@@ -22,24 +22,24 @@ public class Actor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        localPosition = Vector2.one / 2f;
-        if (Input.GetKey(KeyCode.W))
-        {
-            localPosition += Vector2.up / 2f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            localPosition += Vector2.right / 2f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            localPosition += Vector2.left / 2;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            localPosition += Vector2.down / 2;
-        }
-
+        // localPosition = Vector2.one / 2f;
+        // if (Input.GetKey(KeyCode.W))
+        // {
+        //     localPosition += Vector2.up / 2f;
+        // }
+        // if (Input.GetKey(KeyCode.D))
+        // {
+        //     localPosition += Vector2.right / 2f;
+        // }
+        // if (Input.GetKey(KeyCode.A))
+        // {
+        //     localPosition += Vector2.left / 2;
+        // }
+        // if (Input.GetKey(KeyCode.S))
+        // {
+        //     localPosition += Vector2.down / 2;
+        // }
+        Debug.Log(localPosition);
         GlobalPosition = currentPlane.PlaneToScreen(localPosition);
     }
 
