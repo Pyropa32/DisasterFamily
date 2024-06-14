@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
+    [SerializeField]
+    float movementSpeed = 2f;
 
     [SerializeField]
     OrthographicPlane currentPlane;
@@ -38,13 +40,16 @@ public class Actor : MonoBehaviour
             localPosition += Vector2.down / 2;
         }
 
-        transform.position = localPosition;//currentPlane.WorldToScreen(currentPlane.Clamp(localPosition));
+        GlobalPosition = currentPlane.PlaneToScreen(localPosition);
     }
 
     public void SetAnim(string what)
     {
 
     }
+
+    public OrthographicPlane CurrentPlane => currentPlane;
+    public float MovementSpeed => movementSpeed;
 
     public Vector2 GlobalPosition
     {
@@ -54,8 +59,7 @@ public class Actor : MonoBehaviour
         }
         set
         {
-            footPosition.position = new Vector3(value.x, value.y);
-
+            transform.position = new Vector3(value.x - footPosition.localPosition.x, value.y - footPosition.localPosition.y, -0.2f);
         }
     }
 

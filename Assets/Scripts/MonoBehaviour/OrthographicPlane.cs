@@ -52,11 +52,19 @@ public class OrthographicPlane : MonoBehaviour
 
     }
 
-    public Vector2 Clamp(Vector2 localCoordinates)
+    public Vector2 ClampLocal(Vector2 localCoordinates)
     {
         return new Vector2(
-            Mathf.Clamp(localCoordinates.x, 0f, extents.x),
-            Mathf.Clamp(localCoordinates.y, 0f, extents.y)            
+            Mathf.Clamp(localCoordinates.x, 0f, 1f),
+            Mathf.Clamp(localCoordinates.y, 0f, 1f)            
+        );
+    }
+
+    public Vector2 ClampGlobal(Vector2 globalCoordinates)
+    {
+        return new Vector2(
+            Mathf.Clamp(globalCoordinates.x, offset.x, TopRight.x + offset.x),
+            Mathf.Clamp(globalCoordinates.y, offset.x, TopRight.y + offset.y)            
         );
     }
 
@@ -64,19 +72,19 @@ public class OrthographicPlane : MonoBehaviour
     {
         // place at 'origin', tform
         var result = orthographicBasisInverse * (screenCoordinates - offset);
-        return (Vector2)result;
+        return ClampLocal(result);
     }
 
     public Vector2 PlaneToScreen(Vector2 worldCoordinates)
     {
         // transform, offset
-        var result = orthographicBasis * worldCoordinates;
+        var result = orthographicBasis * ClampLocal(worldCoordinates);
         return (Vector2)result + offset;
     }
 
     public void Add(Actor actor)
     {
-        //actor.LocalPosition = ScreenToPlane(actor.GlobalPosition);
+        actor.LocalPosition = ScreenToPlane(actor.GlobalPosition);
         actors.Add(actor);
     }
 
