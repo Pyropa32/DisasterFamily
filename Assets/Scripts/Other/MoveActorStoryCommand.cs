@@ -23,6 +23,19 @@ public sealed class MoveActorStoryCommand : IStoryCommand
     {
         startPosition = _start;
         Destination = _end;
+
+        // Make walking take the same amount of time regardless of distance.
+        var plane = _actor.CurrentPlane;
+        var dist = Vector2.Distance(plane.PlaneToScreen(_start), plane.PlaneToScreen(_end));
+        _movementSpeed /= dist;
+
+        // FIXME: There's one more thing
+        // You move slightly faster if you walk at an angle perpendicular to the angle ➚ from BottomLeft to TopRight ➚
+        var diagonal = plane.TopRight - plane.BottomLeft;
+        // 1.0 = walking perpendicular. 0.0 = walking parallel to diagonal.
+        var perpendicularity = 1.0 - Mathf.Abs(Vector2.Dot(diagonal.normalized, (_end - _start).normalized));
+        // Use perpendicularity to negate the extra walk speed.
+
         MovementSpeed = _movementSpeed;
         actor = _actor;
     }
