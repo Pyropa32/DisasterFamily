@@ -4,23 +4,41 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    // TODO:
-    // 1. Have ClickToMove send 20,20 to me.
-    // 2. Get mouse coordinates and send them here repeatedly.
-    // 3. On click, get mouse coordinates ,print once.
-    // 4. Communicate with StoryCommandDispatcher.
-    // 5. Send a MoveCommand to StoryCommandDispatcher.
-    // 6. This should get me to move.
 
-    // Start is called before the first frame update
+    [SerializeField]
+    OrthographicPlane currentPlane;
+    [SerializeField]
+    Transform footPosition;
+    Vector2 localPosition;
+
     void Start()
     {
-        
+        Debug.Log("hello, world!");
+        currentPlane.Add(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        localPosition = Vector2.one / 2f;
+        if (Input.GetKey(KeyCode.W))
+        {
+            localPosition += Vector2.up / 2f;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            localPosition += Vector2.right / 2f;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            localPosition += Vector2.left / 2;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            localPosition += Vector2.down / 2;
+        }
+
+        GlobalPosition = currentPlane.PlaneToScreen(localPosition);
     }
 
     public void SetAnim(string what)
@@ -32,12 +50,11 @@ public class Actor : MonoBehaviour
     {
         get
         {
-            return new Vector2(transform.position.x, transform.position.y);
+            return new Vector2(footPosition.position.x, footPosition.position.y);
         }
         set
         {
-            transform.position = new Vector3(value.x, value.y);
-
+            transform.position = new Vector3(value.x - footPosition.position.x, value.y - footPosition.position.y);
         }
     }
 
@@ -46,12 +63,11 @@ public class Actor : MonoBehaviour
     {
         get
         {
-            return new Vector2(transform.position.x, transform.position.y);
+            return localPosition;
         }
         set
         {
-            transform.position = new Vector3(value.x, value.y);
-
+            localPosition = value;
         }
     }
 }
