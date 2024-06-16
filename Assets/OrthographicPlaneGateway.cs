@@ -10,7 +10,7 @@ public class OrthographicPlaneGateway : MonoBehaviour
     OrthographicPlane from;
     [SerializeField]
     OrthographicPlane to;
-    public bool worldHasBeenSet = false;
+    private bool worldHasBeenSet = false;
     OrthographicPlaneGraph world;
     public void SetWorld(OrthographicPlaneGraph to)
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,18 @@ public class Actor : MonoBehaviour
     [SerializeField]
     Transform footPosition;
     Vector2 localPosition;
+    OrthographicPlaneGraph world;
+
+    public OrthographicPlaneGraph World => world;
 
     void Start()
     {
-        Debug.Log("hello, world!");
+        world = GetComponentInParent<OrthographicPlaneGraph>();
+        if (world == null)
+        {
+            throw new InvalidOperationException("World on this actor is null!!");
+        }
+        Debug.Log("hello, says Actor!");
         currentPlane.Add(this);
     }
 

@@ -37,7 +37,7 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
     // Use Internal Pathfinding (A*) to:
     //      Navigate the plane
     //      Navigate to a plane exit included in the path to another plane.
-
+    // test
     public void AddGateway(OrthographicPlaneGateway toAdd)
     {
         myGateways.Add(toAdd);
@@ -71,12 +71,16 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
         );
     }
 
+    public bool IsPointInRange(Vector2 globalCoordinates)
+    {
+        var clamped = ClampGlobal(globalCoordinates);
+        return Mathf.Approximately(clamped.x, globalCoordinates.x) &&
+               Mathf.Approximately(clamped.y, globalCoordinates.y);
+    }
+
     public Vector2 ClampGlobal(Vector2 globalCoordinates)
     {
-        return new Vector2(
-            Mathf.Clamp(globalCoordinates.x, offset.x, TopRight.x + offset.x),
-            Mathf.Clamp(globalCoordinates.y, offset.x, TopRight.y + offset.y)            
-        );
+        return PlaneToScreen(ClampLocal(ScreenToPlane(globalCoordinates)));
     }
 
     public Vector2 ScreenToPlane(Vector2 screenCoordinates)

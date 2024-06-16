@@ -6,17 +6,24 @@ using Dijkstra.NET.ShortestPath;
 using System;
 using System.ComponentModel;
 using System.Linq;
+
 public class OrthographicPlaneGraph : MonoBehaviour
 {
     // Start is called before the first frame update
+    // Planes are considered edges for a good reason:
+    //  You may need to pass through the same room again via a different gate to get somewhere.
+    //  But a path will never lead you through the same gate twice.
     private Graph<OrthographicPlaneGateway, OrthographicPlane> graph = new Graph<OrthographicPlaneGateway, OrthographicPlane>();
     private Dictionary<OrthographicPlaneGateway, uint> gateToID = new Dictionary<OrthographicPlaneGateway, uint>();
+    private List<OrthographicPlane> planes = new List<OrthographicPlane>();
     void Start()
     {
         // TODO: Get all of my child OrthographicPlanes and 
         // create an adjacency list that links them.
         // The list will be used for External pathfinding.
         OrthographicPlaneGateway[] allGates = GetComponentsInChildren<OrthographicPlaneGateway>();
+        // populate all planes
+        planes.AddRange(GetComponentsInChildren<OrthographicPlane>());
         // create connections.
         List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway, uint, uint>> connections =
         new List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway, uint, uint>>();
@@ -70,8 +77,20 @@ public class OrthographicPlaneGraph : MonoBehaviour
         }
     }
 
+    public OrthographicPlane GetPlaneByPosition(Vector2 where)
+    {
+        foreach (var plane in planes)
+        {
+            if (plane.IsPointInRange(where))
+            {
+                return plane;
+            }
+        }
+        return null;
+    }
+
     // Eventually, this will need to be made private. The public method needs to find a path that is always usable.
-    ShortestPathResult ShortestExternalPath(OrthographicPlane start, OrthographicPlane end)
+    public ExternalPathfindingResult GetShortestExternalPath(OrthographicPlane start, OrthographicPlane end)
     {
         // Have to figure out which gates to choose.
         // May be O(m^2) where m is number of gates.
@@ -97,24 +116,72 @@ public class OrthographicPlaneGraph : MonoBehaviour
         // delete the paths that weren't found:
         results.RemoveAll(path => path.IsFounded == false);
         // find the smallest path
-        ShortestPathResult result = new ShortestPathResult();
+        ShortestPathResult shortestPath = new ShortestPathResult();
         for (int i = 0; i < results.Count; i++)
         {
             if (i == 0)
             {
-                result = results[i];
+                shortestPath = results[i];
                 continue;
             }
-            if (result.Distance > results[i].Distance)
+            if (shortestPath.Distance > results[i].Distance)
             {
-                result = results[i];
+                shortestPath = results[i];
             }
-
         }
-        result.GetPath();
-        return result;
-    }
+        var pathIDs = shortestPath.GetPath();
+        var gates = pathIDs.ToList().ConvertAll(id => graph[id].Item);
 
+        if (gates.Count < 1)
+        {
+            ExternalPathfindingResult result = new ExternalPathfindingResult
+            {
+                Success = false,
+                Solution = null
+            };
+        }
+
+        OrthographicPlane first = start;
+        OrthographicPlaneGateway gateway = gates[0];
+        OrthographicPlane second = end;
+        Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[] solution =
+        new Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[gates.Count + 1];
+        
+        for (int i = 0; i < gates.Count; i++)
+        {
+            // first is considered previous.
+            var currentGate = gates[i];
+            if (i == gates.Count - 1)
+            {
+                // cap off with 'end'
+                second = end;
+            }
+            else
+            {
+                if (currentGate.ToPlane == first)
+                {
+                    second = currentGate.FromPlane;
+                }
+                if (currentGate.FromPlane == first)
+                {
+                    second = currentGate.ToPlane;
+                }
+            }
+            solution[i] = new Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>(
+                first,
+                currentGate,
+                second
+            );
+            // update with next gate.
+            first = second;
+        }
+        
+        return new ExternalPathfindingResult()
+        {
+            Success = true,
+            Solution = solution
+        };
+    }
 
 
     // Update is called once per frame

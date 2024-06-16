@@ -36,12 +36,36 @@ public class ClickToMove: MonoBehaviour
     private void OnClicked(Vector2 where)
     {
         // Get the coordinates expressed in plane coords.
-        var planeCoordinates = myActor.CurrentPlane.ScreenToPlane(where); 
-        // Create list of move commands using the Graph, with A* pathfinding.
-        // FIXME: For now, since no Pathfinding exists, just create one Move command.
-        var moveCommand = new MoveActorStoryCommand(myActor, myActor.LocalPosition, planeCoordinates, myActor.MovementSpeed);
-        // Send the move commands to the dispatcher.
-        dispatcher.Receive(moveCommand);
+
+        // see if you clicked on another plane.
+        var otherPlane = myActor.World.GetPlaneByPosition(where);
+        
+        if (otherPlane != myActor.CurrentPlane && otherPlane != null)
+        {
+            // get the list of planes to navigate when getting to the other plane.
+            var externalPath = myActor.World.GetShortestExternalPath(myActor.CurrentPlane, otherPlane);
+            
+            // pathfinding failure
+            if (!externalPath.Success)
+            {
+                Debug.Log("Failed to find path between " + myActor.CurrentPlane.name + " and " + otherPlane);
+                return;
+            }
+
+            for (int i = 0; i < externalPath.Solution.Length; i++)
+            {
+                var current = externalPath.Solution[i];
+                // construct walk commands 
+            }
+           
+        }
+        else
+        {
+            // move around in local space
+            var planeCoordinates = myActor.CurrentPlane.ScreenToPlane(where); 
+            var moveCommand = new MoveActorStoryCommand(myActor, myActor.LocalPosition, planeCoordinates, myActor.MovementSpeed);
+            dispatcher.Receive(moveCommand);
+        }
 
     }
 }
