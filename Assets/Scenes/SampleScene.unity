@@ -1242,9 +1242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41059403e4b71d64389060e750defa98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uvX: {x: 1.33, y: 0}
-  uvY: {x: 0.59, y: 1.32}
-  extents: {x: 9, y: 2}
+  uvX: {x: 0.665, y: 0}
+  uvY: {x: 0.295, y: 0.66}
+  extents: {x: 18, y: 4}
 --- !u!1 &706213220
 GameObject:
   m_ObjectHideFlags: 0

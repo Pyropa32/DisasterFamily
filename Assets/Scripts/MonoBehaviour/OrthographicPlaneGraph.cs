@@ -4,9 +4,8 @@ using UnityEngine;
 using Dijkstra.NET.Graph;
 using Dijkstra.NET.ShortestPath;
 using System;
-using System.ComponentModel;
 using System.Linq;
-
+using LostTrainDude;
 public class OrthographicPlaneGraph : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -115,6 +114,21 @@ public class OrthographicPlaneGraph : MonoBehaviour
 
         // delete the paths that weren't found:
         results.RemoveAll(path => path.IsFounded == false);
+
+        // Sort the results by distance
+        results.Sort((a, b) =>
+            {
+            return a.Distance.CompareTo(b.Distance);
+            }
+            );
+
+        // For each of these paths, see if internal pathfinding can take you there.
+        foreach (var result in results)
+        {
+            // TODO: Adjust ExternalPathfindingResult to accomodate the list of landmarks to pass through
+            // when getting through each floor.
+        }
+
         // find the smallest path
         ShortestPathResult shortestPath = new ShortestPathResult();
         for (int i = 0; i < results.Count; i++)
@@ -146,7 +160,7 @@ public class OrthographicPlaneGraph : MonoBehaviour
         OrthographicPlane second = end;
         Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[] solution =
         new Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[gates.Count + 1];
-        
+
         for (int i = 0; i < gates.Count; i++)
         {
             // first is considered previous.

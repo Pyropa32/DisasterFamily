@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using LostTrainDude;
 using UnityEngine;
 
 public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
@@ -29,6 +31,9 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
     private Matrix4x4 orthographicBasisInverse;
     // Not currently used
     private List<Actor> actors = new List<Actor>();
+    private List<Obstacle> obstacles = new List<Obstacle>();
+    private BitGrid obstacleGrid;
+    private LostTrainDude.GridGraph obstacleGraph;
 
     // TODO: Support blocking obstacles
     // OrthographicPlane should also have its own grid built in
@@ -61,6 +66,10 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
 
         orthographicBasisInverse = orthographicBasis.inverse;
         offset = transform.position;
+
+        // set up pathfinding grid.
+        obstacleGrid = new BitGrid(extents.x, extents.y);
+        obstacleGraph = new LostTrainDude.GridGraph(extents.x, extents.y);
     }
 
     public Vector2 ClampLocal(Vector2 localCoordinates)
@@ -97,10 +106,73 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
         return (Vector2)result + offset;
     }
 
+    public Vector2Int PlaneToGrid(Vector2 localCoordinates)
+    {
+        // use uvX and uvY to snap to increments.
+        // if extents are 18, 4, then...
+        // 0f, 0f maps to <0,0>
+        // 0.5f, 0.5f maps to <9,2> (just multiply local by extents)
+        return new Vector2Int(
+            Mathf.RoundToInt(localCoordinates.x * extents.x),
+            Mathf.RoundToInt(localCoordinates.y * extents.y)
+        );
+    }
+    public Vector2 GridToPlane(Vector2Int gridCoordinates)
+    {
+        return new Vector2(
+            gridCoordinates.x / (float)extents.x,
+            gridCoordinates.y / (float)extents.y
+        );
+    }
+
     public void Add(Actor actor)
     {
         actor.LocalPosition = ScreenToPlane(actor.GlobalPosition);
         actors.Add(actor);
+    }
+
+    public void AddObstacle(Obstacle obstacle)
+    {
+        if (obstacle.CurrentPlane != this)
+        {
+            throw new ArgumentException(obstacle.name + " is not a part of this plane!");
+        }
+        var gridPosition = PlaneToGrid(ScreenToPlane(obstacle.transform.position));
+        for (int i = 0; i < obstacle.CellSize.x; i++)
+        {
+            for (int j = 0; i < obstacle.CellSize.y; j++)
+            {
+                // cellSize = 1. 0, 0, 0
+                // cellSize = 2. 1, 0, 1
+                var coordinates = gridPosition + new Vector2Int(
+                    i - (obstacle.CellSize.x / 2),
+                    j - (obstacle.CellSize.y / 2));
+                obstacleGrid.Set(coordinates.x, coordinates.y, true);
+                
+                obstacleGraph.Walls.Add(coordinates); 
+            }
+        }
+        obstacle.transform.position = PlaneToScreen(GridToPlane(gridPosition));
+        obstacles.Add(obstacle);
+    }
+
+    public List<Vector2> GetShortestInternalPath(Vector2 from, Vector2 to)
+    {
+        var result = new List<Vector2>();
+
+        var fromGridCoords = PlaneToGrid(ScreenToPlane(from));
+        var toGridCoords = PlaneToGrid(ScreenToPlane(to));
+
+        var untrimmed = AStar.Search(
+            obstacleGraph,
+            obstacleGraph.Grid[fromGridCoords.x,fromGridCoords.y],
+            obstacleGraph.Grid[toGridCoords.x,toGridCoords.y]);
+        
+        // TODO: Add trimming to reduce the amount of walk commands issued.
+        // no trimming yet
+        result = untrimmed.ConvertAll(node => node.Position);
+
+        return result;
     }
 
 // show 
