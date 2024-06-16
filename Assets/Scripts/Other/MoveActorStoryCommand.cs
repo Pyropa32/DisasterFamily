@@ -1,10 +1,12 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public sealed class MoveActorStoryCommand : IStoryCommand
 {
 
-    public event Func<object> OnFinish;
+    // object = args
+    public event Action<object> OnFinish;
     public Vector2 Destination { get; private set; }
     public Vector2 CurrentPosition => Vector2.Lerp(startPosition, Destination, progress);
     public float MovementSpeed { get; private set; }
@@ -18,9 +20,19 @@ public sealed class MoveActorStoryCommand : IStoryCommand
     private float progress = 0f;
     private bool finished = false;
     private bool started = false;
+    private OrthographicPlane adjacent;
 
-    public MoveActorStoryCommand(Actor _actor, Vector2 _start, Vector2 _end, float _movementSpeed)
+    public MoveActorStoryCommand(Actor _actor, Vector2 _start, Vector2 _end, float _movementSpeed, OrthographicPlane _adjacent=null)
     {
+        if (_adjacent != null)
+        {
+            adjacent = _adjacent;
+            OnFinish = (object arg) =>
+            {
+                _actor.DoSetCurrentPlane((OrthographicPlane)arg);
+            };
+        }
+        
         startPosition = _start;
         Destination = _end;
 
@@ -62,7 +74,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
             {
                 finished = true;
                 actor.SetAnim("idle");
-                OnFinish?.Invoke();
+                OnFinish?.Invoke(adjacent);
             }
             else
             {

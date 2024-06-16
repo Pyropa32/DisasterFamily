@@ -19,6 +19,14 @@ public class StoryCommandDispatcher : MonoBehaviour
 
     // Commands that must be completed first: 
 
+    public void ReceiveRange(IEnumerable<IStoryCommand> commands)
+    {
+        foreach (var command in commands)
+        {
+            Receive(command);
+        }
+    }
+
     public void Receive(IStoryCommand command)
     {
 

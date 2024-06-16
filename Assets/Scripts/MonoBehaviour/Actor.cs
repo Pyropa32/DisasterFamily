@@ -17,6 +17,28 @@ public class Actor : MonoBehaviour
 
     public OrthographicPlaneGraph World => world;
 
+    public OrthographicPlane CurrentPlane 
+    {
+        get
+        {
+            return currentPlane;
+        }
+        set
+        {
+            currentPlane = value;
+        }
+    }
+
+    // FIXME: this does not need to exist. Just set the property.
+    public void DoSetCurrentPlane(OrthographicPlane to)
+    {
+        CurrentPlane = to;
+        // FIXME: do the conversion work in the CurrentPlane property instead.
+        // first, convert local coordinates (which are the coordinates of CurrentPlane) to screen coordinates
+        // then, convert to the basis of the new plane, then clamp it to fit inside the plane;
+        LocalPosition = to.ClampLocal(to.ScreenToPlane(CurrentPlane.PlaneToScreen(LocalPosition)));
+    }
+
     void Start()
     {
         world = GetComponentInParent<OrthographicPlaneGraph>();
@@ -56,7 +78,6 @@ public class Actor : MonoBehaviour
 
     }
 
-    public OrthographicPlane CurrentPlane => currentPlane;
     public float MovementSpeed => movementSpeed;
 
     public Vector2 GlobalPosition
