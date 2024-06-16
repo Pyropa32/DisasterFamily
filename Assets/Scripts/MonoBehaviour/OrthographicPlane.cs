@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class OrthographicPlane : MonoBehaviour
+public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
 {
     // Start is called before the first frame update
     // X and Y vector stored in a matrix.
@@ -19,12 +21,32 @@ public class OrthographicPlane : MonoBehaviour
     private Vector2 uvY;
     [SerializeField]
     private Vector2Int extents;
+    private HashSet<OrthographicPlaneGateway> myGateways = new HashSet<OrthographicPlaneGateway>();
 
     private Vector2 offset;
 
     private Matrix4x4 orthographicBasis;
     private Matrix4x4 orthographicBasisInverse;
+    // Not currently used
     private List<Actor> actors = new List<Actor>();
+
+    // TODO: Support blocking obstacles
+    // OrthographicPlane should also have its own grid built in
+    // obstacles a part of this plane should erase walkable spaces from the grid.
+    // Moreover, support Exits to link with other Planes.
+    // Use Internal Pathfinding (A*) to:
+    //      Navigate the plane
+    //      Navigate to a plane exit included in the path to another plane.
+
+    public void AddGateway(OrthographicPlaneGateway toAdd)
+    {
+        myGateways.Add(toAdd);
+    }
+
+    public OrthographicPlaneGateway[] GetGateways()
+    {
+        return myGateways.ToArray();
+    }
 
     void Awake()
     {
@@ -38,18 +60,7 @@ public class OrthographicPlane : MonoBehaviour
         );
 
         orthographicBasisInverse = orthographicBasis.inverse;
-        offset = ScreenToPlane(transform.position);
-
-        Debug.Log("uvX is " + uvX);
-        Debug.Log("uvX is " + uvY);
-        Debug.Log(orthographicBasis);
-        Debug.Log("offset is " + offset);
-        Debug.Log("0.5,0.5 is " + ScreenToPlane(new Vector2(0.5f,0.5f)));
-        Debug.Log("0.75,0.5 is " + ScreenToPlane(new Vector2(0.75f,0.5f)));
-        Debug.Log("0.0,0.0 is " + ScreenToPlane(new Vector2(0.0f,0.0f)));
-        Debug.Log("1.0,1.0 is " + ScreenToPlane(new Vector2(1.0f,1.0f)));
-        Debug.Log("0.0,0.0 is " + ScreenToPlane(new Vector2(0.5f,0.5f)));
-
+        offset = transform.position;
     }
 
     public Vector2 ClampLocal(Vector2 localCoordinates)
@@ -114,5 +125,10 @@ public class OrthographicPlane : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public bool Equals(OrthographicPlane other)
+    {
+        return this == other;
     }
 }

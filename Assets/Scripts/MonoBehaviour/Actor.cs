@@ -39,7 +39,6 @@ public class Actor : MonoBehaviour
         // {
         //     localPosition += Vector2.down / 2;
         // }
-        Debug.Log(localPosition);
         GlobalPosition = currentPlane.PlaneToScreen(localPosition);
     }
 
