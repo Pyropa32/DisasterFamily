@@ -13,7 +13,7 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
     // only affected by Y
     public Vector2 TopLeft => new Vector2(transform.position.x + (uvY.x * extents.y), transform.position.y + (uvY.y * extents.y));
     public Vector2 TopRight => new Vector2(transform.position.x + (uvX.x * extents.x) + (uvY.x * extents.y),
-                                           transform.position.y + (uvY.y * extents.y) + uvX.y);
+                                           transform.position.y + (uvY.y * extents.y) + uvX.y /* not broken (yet)*/);
 
     [SerializeField]
     private Vector2 uvX;
