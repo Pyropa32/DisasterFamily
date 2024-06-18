@@ -2370,7 +2370,7 @@ Transform:
   m_GameObject: {fileID: 1889337237}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.13, y: 2.0900002, z: -0.2}
+  m_LocalPosition: {x: 3.78, y: -2.71, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2490,7 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  currentPlane: {fileID: 694418516}
+  currentPlane: {fileID: 94776943}
   footPosition: {fileID: 1433370193}
 --- !u!1 &1907868118
 GameObject:

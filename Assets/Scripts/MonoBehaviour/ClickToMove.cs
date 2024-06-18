@@ -28,11 +28,6 @@ public class ClickToMove : MonoBehaviour
         _previousLeftMouseDown = currentLeftMouseDown;
     }
 
-    private void SendToDispatcher()
-    {
-
-    }
-
     private void OnClicked(Vector2 where)
     {
         // Get the coordinates expressed in plane coords.
@@ -56,14 +51,14 @@ public class ClickToMove : MonoBehaviour
 
             List<IStoryCommand> movementCommandChain = new List<IStoryCommand>();
 
-            var lastGatewayPosition = Vector2.zero;
+            var lastPosition = myActor.LocalPosition;
 
             for (int i = 0; i < externalPath.Solution.Length; i++)
             {
                 var currentPlanePair = externalPath.Solution[i];
                 var firstPlane = currentPlanePair.Item1;
                 var gateway = currentPlanePair.Item2;
-                var secondPlane = currentPlanePair.Item1;
+                var secondPlane = currentPlanePair.Item3;
                 // move towards gateway
                 // on finish, set plane to secondPlane;
                 Vector2 startPosition = Vector2.zero;
@@ -73,35 +68,36 @@ public class ClickToMove : MonoBehaviour
                 }
                 else
                 {
-                    startPosition = firstPlane.ScreenToPlane(gateway.transform.position);
+                    startPosition = lastPosition;
                 }
-                var gatewayPosition = firstPlane.ScreenToPlane(gateway.transform.position);
+                var destination = firstPlane.ScreenToPlane(gateway.transform.position);
 
                 // this argument (adjacent) is what causes the gateway change.
                 var moveCommand = new MoveActorStoryCommand(
                     myActor,
                     startPosition,
-                    gatewayPosition,
+                    destination,
                     myActor.MovementSpeed,
                     _adjacent: secondPlane
                 );
 
                 movementCommandChain.Add(moveCommand);
 
-                if (i == externalPath.Solution.Length - 1)
-                {
-                    lastGatewayPosition = gatewayPosition;
-                }
+                lastPosition = secondPlane.ScreenToPlane(gateway.transform.position);
             }
             // The last movement command in this series is just going to be a basic move command
             var internalMoveCommand = new MoveActorStoryCommand(myActor,
-                                                                myActor.LocalPosition,
-                                                                lastGatewayPosition,
+                                                                lastPosition,
+                                                                otherPlane.ScreenToPlane(where),
                                                                 myActor.MovementSpeed
                                                                 );
             movementCommandChain.Add(internalMoveCommand);
             // Send all of the commands to the dispatcher.
-            dispatcher.ReceiveRange(movementCommandChain);
+            dispatcher.ReceiveSequentialRange(
+                movementCommandChain,
+                blocking:false,
+                flagOverride:StoryCommandExecutionFlags.DiscardAlike
+                );
         }
         else
         {

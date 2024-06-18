@@ -13,6 +13,7 @@ public interface IStoryCommand
     public bool IsStarted { get; }
     public bool IsConcurrent { get; }
     public StoryCommandExecutionFlags ExecutionFlags { get; }
+    public Type InstanceType => GetType();
 
 }
 

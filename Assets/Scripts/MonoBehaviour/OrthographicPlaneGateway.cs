@@ -15,7 +15,7 @@ public class OrthographicPlaneGateway : MonoBehaviour
 
     public uint ID { get; protected set; }
 
-    static uint _gatewayCurrentID = 0;
+    static uint _gatewayCurrentID = 1;
 
     public void SetWorld(OrthographicPlaneGraph to)
     {
@@ -34,6 +34,11 @@ public class OrthographicPlaneGateway : MonoBehaviour
     {
         return (int)((transform.position.x - what.transform.position.x) * (transform.position.x - what.transform.position.x) +
                 (transform.position.y - what.transform.position.y) * (transform.position.y - what.transform.position.y));
+    }
+
+    public bool SharesPlaneWith(OrthographicPlaneGateway with)
+    {
+        return TryGetSharedPlane(with, out _);
     }
 
     public bool TryGetSharedPlane(OrthographicPlaneGateway with, out OrthographicPlane result)
@@ -60,7 +65,7 @@ public class OrthographicPlaneGateway : MonoBehaviour
     {
         ID = _gatewayCurrentID;
         _gatewayCurrentID += 1;
-        
+
         if (ToPlane == null)
         {
             throw new InvalidOperationException("ToPlane of " + name + " not set!");

@@ -30,13 +30,17 @@ public class Actor : MonoBehaviour
     }
 
     // FIXME: this does not need to exist. Just set the property.
-    public void DoSetCurrentPlane(OrthographicPlane to)
+    public void DoSetCurrentPlane(OrthographicPlane newPlane)
     {
-        CurrentPlane = to;
         // FIXME: do the conversion work in the CurrentPlane property instead.
         // first, convert local coordinates (which are the coordinates of CurrentPlane) to screen coordinates
         // then, convert to the basis of the new plane, then clamp it to fit inside the plane;
-        LocalPosition = to.ClampLocal(to.ScreenToPlane(CurrentPlane.PlaneToScreen(LocalPosition)));
+        Debug.Log("set current plane!");
+        
+        // revert old coordinate system, apply new coordinate system
+        var val = newPlane.ScreenToPlane(CurrentPlane.PlaneToScreen(LocalPosition));
+        CurrentPlane = newPlane;
+        LocalPosition = val;
     }
 
     void Start()
@@ -71,6 +75,10 @@ public class Actor : MonoBehaviour
         //     localPosition += Vector2.down / 2;
         // }
         GlobalPosition = currentPlane.PlaneToScreen(localPosition);
+        if (GlobalPosition.x < -6f || GlobalPosition.x > 10f)
+        {
+            Debug.Log("found error in update");
+        }
     }
 
     public void SetAnim(string what)
