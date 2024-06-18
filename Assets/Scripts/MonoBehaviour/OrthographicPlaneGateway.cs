@@ -12,6 +12,11 @@ public class OrthographicPlaneGateway : MonoBehaviour
     OrthographicPlane to;
     private bool worldHasBeenSet = false;
     OrthographicPlaneGraph world;
+
+    public uint ID { get; protected set; }
+
+    static uint _gatewayCurrentID = 0;
+
     public void SetWorld(OrthographicPlaneGraph to)
     {
         if (worldHasBeenSet)
@@ -53,7 +58,9 @@ public class OrthographicPlaneGateway : MonoBehaviour
 
     void Awake()
     {
-
+        ID = _gatewayCurrentID;
+        _gatewayCurrentID += 1;
+        
         if (ToPlane == null)
         {
             throw new InvalidOperationException("ToPlane of " + name + " not set!");

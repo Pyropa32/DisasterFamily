@@ -85,6 +85,7 @@ public class ClickToMove : MonoBehaviour
                     myActor.MovementSpeed,
                     _adjacent: secondPlane
                 );
+
                 movementCommandChain.Add(moveCommand);
 
                 if (i == externalPath.Solution.Length - 1)

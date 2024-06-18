@@ -13,7 +13,6 @@ public class OrthographicPlaneGraph : MonoBehaviour
     //  You may need to pass through the same room again via a different gate to get somewhere.
     //  But a path will never lead you through the same gate twice.
     private Graph<OrthographicPlaneGateway, OrthographicPlane> graph = new Graph<OrthographicPlaneGateway, OrthographicPlane>();
-    private Dictionary<OrthographicPlaneGateway, uint> gateToID = new Dictionary<OrthographicPlaneGateway, uint>();
     private List<OrthographicPlane> planes = new List<OrthographicPlane>();
     void Start()
     {
@@ -24,8 +23,8 @@ public class OrthographicPlaneGraph : MonoBehaviour
         // populate all planes
         planes.AddRange(GetComponentsInChildren<OrthographicPlane>());
         // create connections.
-        List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway, uint, uint>> connections =
-        new List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway, uint, uint>>();
+        List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>> connections =
+        new List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>>();
         for (uint i = 0; i < allGates.Length; i++)
         {
             for (uint j = 0; j < allGates.Length; j++)
@@ -33,25 +32,22 @@ public class OrthographicPlaneGraph : MonoBehaviour
                 var gateway1 = allGates[i];
                 var gateway2 = allGates[j];
 
-                if (gateway1.ToPlane == gateway2.FromPlane ||
+                if ((gateway1.ToPlane == gateway2.FromPlane ||
                     gateway1.FromPlane == gateway2.ToPlane ||
                     gateway1.FromPlane == gateway2.FromPlane ||
-                    gateway1.ToPlane == gateway2.ToPlane)
+                    gateway1.ToPlane == gateway2.ToPlane
+                    ) && gateway1 != gateway2)
                 {
                     // duplicates should be okay.
-                    connections.Add(new Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway, uint, uint>(
+                    connections.Add(new Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>(
                         gateway1,
-                        gateway2,
-                        i,
-                        j
+                        gateway2
                     ));
                 }
             }
 
             // add the current gate to the graph
             graph.AddNode(allGates[i]);
-            // update planeToID
-            gateToID[allGates[i]] = i;
             allGates[i].SetWorld(this);
 
         }
@@ -65,14 +61,12 @@ public class OrthographicPlaneGraph : MonoBehaviour
 
             var gateway1 = currentConnection.Item1;
             var gateway2 = currentConnection.Item2;
-            var gateway1ID = currentConnection.Item3;
-            var gateway2ID = currentConnection.Item4;
 
             var distance2 = gateway1.Distance2To(gateway2);
 
             // it doesnt matter if the distance is squared
             gateway1.TryGetSharedPlane(gateway2, out OrthographicPlane plane);
-            graph.Connect(gateway1ID, gateway2ID, distance2, plane);
+            graph.Connect(gateway1.ID, gateway2.ID, distance2, plane);
         }
     }
 
@@ -104,10 +98,10 @@ public class OrthographicPlaneGraph : MonoBehaviour
         {
             for (int j = 0; j < endGateways.Length; j++)
             {
-                var startGatewayID = gateToID[startGateways[i]];
-                var endGatewayID = gateToID[endGateways[j]];
+                var from = startGateways[i];
+                var to = endGateways[j];
 
-                var path = graph.Dijkstra(startGatewayID, endGatewayID);
+                var path = graph.Dijkstra(from.ID, to.ID);
                 results.Add(path);
             }
         }
