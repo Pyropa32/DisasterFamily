@@ -20,9 +20,6 @@ public class TempinventoryThing : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha5)) {
             toggle(4);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6)) {
-            UITextManager.SetText("UMMMMMMM");
-        }
     }
 
     private void toggle(int id) {
