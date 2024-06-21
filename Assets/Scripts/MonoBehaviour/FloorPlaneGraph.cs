@@ -8,20 +8,20 @@ using System.Linq;
 using LostTrainDude;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices.WindowsRuntime;
-public class OrthographicPlaneGraph : MonoBehaviour
+public class FloorPlaneGraph : MonoBehaviour
 {
     // Start is called before the first frame update
     // Planes are considered edges for a good reason:
     //  You may need to pass through the same room again via a different gate to get somewhere.
     //  But a path will never lead you through the same gate twice.
-    private Graph<OrthographicPlaneGateway, OrthographicPlane> graph = new Graph<OrthographicPlaneGateway, OrthographicPlane>();
-    private List<OrthographicPlane> planes = new List<OrthographicPlane>();
+    private Graph<FloorPlaneGateway, FloorPlane> graph = new Graph<FloorPlaneGateway, FloorPlane>();
+    private List<FloorPlane> planes = new List<FloorPlane>();
     void Start()
     {
-        // TODO: Get all of my child OrthographicPlanes and 
+        // TODO: Get all of my child FloorPlanes and 
         // create an adjacency list that links them.
         // The list will be used for External pathfinding.
-        OrthographicPlaneGateway[] allGatesArray = GetComponentsInChildren<OrthographicPlaneGateway>();
+        FloorPlaneGateway[] allGatesArray = GetComponentsInChildren<FloorPlaneGateway>();
 
         // FIXME: Find better alternative to add to the graph without sorting
         var allGates = allGatesArray.ToList();
@@ -32,10 +32,10 @@ public class OrthographicPlaneGraph : MonoBehaviour
         
 
         // populate all planes
-        planes.AddRange(GetComponentsInChildren<OrthographicPlane>());
+        planes.AddRange(GetComponentsInChildren<FloorPlane>());
         // create connections.
-        List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>> connections =
-        new List<Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>>();
+        List<Tuple<FloorPlaneGateway, FloorPlaneGateway>> connections =
+        new List<Tuple<FloorPlaneGateway, FloorPlaneGateway>>();
         for (int i = 0; i < allGates.Count; i++)
         {
             for (int j = 0; j < allGates.Count; j++)
@@ -47,7 +47,7 @@ public class OrthographicPlaneGraph : MonoBehaviour
                      && gateway1 != gateway2)
                 {
                     // duplicates should be okay.
-                    connections.Add(new Tuple<OrthographicPlaneGateway, OrthographicPlaneGateway>(
+                    connections.Add(new Tuple<FloorPlaneGateway, FloorPlaneGateway>(
                         gateway1,
                         gateway2
                     ));
@@ -73,12 +73,12 @@ public class OrthographicPlaneGraph : MonoBehaviour
             var distance2 = gateway1.Distance2To(gateway2);
 
             // it doesnt matter if the distance is squared
-            gateway1.TryGetSharedPlane(gateway2, out OrthographicPlane plane);
+            gateway1.TryGetSharedPlane(gateway2, out FloorPlane plane);
             graph.Connect(gateway1.ID, gateway2.ID, distance2, plane);
         }
     }
 
-    public OrthographicPlane GetPlaneByPosition(Vector2 where)
+    public FloorPlane GetPlaneByPosition(Vector2 where)
     {
         foreach (var plane in planes)
         {
@@ -91,7 +91,7 @@ public class OrthographicPlaneGraph : MonoBehaviour
     }
 
     // Eventually, this will need to be made private. The public method needs to find a path that is always usable.
-    public ExternalPathfindingResult GetShortestExternalPath(OrthographicPlane start, OrthographicPlane end)
+    public ExternalPathfindingResult GetShortestExternalPath(FloorPlane start, FloorPlane end)
     {
         // Have to figure out which gates to choose.
         // May be O(m^2) where m is number of gates.
@@ -99,7 +99,6 @@ public class OrthographicPlaneGraph : MonoBehaviour
         var endGateways = end.GetGateways();
 
         // don't include 
-        int k = 0;
         List<ShortestPathResult> results = new List<ShortestPathResult>(startGateways.Length * endGateways.Length);
         
         for (int i = 0; i < startGateways.Length; i++)
@@ -132,12 +131,13 @@ public class OrthographicPlaneGraph : MonoBehaviour
         // {
         //     // TODO: Adjust ExternalPathfindingResult to accomodate the list of landmarks to pass through
         //     // when getting through each floor.
+
         // }
 
         // find the smallest path
         ShortestPathResult shortestPath = results[0];
         var pathIDs = shortestPath.GetPath();
-        List<OrthographicPlaneGateway> gateList = new List<OrthographicPlaneGateway>();
+        List<FloorPlaneGateway> gateList = new List<FloorPlaneGateway>();
         foreach (var thing in pathIDs)
         {
             gateList.Add(graph[thing].Item);
@@ -152,11 +152,11 @@ public class OrthographicPlaneGraph : MonoBehaviour
             };
         }
 
-        OrthographicPlane first = start;
-        OrthographicPlaneGateway gateway = gateList[0];
-        OrthographicPlane second = end;
-        Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[] solution =
-        new Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[gateList.Count];
+        FloorPlane first = start;
+        FloorPlaneGateway gateway = gateList[0];
+        FloorPlane second = end;
+        Tuple<FloorPlane, FloorPlaneGateway, FloorPlane>[] solution =
+        new Tuple<FloorPlane, FloorPlaneGateway, FloorPlane>[gateList.Count];
 
         for (int i = 0; i < gateList.Count; i++)
         {
@@ -178,7 +178,7 @@ public class OrthographicPlaneGraph : MonoBehaviour
                     second = currentGate.ToPlane;
                 }
             }
-            solution[i] = new Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>(
+            solution[i] = new Tuple<FloorPlane, FloorPlaneGateway, FloorPlane>(
                 first,
                 currentGate,
                 second

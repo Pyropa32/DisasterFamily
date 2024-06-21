@@ -5,7 +5,7 @@ using System.Linq;
 using LostTrainDude;
 using UnityEngine;
 
-public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
+public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
 {
     // Start is called before the first frame update
     // X and Y vector stored in a matrix.
@@ -23,7 +23,7 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
     private Vector2 uvY;
     [SerializeField]
     private Vector2Int extents;
-    private HashSet<OrthographicPlaneGateway> myGateways = new HashSet<OrthographicPlaneGateway>();
+    private HashSet<FloorPlaneGateway> myGateways = new HashSet<FloorPlaneGateway>();
 
     private Vector2 offset;
 
@@ -36,19 +36,19 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
     private LostTrainDude.GridGraph obstacleGraph;
 
     // TODO: Support blocking obstacles
-    // OrthographicPlane should also have its own grid built in
+    // FloorPlane should also have its own grid built in
     // obstacles a part of this plane should erase walkable spaces from the grid.
     // Moreover, support Exits to link with other Planes.
     // Use Internal Pathfinding (A*) to:
     //      Navigate the plane
     //      Navigate to a plane exit included in the path to another plane.
     // test
-    public void AddGateway(OrthographicPlaneGateway toAdd)
+    public void AddGateway(FloorPlaneGateway toAdd)
     {
         myGateways.Add(toAdd);
     }
 
-    public OrthographicPlaneGateway[] GetGateways()
+    public FloorPlaneGateway[] GetGateways()
     {
         return myGateways.ToArray();
     }
@@ -203,7 +203,7 @@ public class OrthographicPlane : MonoBehaviour, IEquatable<OrthographicPlane>
 
     }
 
-    public bool Equals(OrthographicPlane other)
+    public bool Equals(FloorPlane other)
     {
         return this == other;
     }

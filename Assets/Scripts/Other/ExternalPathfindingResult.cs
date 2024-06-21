@@ -4,5 +4,5 @@ using System;
 public record ExternalPathfindingResult
 {
     public bool Success;
-    public Tuple<OrthographicPlane, OrthographicPlaneGateway, OrthographicPlane>[] Solution;
+    public Tuple<FloorPlane, FloorPlaneGateway, FloorPlane>[] Solution;
 };

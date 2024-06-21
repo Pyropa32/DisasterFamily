@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrthographicPlaneGateway : MonoBehaviour
+public class FloorPlaneGateway : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    OrthographicPlane from;
+    FloorPlane from;
     [SerializeField]
-    OrthographicPlane to;
+    FloorPlane to;
     private bool worldHasBeenSet = false;
-    OrthographicPlaneGraph world;
+    FloorPlaneGraph world;
 
     public uint ID { get; protected set; }
 
     static uint _gatewayCurrentID = 1;
 
-    public void SetWorld(OrthographicPlaneGraph to)
+    public void SetWorld(FloorPlaneGraph to)
     {
         if (worldHasBeenSet)
         {
@@ -27,21 +27,21 @@ public class OrthographicPlaneGateway : MonoBehaviour
         worldHasBeenSet = true;
     }
 
-    public OrthographicPlane FromPlane => from;
-    public OrthographicPlane ToPlane => to;
+    public FloorPlane FromPlane => from;
+    public FloorPlane ToPlane => to;
 
-    public int Distance2To(OrthographicPlaneGateway what)
+    public int Distance2To(FloorPlaneGateway what)
     {
         return (int)((transform.position.x - what.transform.position.x) * (transform.position.x - what.transform.position.x) +
                 (transform.position.y - what.transform.position.y) * (transform.position.y - what.transform.position.y));
     }
 
-    public bool SharesPlaneWith(OrthographicPlaneGateway with)
+    public bool SharesPlaneWith(FloorPlaneGateway with)
     {
         return TryGetSharedPlane(with, out _);
     }
 
-    public bool TryGetSharedPlane(OrthographicPlaneGateway with, out OrthographicPlane result)
+    public bool TryGetSharedPlane(FloorPlaneGateway with, out FloorPlane result)
     {
         if (with.FromPlane == FromPlane ||
             with.FromPlane == ToPlane)

@@ -9,15 +9,15 @@ public class Actor : MonoBehaviour
     float movementSpeed = 2f;
 
     [SerializeField]
-    OrthographicPlane currentPlane;
+    FloorPlane currentPlane;
     [SerializeField]
     Transform footPosition;
     Vector2 localPosition;
-    OrthographicPlaneGraph world;
+    FloorPlaneGraph world;
 
-    public OrthographicPlaneGraph World => world;
+    public FloorPlaneGraph World => world;
 
-    public OrthographicPlane CurrentPlane 
+    public FloorPlane CurrentPlane 
     {
         get
         {
@@ -30,7 +30,7 @@ public class Actor : MonoBehaviour
     }
 
     // FIXME: this does not need to exist. Just set the property.
-    public void DoSetCurrentPlane(OrthographicPlane newPlane)
+    public void DoSetCurrentPlane(FloorPlane newPlane)
     {
         // FIXME: do the conversion work in the CurrentPlane property instead.
         // first, convert local coordinates (which are the coordinates of CurrentPlane) to screen coordinates
@@ -45,7 +45,7 @@ public class Actor : MonoBehaviour
 
     void Start()
     {
-        world = GetComponentInParent<OrthographicPlaneGraph>();
+        world = GetComponentInParent<FloorPlaneGraph>();
         if (world == null)
         {
             throw new InvalidOperationException("World on this actor is null!!");
@@ -57,23 +57,6 @@ public class Actor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // localPosition = Vector2.one / 2f;
-        // if (Input.GetKey(KeyCode.W))
-        // {
-        //     localPosition += Vector2.up / 2f;
-        // }
-        // if (Input.GetKey(KeyCode.D))
-        // {
-        //     localPosition += Vector2.right / 2f;
-        // }
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     localPosition += Vector2.left / 2;
-        // }
-        // if (Input.GetKey(KeyCode.S))
-        // {
-        //     localPosition += Vector2.down / 2;
-        // }
         GlobalPosition = currentPlane.PlaneToScreen(localPosition);
         if (GlobalPosition.x < -6f || GlobalPosition.x > 10f)
         {

@@ -6,13 +6,13 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField]
-    OrthographicPlaneGraph world;
+    FloorPlaneGraph world;
     [SerializeField]
     Vector2Int cellSize;
-    private OrthographicPlane currentPlane;
+    private FloorPlane currentPlane;
     public Vector2Int CellSize => cellSize;
-    public OrthographicPlaneGraph World => world;
-    public OrthographicPlane CurrentPlane => currentPlane;
+    public FloorPlaneGraph World => world;
+    public FloorPlane CurrentPlane => currentPlane;
     void Start()
     {
         currentPlane = world.GetPlaneByPosition(transform.position);

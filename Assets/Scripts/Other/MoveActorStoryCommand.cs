@@ -12,7 +12,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
     public float MovementSpeed { get; private set; }
     public bool IsFinished { get => finished; }
     public bool IsConcurrent { get => true; }
-    public bool IsStarted { get => true; }
+    public bool IsStarted { get => started; }
     public StoryCommandExecutionFlags ExecutionFlags => StoryCommandExecutionFlags.DiscardAlike |
                                                         StoryCommandExecutionFlags.DiscardConcurrent;
     private Actor actor;
@@ -20,16 +20,16 @@ public sealed class MoveActorStoryCommand : IStoryCommand
     private float progress = 0f;
     private bool finished = false;
     private bool started = false;
-    private OrthographicPlane adjacent;
+    private FloorPlane adjacent;
 
-    public MoveActorStoryCommand(Actor _actor, Vector2 _start, Vector2 _end, float _movementSpeed, OrthographicPlane _adjacent=null)
+    public MoveActorStoryCommand(Actor _actor, Vector2 _start, Vector2 _end, float _movementSpeed, FloorPlane _adjacent=null)
     {
         if (_adjacent != null)
         {
             adjacent = _adjacent;
             OnFinish = (object arg) =>
             {
-                _actor.DoSetCurrentPlane((OrthographicPlane)arg);
+                _actor.DoSetCurrentPlane((FloorPlane)arg);
             };
         }
         
