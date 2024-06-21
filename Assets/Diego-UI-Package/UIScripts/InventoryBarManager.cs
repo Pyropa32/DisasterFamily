@@ -15,13 +15,13 @@ public class InventoryBarManager : MonoBehaviour {
     }
 
     void Update() {
-        for (int i = 0; i < IM.ids.Length; i++) {
-            if (IM.ids[i] == -1) {
+        for (int i = 0; i < IM.invIds.Length; i++) {
+            if (IM.invIds[i] == -1) {
                 children[i].enabled = false;
                 continue;
             }
             children[i].enabled = (i != -1);
-            children[i].sprite = IM.sprites[IM.ids[i]];
+            children[i].sprite = IM.sprites[IM.invIds[i]];
         }
         if (onMouse != -1 && Input.GetMouseButton(0)) {
             Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);
@@ -33,13 +33,13 @@ public class InventoryBarManager : MonoBehaviour {
             Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);
             worldSpace.x *= -16;
             worldSpace.y *= 10;
-            childrenSlots[onMouse].Apply(worldSpace, onMouse);
+            childrenSlots[onMouse].Apply(IM.invIds[onMouse]);
             onMouse = -1;
         }
     }
 
     public void clickInventory(int inventoryInd) {
-        if (IM.ids[inventoryInd] != -1) {
+        if (IM.invIds[inventoryInd] != -1) {
             onMouse = inventoryInd;
         }
     }

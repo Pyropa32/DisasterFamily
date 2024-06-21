@@ -20,7 +20,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
     private bool started = false;
 
     public MoveActorStoryCommand(Actor _actor, Vector2 _start, Vector2 _end, float _movementSpeed)
-    {
+    {/*
         startPosition = _start;
         Destination = _end;
 
@@ -37,7 +37,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
         // Use perpendicularity to negate the extra walk speed.
 
         MovementSpeed = _movementSpeed;
-        actor = _actor;
+        actor = _actor;*/
     }
 
     public object GetProgressModel()

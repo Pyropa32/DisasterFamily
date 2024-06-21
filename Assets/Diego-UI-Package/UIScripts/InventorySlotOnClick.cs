@@ -22,7 +22,11 @@ public class InventorySlotOnClick : MonoBehaviour {
         MoveSprite(origin);
     }
 
-    public void Apply(Vector3 loc, int id) { // location and id of dropped item
+    public void Apply(int id) {
+        Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
+        if (hit != null && hit.GetComponent<Interactable>() != null) {
+            hit.GetComponent<Interactable>().getAction().Invoke(InventoryManager.GetItemFromID(id));
+        }
         ResetPos();
     }
 }

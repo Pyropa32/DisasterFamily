@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickToMove: MonoBehaviour
-{
+{/*
     // Start is called before the first frame update
     [SerializeField]
     private StoryCommandDispatcher dispatcher;
@@ -43,5 +43,5 @@ public class ClickToMove: MonoBehaviour
         // Send the move commands to the dispatcher.
         dispatcher.Receive(moveCommand);
 
-    }
+    }*/
 }
