@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Prototypal;
 public class ClickToMove : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
     private StoryCommandDispatcher dispatcher;
-    private Actor myActor;
+    private SimpleActor myActor;
 
     private bool _previousLeftMouseDown = false;
     void Start()
     {
-        myActor = GetComponent<Actor>();
+        myActor = GetComponent<SimpleActor>();
     }
 
     // Update is called once per frame
@@ -56,9 +56,9 @@ public class ClickToMove : MonoBehaviour
             for (int i = 0; i < externalPath.Solution.Length; i++)
             {
                 var currentPlanePair = externalPath.Solution[i];
-                var firstPlane = currentPlanePair.Item1;
-                var gateway = currentPlanePair.Item2;
-                var secondPlane = currentPlanePair.Item3;
+                var firstPlane = currentPlanePair.StartPlane;
+                var gateway = currentPlanePair.Gate;
+                var secondPlane = currentPlanePair.DestinationPlane;
                 // move towards gateway
                 // on finish, set plane to secondPlane;
                 Vector2 startPosition = Vector2.zero;
