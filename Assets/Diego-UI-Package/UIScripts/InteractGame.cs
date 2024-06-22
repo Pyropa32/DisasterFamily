@@ -20,5 +20,6 @@ public class InteractGame {
         gameSpace += new Vector2(1.2f, 0.75f);
         gameSpace.x *= 16 / 13.6f;
         gameSpace.y *= 10 / 8.5f;
+        return gameSpace;
     }
 }
