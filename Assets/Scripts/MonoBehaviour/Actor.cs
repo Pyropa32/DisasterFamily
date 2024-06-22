@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    [SerializeField]
-    float movementSpeed = 2f;
 
     [SerializeField]
     FloorPlane currentPlane;
@@ -79,7 +77,7 @@ public class Actor : MonoBehaviour
         }
         set
         {
-            transform.position = new Vector3(value.x - footPosition.localPosition.x, value.y - footPosition.localPosition.y, -0.2f);
+            transform.position = new Vector3(value.x - footPosition.position.x, value.y - footPosition.position.y);
         }
     }
 
