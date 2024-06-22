@@ -988,6 +988,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663214753}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2, y: -3.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -995,7 +996,6 @@ Transform:
   m_Children:
   - {fileID: 1655450071}
   m_Father: {fileID: 426135497}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &663214755
 SpriteRenderer:
@@ -1108,8 +1108,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Is this the real life? Is this just fantasy? Caught in a land slide. No
-    escape from reality. Open your eyes, look up to th-
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1245,6 +1244,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1754,7 +1772,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1119802236}
   - component: {fileID: 1119802235}
+<<<<<<< HEAD
   - component: {fileID: 1119802238}
+=======
+>>>>>>> origin/Diego-UI
   - component: {fileID: 1119802237}
   m_Layer: 0
   m_Name: SampleScriptRunner
@@ -1799,6 +1820,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1119802234}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: b1bd32ca993ef40fa836a9b172f63207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1815,6 +1837,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: Sample
+=======
+  m_Script: {fileID: 11500000, guid: b0e7fd499f1296446b8ba2c5b3b557f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> origin/Diego-UI
 --- !u!1 &1125440823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1891,24 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+<<<<<<< HEAD
+=======
+--- !u!4 &1125440825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125440823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> origin/Diego-UI
 --- !u!1 &1249121547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,7 +2446,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 663214754}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2418,6 +2462,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

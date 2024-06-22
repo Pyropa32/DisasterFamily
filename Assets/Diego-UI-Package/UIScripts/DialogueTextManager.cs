@@ -28,7 +28,8 @@ public class DialogueTextManager : MonoBehaviour {
     }
 
     void Update() {
-        if (tmp.text == "" && q.Count > 0) {
+        if (!writing && tmp.text == "" && q.Count > 0) {
+            transform.parent.GetComponent<SpriteRenderer>().enabled = true;
             writingText = q.Dequeue();
             writing = true;
         }
@@ -48,7 +49,9 @@ public class DialogueTextManager : MonoBehaviour {
             tmp.text = "";
             currentText = "";
             writingText = "";
-            transform.parent.GetComponent<SpriteRenderer>().enabled = false;
+            if (q.Count == 0) {
+                transform.parent.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
         if (clicked) {
             clicked = false;

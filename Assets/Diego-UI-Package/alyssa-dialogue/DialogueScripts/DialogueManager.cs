@@ -30,7 +30,7 @@ public class DialogueManager {
             return false;
         }
 
-        UITextManager.SetText(DialogueDict.GetValueOrDefault(path)[0]);
+        DialogueTextManager.EnqueueTexts(DialogueDict.GetValueOrDefault(path));
         return true;
     }
 
