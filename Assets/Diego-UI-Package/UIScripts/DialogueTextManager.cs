@@ -40,7 +40,7 @@ public class DialogueTextManager : MonoBehaviour {
                     timer = 0;
                     break;
                 }
-                currentText += writingText.Substring(writingText.Length, 1);
+                currentText += writingText.Substring(currentText.Length, 1);
                 timer -= 1f / writeSpeed;
             }
         }
