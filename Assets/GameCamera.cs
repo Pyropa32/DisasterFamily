@@ -9,7 +9,7 @@ public class GameCamera : MonoBehaviour
     // Start is called before the first frame update
     SimpleFloorPlaneGraph world;
     BoundedVector boundedPosition; 
-    Actor focus;
+    Actor focusedActor;
     void Start()
     {
         boundedPosition = new BoundedVector();
@@ -23,8 +23,14 @@ public class GameCamera : MonoBehaviour
                 throw new InvalidOperationException("unable to obtain reference to World");
             }
         }
-        // get the absolute furthest back point in the whole world.
+        // get the absolute min and max of the world.
         var bounds = world.GetBounds();
+        boundedPosition.SetAxisLowerBound(BoundedVector.Axis.X, bounds.min.x);
+        boundedPosition.SetAxisLowerBound(BoundedVector.Axis.Y, bounds.min.y);
+
+        boundedPosition.SetAxisUpperBound(BoundedVector.Axis.X, bounds.max.x);
+        boundedPosition.SetAxisUpperBound(BoundedVector.Axis.Y, bounds.max.y);
+
     }
 
     // Update is called once per frame
