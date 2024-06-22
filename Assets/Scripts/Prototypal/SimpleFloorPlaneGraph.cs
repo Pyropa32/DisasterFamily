@@ -21,8 +21,8 @@ namespace Prototypal
         void Start()
         {
 
-            // add sprites to sorting list.
-            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>());
+            // add sprites to sorting list (except the black square ones bound to the main camera)
+            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>().Where(sprite => sprite.tag != "MainCamera"));
 
 
             // TODO: Get all of my child SimpleFloorPlanes and 
@@ -107,6 +107,15 @@ namespace Prototypal
                 gateway1.TryGetSharedPlane(gateway2, out SimpleFloorPlane plane);
                 graph.Connect(gateway1.ID, gateway2.ID, distance2, plane);
             }
+        }
+
+        public Bounds GetBounds()
+        {
+            Bounds result = new Bounds();
+            Vector3 minimum = new Vector2(float.MaxValue, float.MaxValue);
+            Vector3 maximum = new Vector2(float.MinValue, float.MinValue);
+            result.SetMinMax(minimum, maximum);
+            return result;
         }
 
         public SimpleFloorPlane GetPlaneByPosition(Vector2 where)
