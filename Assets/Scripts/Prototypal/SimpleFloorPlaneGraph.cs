@@ -114,6 +114,19 @@ namespace Prototypal
             Bounds result = new Bounds();
             Vector3 minimum = new Vector2(float.MaxValue, float.MaxValue);
             Vector3 maximum = new Vector2(float.MinValue, float.MinValue);
+            foreach (var plane in planes)
+            {
+                maximum = new Vector3(
+                    Mathf.Max(plane.TopRight.x, maximum.x),
+                    Mathf.Max(plane.TopRight.y, maximum.y),
+                    transform.position.z
+                );
+                minimum = new Vector3(
+                    Mathf.Min(plane.BottomLeft.x, minimum.x),
+                    Mathf.Min(plane.BottomLeft.y, minimum.y),
+                    transform.position.z
+                );
+            }
             result.SetMinMax(minimum, maximum);
             return result;
         }
