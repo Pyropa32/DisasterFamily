@@ -21,7 +21,9 @@ public class ClickToMove : MonoBehaviour
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true)
         {
-            var worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 worldMousePosition = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            Vector3 CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
+            worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             OnClicked(worldMousePosition);
 
         }
