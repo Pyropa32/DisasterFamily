@@ -4,32 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Diego
 {
-    public class Item : Selectable
+    // Readonly structs live on the stack
+    // They're quite nice to have
+    public readonly struct Item : ISelectable
     {
-        private int id = -1;
-        private Sprite sprite;
+        private readonly int id;
+        private readonly Sprite sprite;
 
         public Item(int id, Sprite sprite)
         {
             this.id = id;
             this.sprite = sprite;
         }
-
-        public bool isCollectable()
-        {
-            return true;
-        }
-        public bool isInteractable()
-        {
-            return false;
-        }
-        public int getID()
-        {
-            return id;
-        }
-        public Sprite getSprite()
-        {
-            return sprite;
-        }
+        public bool CanBeCollected => true;
+        public bool CanBeInteractedWith => false;
+        public int ID => id;
+        public Sprite Sprite => sprite;
     }
 }

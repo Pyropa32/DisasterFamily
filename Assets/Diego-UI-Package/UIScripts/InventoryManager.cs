@@ -14,16 +14,16 @@ namespace Diego
         public int invSize = 5;
         public int globalInvSize = 20;
 
-        public static InventoryManager instance = null;
-
+        public static InventoryManager SingletonInstance { get => _singletonInstance; }
+        private static InventoryManager _singletonInstance;
         void Start()
         {
-            if (instance != null)
+            if (_singletonInstance != null)
             {
                 Destroy(gameObject);
                 return;
             }
-            instance = this;
+            _singletonInstance = this;
             invIds = new int[invSize];
             for (int i = 0; i < invSize; i++)
             {
@@ -43,80 +43,80 @@ namespace Diego
 
         public static Item GetItemFromID(int id)
         {
-            return instance.items[id];
+            return _singletonInstance.items[id];
         }
 
         public static bool toggleInInventory(Item item)
         {
-            return toggleInInventory(item.getID());
+            return toggleInInventory(item.ID);
         }
 
         public static bool toggleInInventory(int id)
         {
             bool found = false;
-            for (int i = 0; i < instance.invIds.Length; i++)
+            for (int i = 0; i < _singletonInstance.invIds.Length; i++)
             {
                 if (found)
                 {
-                    instance.invIds[i - 1] = instance.invIds[i];
-                    instance.invIds[i] = -1;
+                    _singletonInstance.invIds[i - 1] = _singletonInstance.invIds[i];
+                    _singletonInstance.invIds[i] = -1;
                 }
-                if (instance.invIds[i] == id)
+                if (_singletonInstance.invIds[i] == id)
                 {
                     found = true;
-                    instance.invIds[i] = -1;
+                    _singletonInstance.invIds[i] = -1;
                 }
             }
-            if (found || instance.invIds[instance.invIds.Length - 1] != -1)
+            if (found || _singletonInstance.invIds[_singletonInstance.invIds.Length - 1] != -1)
             {
                 return false;
             }
-            for (int i = instance.invIds.Length - 2; i >= 0; i--)
+            for (int i = _singletonInstance.invIds.Length - 2; i >= 0; i--)
             {
-                if (instance.invIds[i] != -1)
+                if (_singletonInstance.invIds[i] != -1)
                 {
-                    instance.invIds[i + 1] = id;
+                    _singletonInstance.invIds[i + 1] = id;
                     return true;
                 }
             }
-            instance.invIds[0] = id;
+            _singletonInstance.invIds[0] = id;
             return true;
         }
 
         public static bool toggleInGlobalInventory(Item item)
         {
-            return toggleInGlobalInventory(item.getID());
+            return toggleInGlobalInventory(item.ID);
         }
 
         public static bool toggleInGlobalInventory(int id)
         {
             bool found = false;
-            for (int i = 0; i < instance.globalInvIds.Length; i++)
+            for (int i = 0; i < _singletonInstance.globalInvIds.Length; i++)
             {
                 if (found)
                 {
-                    instance.globalInvIds[i - 1] = instance.globalInvIds[i];
-                    instance.globalInvIds[i] = -1;
+                    _singletonInstance.globalInvIds[i - 1] = _singletonInstance.globalInvIds[i];
+                    _singletonInstance.globalInvIds[i] = -1;
                 }
-                if (instance.globalInvIds[i] == id)
+                if (_singletonInstance.globalInvIds[i] == id)
                 {
                     found = true;
-                    instance.globalInvIds[i] = -1;
+                    _singletonInstance.globalInvIds[i] = -1;
                 }
             }
-            if (found || instance.globalInvIds[instance.globalInvIds.Length - 1] != -1)
+            if (found || _singletonInstance.globalInvIds[_singletonInstance.globalInvIds.Length - 1] != -1)
             {
                 return false;
             }
-            for (int i = instance.globalInvIds.Length - 2; i >= 0; i--)
+            for (int i = _singletonInstance.globalInvIds.Length - 2; i >= 0; i--)
             {
-                if (instance.globalInvIds[i] != -1)
+                if (_singletonInstance.globalInvIds[i] != -1)
                 {
-                    instance.globalInvIds[i + 1] = id;
+                    _singletonInstance.globalInvIds[i + 1] = id;
                     return true;
                 }
             }
-            instance.globalInvIds[0] = id;
+            _singletonInstance.globalInvIds[0] = id;
             return true;
         }
     }

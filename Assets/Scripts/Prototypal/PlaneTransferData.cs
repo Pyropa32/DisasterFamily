@@ -11,9 +11,6 @@ namespace Prototypal
             Gate = _gate;
             DestinationPlane = _finish;
         }
-        public PlaneTransferData()
-        {
-        }
         public SimpleFloorPlane StartPlane;
         public SimpleFloorPlaneGateway Gate;
         public SimpleFloorPlane DestinationPlane;

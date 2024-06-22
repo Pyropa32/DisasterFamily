@@ -7,9 +7,11 @@ namespace Diego
     public class UITextManager : MonoBehaviour
     {
         private static UITextManager instance = null;
+        private TextMeshPro label;
 
         void Start()
         {
+            label = GetComponent<TextMeshPro>();
             if (instance != null)
             {
                 Destroy(this);
@@ -20,7 +22,8 @@ namespace Diego
 
         public static void SetText(string text)
         {
-            instance.transform.GetComponent<TextMeshPro>().text = text;
+            // don't need to call GetComponent every time, it *is* kind of expensive
+            instance.label.text = text;
         }
     }
 }

@@ -11,7 +11,8 @@ namespace Diego
 
         void OnMouseDown()
         {
-            onClick.Invoke();
+            // if onClick is null, don't invoke.
+            onClick?.Invoke();
             origin = transform.position;
         }
 
@@ -30,9 +31,9 @@ namespace Diego
         public void Apply(int id)
         {
             Transform hit = CameraToScreenspaceConverter.GetFromScreenSpace(Input.mousePosition);
-            if (hit != null && hit.GetComponent<Interactable>() != null)
+            if (hit != null && hit.GetComponent<IInteractable>() != null)
             {
-                hit.GetComponent<Interactable>().getAction().Invoke(InventoryManager.GetItemFromID(id));
+                hit.GetComponent<IInteractable>()?.OnInteract(InventoryManager.GetItemFromID(id));
             }
             ResetPos();
         }

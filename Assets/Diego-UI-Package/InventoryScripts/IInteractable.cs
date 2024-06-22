@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Diego
 {
-    public interface Interactable : Selectable
+    public interface IInteractable : ISelectable
     {
-        public Action<Item> getAction();
+        public Action<Item> OnInteract { get; set; }
     }
 }
