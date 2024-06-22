@@ -919,7 +919,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 519420032}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -1772,11 +1772,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1119802236}
   - component: {fileID: 1119802235}
-<<<<<<< HEAD
-  - component: {fileID: 1119802238}
-=======
->>>>>>> origin/Diego-UI
   - component: {fileID: 1119802237}
+  - component: {fileID: 1119802239}
+  - component: {fileID: 1119802238}
   m_Layer: 0
   m_Name: SampleScriptRunner
   m_TagString: Untagged
@@ -1820,11 +1818,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1119802234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-  m_Script: {fileID: 11500000, guid: b1bd32ca993ef40fa836a9b172f63207, type: 3}
+  m_Script: {fileID: 11500000, guid: b0e7fd499f1296446b8ba2c5b3b557f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1119802238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119802234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bd32ca993ef40fa836a9b172f63207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1119802239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1837,11 +1846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: Sample
-=======
-  m_Script: {fileID: 11500000, guid: b0e7fd499f1296446b8ba2c5b3b557f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> origin/Diego-UI
 --- !u!1 &1125440823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,30 +1855,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125440825}
-  - component: {fileID: 1125440826}
-  m_Layer: 6
+  - component: {fileID: 1125440824}
+  m_Layer: 3
   m_Name: PostProc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1125440825
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125440823}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1125440826
+--- !u!114 &1125440824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1888,11 +1877,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 1f34afcc9d02e4d40b485c851f98e327, type: 2}
   isGlobal: 1
-  blendDistance: 0
+  blendDistance: 13.16
   weight: 1
   priority: 0
-<<<<<<< HEAD
-=======
 --- !u!4 &1125440825
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,7 +1895,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/Diego-UI
 --- !u!1 &1249121547
 GameObject:
   m_ObjectHideFlags: 0
