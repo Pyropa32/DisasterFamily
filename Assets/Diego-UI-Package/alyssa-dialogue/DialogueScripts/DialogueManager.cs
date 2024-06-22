@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 
+// Next up:
+// Include Actor data
+// Actor Expression Data as well
+
 public class DialogueManager {
     private static Dictionary<string, string[]> DialogueDict = new Dictionary<string, string[]>();
 
