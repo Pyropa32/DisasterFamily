@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UITextManager : MonoBehaviour {
-    private static UITextManager instance = null;
+public class DialogueTextManager : MonoBehaviour {
+    private static DialogueTextManager instance = null;
     private Queue<string> q;
     private TextMeshPro tmp;
 
@@ -48,6 +48,7 @@ public class UITextManager : MonoBehaviour {
             tmp.text = "";
             currentText = "";
             writingText = "";
+            transform.parent.GetComponent<SpriteRenderer>().enabled = false;
         }
         if (clicked) {
             clicked = false;
