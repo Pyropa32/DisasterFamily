@@ -63,7 +63,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
         // // Use perpendicularity to negate the extra walk speed.
 
         MovementSpeed = _movementSpeed;
-        actor = _actor;*/
+        actor = _actor;
     }
 
     public object GetProgressModel()

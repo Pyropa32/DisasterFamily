@@ -67,8 +67,6 @@ public class Actor : MonoBehaviour
 
     }
 
-    public float MovementSpeed => movementSpeed;
-
     public Vector2 GlobalPosition
     {
         get
