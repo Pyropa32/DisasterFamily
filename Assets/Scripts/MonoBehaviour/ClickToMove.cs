@@ -41,18 +41,13 @@ public class ClickToMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var viewportPos = GetViewportMousePosition();
-        //Debug.Log("viewport pos" + viewportPos);
-        var globalMousePos = CameraToScreenspaceConverter.SingletonInstance.ViewportToWorld(viewportPos);
-        //Debug.Log("global pos" + globalMousePos);
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true)
         {
-            Vector2 worldMousePosition = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
             Vector3 CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             OnClicked(worldMousePosition);
-
         }
         _previousLeftMouseDown = currentLeftMouseDown;
     }
