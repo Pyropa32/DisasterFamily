@@ -69,10 +69,6 @@ namespace Prototypal
                 DoSetCurrentPlane(World.GetPlaneByPosition(transform.position));
             }
             GlobalPosition = currentPlane.PlaneToScreen(localPosition);
-            if (GlobalPosition.x < -6f || GlobalPosition.x > 10f)
-            {
-                Debug.Log("found error in update");
-            }
         }
 
         public void SetAnim(string what)

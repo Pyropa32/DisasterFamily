@@ -15,14 +15,16 @@ namespace Prototypal
         // Planes are considered edges for a good reason:
         //  You may need to pass through the same room again via a different gate to get somewhere.
         //  But a path will never lead you through the same gate twice.
+        bool hasStarted = false;
+        public bool HasStarted => hasStarted;
         private Graph<SimpleFloorPlaneGateway, SimpleFloorPlane> graph = new Graph<SimpleFloorPlaneGateway, SimpleFloorPlane>();
         private List<SimpleFloorPlane> planes = new List<SimpleFloorPlane>();
         private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
         void Start()
         {
-
-            // add sprites to sorting list (except the black square ones bound to the main camera)
-            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>().Where(sprite => sprite.tag != "MainCamera"));
+            hasStarted = true;
+            // add sprites to sorting list (except the black square ones bound to the main camera + anything UI)
+            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>().Where(sprite => sprite.tag != "DoNotSort"));
 
 
             // TODO: Get all of my child SimpleFloorPlanes and 

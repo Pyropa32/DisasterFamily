@@ -10,6 +10,7 @@ public class GameCamera : MonoBehaviour
     SimpleFloorPlaneGraph world;
     BoundedVector boundedPosition; 
     Actor focusedActor;
+    bool _hasSetInitialBounds = false;
     void Start()
     {
         boundedPosition = new BoundedVector();
@@ -24,18 +25,27 @@ public class GameCamera : MonoBehaviour
             }
         }
         // get the absolute min and max of the world.
+
+    }
+
+    void SetUpBounds()
+    {
         var bounds = world.GetBounds();
         boundedPosition.SetAxisLowerBound(BoundedVector.Axis.X, bounds.min.x);
         boundedPosition.SetAxisLowerBound(BoundedVector.Axis.Y, bounds.min.y);
 
         boundedPosition.SetAxisUpperBound(BoundedVector.Axis.X, bounds.max.x);
         boundedPosition.SetAxisUpperBound(BoundedVector.Axis.Y, bounds.max.y);
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (world.HasStarted && !_hasSetInitialBounds)
+        {
+            _hasSetInitialBounds = false;
+            SetUpBounds();
+        }
         // bound the transform's position.
         boundedPosition.Value = transform.position;
     }

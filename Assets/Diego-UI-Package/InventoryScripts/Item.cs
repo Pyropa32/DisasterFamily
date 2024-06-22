@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Diego
 {
-    // Readonly structs live on the stack
-    // They're quite nice to have
     public readonly struct Item : ISelectable
     {
         private readonly int id;
