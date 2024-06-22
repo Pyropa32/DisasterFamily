@@ -22,7 +22,7 @@ public class ClickToMove: MonoBehaviour
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true)
         {
             var worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            OnClicked(worldMousePosition);
+            //OnClicked(worldMousePosition);
             
         }
         _previousLeftMouseDown = currentLeftMouseDown;
@@ -33,7 +33,7 @@ public class ClickToMove: MonoBehaviour
 
     }
 
-    private void OnClicked(Vector2 where)
+   /* private void OnClicked(Vector2 where)
     {
         // Get the coordinates expressed in plane coords.
         var planeCoordinates = myActor.CurrentPlane.ScreenToPlane(where); 
@@ -43,5 +43,5 @@ public class ClickToMove: MonoBehaviour
         // Send the move commands to the dispatcher.
         dispatcher.Receive(moveCommand);
 
-    }
+    }*/
 }

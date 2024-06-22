@@ -5,20 +5,23 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
 
-    [SerializeField]
-    OrthographicPlane currentPlane;
-    [SerializeField]
+    //[SerializeField]
+    //OrthographicPlane currentPlane;
+    //[SerializeField]
     Transform footPosition;
     Vector2 localPosition;
+    // ILIST class?
+    public ActorInventory inventory = new ActorInventory();
 
     void Start()
     {
         Debug.Log("hello, world!");
-        currentPlane.Add(this);
+        inventory = GetComponent<ActorInventory>();
+        //currentPlane.Add(this);
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         localPosition = Vector2.one / 2f;
         if (Input.GetKey(KeyCode.W))
@@ -69,5 +72,5 @@ public class Actor : MonoBehaviour
         {
             localPosition = value;
         }
-    }
+    }*/
 }
