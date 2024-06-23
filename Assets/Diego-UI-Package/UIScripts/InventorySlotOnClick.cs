@@ -42,10 +42,9 @@ namespace Diego
         public static void ApplyNoItem()
         {
             Transform hit = CameraToScreenspaceConverter.GetFromScreenSpace(Input.mousePosition);
-            if (hit != null && hit.GetComponent<Interactable>() != null)
+            if (hit != null && hit.GetComponent<IInteractable>() != null)
             {
-                // FIXME : Add Item.Empty instead of <null>
-                hit.GetComponent<IInteractable>()?.OnInteract(new Item());
+                hit.GetComponent<IInteractable>()?.OnInteract(Item.Empty);
             }
         }
     }

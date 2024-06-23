@@ -4,10 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Diego
 {
-    public class Wrench : MonoBehaviour, Interactable
+    public class Wrench : MonoBehaviour, IInteractable
     {
         private Action<Item> action;
         private Sprite mySprite;
+
+        public Action<Item> OnInteract { get => action; set => action = value; }
+
+        public bool CanBeCollected => false;
+
+        public bool CanBeInteractedWith => true;
+
+        public int ID => 0;
+
+        public Sprite Sprite => mySprite;
 
         public void Start()
         {
