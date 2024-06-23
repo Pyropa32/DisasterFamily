@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
 namespace Diego
 {
     public class InventorySlotOnClick : MonoBehaviour
@@ -36,6 +37,16 @@ namespace Diego
                 hit.GetComponent<IInteractable>()?.OnInteract(InventoryManager.GetItemFromID(id));
             }
             ResetPos();
+        }
+
+        public static void ApplyNoItem()
+        {
+            Transform hit = CameraToScreenspaceConverter.GetFromScreenSpace(Input.mousePosition);
+            if (hit != null && hit.GetComponent<Interactable>() != null)
+            {
+                // FIXME : Add Item.Empty instead of <null>
+                hit.GetComponent<IInteractable>()?.OnInteract(new Item());
+            }
         }
     }
 }

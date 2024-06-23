@@ -11,7 +11,6 @@ namespace Prototypal
             Gate = _gate;
             DestinationPlane = _finish;
         }
-
         public PlaneTransferData()
         {
         }
