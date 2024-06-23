@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollection : MonoBehaviour, IStoryCommand
+public class CollectItemCommand : IStoryCommand
 {
     private Actor actor;
     private Item item;
@@ -15,29 +15,43 @@ public class ItemCollection : MonoBehaviour, IStoryCommand
     public bool IsConcurrent { get => true; }
     public bool IsStarted { get => true; }
     public StoryCommandExecutionFlags ExecutionFlags => StoryCommandExecutionFlags.Ignore;
-    
-    
-    public void Start(){
+    private event Action<object> _onFinish;
+    public event Action<object> OnFinish
+    {
+        add
+        {
+            _onFinish += value;
+        }
+
+        remove
+        {
+            _onFinish -= value;
+        }
+    }
+
+    public void Start()
+    {
         started = true;
     }
-    public void Tick(float delta){
-         if (!finished)
+    public void Tick(float delta)
+    {
+        if (!finished)
         {
             progress += delta * 1f;
             if (progress >= 1f)
             {
                 finished = true;
                 //actor.SetAnim("idle");
-                OnFinish?.Invoke();
+                _onFinish?.Invoke(null);
             }
         }
     }
-    public object GetProgressModel(){
+    public object GetProgressModel()
+    {
         return progress;
     }
-    public event Func<object> OnFinish;
 
-    /*public ItemCollection(Actor _actor, Item _item){
+    /*public CollectItemCommand(Actor _actor, Item _item){
         actor = _actor;
         item = _item;
 
@@ -66,7 +80,7 @@ public class ItemCollection : MonoBehaviour, IStoryCommand
             actor.inventory.AddItem(item);
             item.collected = true;
         }*/
-        item.collected = true;
+        item.ClickToCollect();
     }
 
 }

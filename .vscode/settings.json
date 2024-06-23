@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DisasterFamily-PathFindingUI-Integration.sln"
+    "dotnet.defaultSolution": "DisasterFamily.sln"
 }

@@ -14,9 +14,9 @@ namespace Prototypal
         SimpleFloorPlane currentPlane;
         Vector2 localPosition;
         SimpleFloorPlaneGraph world;
-
+        ActorInventory actorInventory;
         public SimpleFloorPlaneGraph World => world;
-
+        public ActorInventory Inventory => actorInventory;
         public SimpleFloorPlane CurrentPlane
         {
             get

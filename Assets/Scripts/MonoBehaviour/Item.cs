@@ -2,28 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Prototypal;
 
 public class Item : MonoBehaviour
 {
     private string weight = "";
-    private ItemCollection itemCollection;
     private bool collected = false;
-    private Actor actor;
+    private SimpleActor SimpleActor;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject actorObject = GameObject.FindWithTag("Player");
-        if (actorObject != null)
+        GameObject SimpleActorObject = GameObject.FindWithTag("Player");
+        if (SimpleActorObject != null)
         {
-            actor = actorObject.GetComponent<Actor>();
+            SimpleActor = SimpleActorObject.GetComponent<SimpleActor>();
         }
         else
         {
-            Debug.LogError("No actor found in scene.");
+            Debug.LogError("No SimpleActor found in scene.");
         }
         Debug.Log("Item generated");
-        itemCollection = GetComponent<ItemCollection>();
     }
 
     //load attributes from xml
@@ -69,11 +68,11 @@ public class Item : MonoBehaviour
         return bounds.Contains(mousePosition);
     }
 
-    void ClickToCollect()
+    public void ClickToCollect()
     {
-        if (actor.inventory.Count < 1)
+        if (SimpleActor.Inventory.Count < 1)
         {
-            actor.inventory.AddItem(this);
+            SimpleActor.Inventory.AddItem(this);
             collected = true;
             Debug.Log("Item collected: " + gameObject.name);
         }
