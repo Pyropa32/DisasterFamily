@@ -14,14 +14,14 @@ public static class ItemsUniverse
             10000,
             "whiskey",
             "Jack Daniel's Single-Barrel Tennessee Whiskey",
-            "It escaped the supplies promptly; A sneaky father seems to have broken his vows",
+            "It escaped the supplies promptly; A sneaky father seems to have broken his vows.",
             ItemQuality.Useless
         );
         AddItem(
             10001,
             "teddy_bear",
             "Kuma",
-            "A gentle reminder of childhood innocence, yet with no place here in times like these"
+            "A gentle reminder of childhood innocence, yet with no place here in times like these."
         );
         AddItem(
             10002,
@@ -67,7 +67,7 @@ public static class ItemsUniverse
         );
         AddItem(
             10008,
-            "wood",
+            "plank",
             "Plank",
             "With one useless plank you hold comes hundreds more from the collapse of your home.",
             ItemQuality.Useless
@@ -125,7 +125,7 @@ public static class ItemsUniverse
             10016,
             "home_documents",
             "House Documents",
-            "These documents are proof of your home ownership and mortgate payments.",
+            "These documents are proof of your home ownership and mortgage payments.",
             ItemQuality.Required
         );
         AddItem(
@@ -160,7 +160,7 @@ public static class ItemsUniverse
             10021,
             "burnout_revenge",
             "Burnout Revenge for the PS2",
-            "There's no weed to smoke, no diet soda with which to fill your bellies.",
+            "There's no weed to smoke, no diet soda to fill your bellies with, no hanging out to do.",
             ItemQuality.Useless
         );
         AddItem(
