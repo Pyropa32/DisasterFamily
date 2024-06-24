@@ -151,10 +151,10 @@ public static class ItemsUniverse
         );
         AddItem(
             10020,
-            "batteries",
-            "Spare Batteries",
-            "It's a good idea to keep your electronics charged.",
-            ItemQuality.Required
+            "manifesto",
+            "My Manifesto",
+            "What- Why would you... Like, what is that, why would you write something like that?",
+            ItemQuality.Useless
         );
         AddItem(
             10021,
@@ -191,8 +191,6 @@ public static class ItemsUniverse
             "Your wife has a health condition. Lucky of you to bring the medicine.",
             ItemQuality.Required
         );
-
-
     }
 
     public static bool TryGetValue(int id, out Diego.Item item)

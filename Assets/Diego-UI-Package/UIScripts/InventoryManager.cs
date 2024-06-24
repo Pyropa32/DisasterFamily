@@ -5,13 +5,17 @@ namespace Diego
 {
     public class InventoryManager : MonoBehaviour
     {
+        // What I really need
+        // Injected
         public Item[] items;
         public Sprite[] sprites;
 
         public int[] invIds;
         public int[] globalInvIds;
 
+        // Keep
         public int invSize = 5;
+        // Destroy
         public int globalInvSize = 20;
 
         public static InventoryManager SingletonInstance { get => _singletonInstance; }
