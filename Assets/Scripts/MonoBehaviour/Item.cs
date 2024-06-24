@@ -3,16 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Prototypal;
-
-public class Item : MonoBehaviour
+using Diego;
+using Unity.VisualScripting;
+public class WorldItem : MonoBehaviour
 {
     private string weight = "";
     private bool collected = false;
     private SimpleActor SimpleActor;
 
+    // serialize fields
+    [SerializeField]
+    int ID;
+
+    [HideInInspector]
+    public Item Data { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
+        if (ItemsUniverse.TryGetValue(ID, out Item data))
+        {
+            Data = data;
+            // set sprite
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError("Hey!!! put a sprite renderer on this item!");
+            }
+            spriteRenderer.sprite = data.Sprite;
+        }
+        else
+        {
+            Debug.LogError("Hey!!! You!!! Look at ItemsUniverse.cs for item IDs!");
+        }
+
         GameObject SimpleActorObject = GameObject.FindWithTag("Player");
         if (SimpleActorObject != null)
         {

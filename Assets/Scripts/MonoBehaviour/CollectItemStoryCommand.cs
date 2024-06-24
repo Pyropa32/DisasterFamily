@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CollectItemCommand : IStoryCommand
 {
     private Actor actor;
-    private Item item;
+    private WorldItem item;
     private float progress = 0f;
     private float totalDuration = 0f;
     private bool finished = false;
