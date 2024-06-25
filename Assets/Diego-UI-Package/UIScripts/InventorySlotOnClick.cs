@@ -37,7 +37,7 @@ namespace Diego
             if (hit != null && hit.GetComponent<IInteractable>() != null)
             {
                 ItemsUniverse.TryGetValue(id, out Item i);
-                hit.GetComponent<IInteractable>()?.OnInteract(i);
+                hit.GetComponent<IInteractable>()?.GetInRangeAndDo(i, hit.transform.position);
             }
             else {
                 DropItem(id);

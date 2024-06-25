@@ -42,16 +42,18 @@ public interface IInteractable : ISelectable {
         return new InteractableActionStoryCommand(OnInteract, item);
     }
     public void GetInRangeAndDo(Item item, UnityEngine.Vector2 itemPos) {
-        UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position + new UnityEngine.Vector3(0, 0.75f, 0);
-        UnityEngine.Vector2 displacement = itemPos - playerPos;
         float range = 1f;
+        UnityEngine.Vector2 playerPivot = new UnityEngine.Vector2(0, 0.75f);
+
+        UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position + new UnityEngine.Vector3(playerPivot.x, playerPivot.y, 0);
+        UnityEngine.Vector2 displacement = itemPos - playerPos;
         if (displacement.magnitude <= range) {
             OnInteract.Invoke(item);
             return;
         }
-        displacement /= 1 - (range / displacement.magnitude);
+        displacement *= 1 - (range / displacement.magnitude);
         List<IStoryCommand> after = new List<IStoryCommand>();
         after.Add(ToStoryCommand(item));
-        UnityEngine.GameObject.FindWithTag("Player").GetComponent<ClickToMove>().OnClicked(displacement + playerPos, after);
+        UnityEngine.GameObject.FindWithTag("Player").GetComponent<ClickToMove>().OnClicked(displacement + playerPos - playerPivot, after);
     }
 }
