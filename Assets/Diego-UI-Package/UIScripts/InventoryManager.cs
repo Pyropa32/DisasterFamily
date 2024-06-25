@@ -79,6 +79,7 @@ namespace Diego
             {
                 if (found)
                 {
+                    // shift elements
                     _singletonInstance.invIds[i - 1] = _singletonInstance.invIds[i];
                     _singletonInstance.invIds[i] = -1;
                 }

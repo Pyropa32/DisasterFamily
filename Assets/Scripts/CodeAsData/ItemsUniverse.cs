@@ -208,7 +208,8 @@ public static class ItemsUniverse
             id,
             _path,
             _name,
-            _remarks
+            _remarks,
+            quality
         ));
     }
 }
