@@ -40,7 +40,7 @@ namespace Diego
                 ItemsUniverse.TryGetValue(id, out Item i);
                 hit.GetComponent<IInteractable>()?.OnInteract(i);
             }
-            else{
+            else {
                 DropItem(id);
             }
             ResetPos();
