@@ -19,10 +19,8 @@ namespace Diego
 
         public const float writeSpeed = 20f;
 
-        void Start()
-        {
-            if (instance != null)
-            {
+        void Start() {
+            if (instance != null) {
                 Destroy(this);
                 return;
             }
@@ -43,8 +41,8 @@ namespace Diego
                 timer += Time.deltaTime;
                 while (timer > 1f / writeSpeed)
                 {
-                    if (writingText.Length == currentText.Length)
-                    {
+                    if (clicked || writingText.Length == currentText.Length) {
+                        currentText = writingText;
                         writing = false;
                         timer = 0;
                         break;
@@ -81,6 +79,20 @@ namespace Diego
             {
                 EnqueueText(s);
             }
+        }
+        public static void Clear() {
+            instance.q.Clear();
+            instance.writingText = "";
+            instance.currentText = "";
+            instance.writing = false;
+            instance.timer = 0f;
+            instance.tmp.text = "";
+        }
+        public static void SetText(string text) {
+            Clear();
+            instance.writingText = text;
+            instance.currentText = text;
+            instance.tmp.text = text;
         }
     }
 }

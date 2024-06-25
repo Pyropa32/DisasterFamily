@@ -26,7 +26,7 @@ namespace Diego
         public static Item GetItemFromName(string name)
         {
             // change to dictionary in future and load at start
-            // read from xml file to load item from given name 
+            // read from xml file to load item from given name
             TextAsset textAsset = (TextAsset)Resources.Load("ItemList");
             XmlDocument xmldoc = new XmlDocument();
             xmldoc.LoadXml(textAsset.text);

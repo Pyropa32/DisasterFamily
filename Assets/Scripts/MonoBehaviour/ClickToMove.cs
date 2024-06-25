@@ -24,7 +24,7 @@ public class ClickToMove : MonoBehaviour
                                     Screen.currentResolution.height);
         var actualScreenSize = new Vector2(Screen.width, Screen.height);
         var viewportMax = actualScreenSize / resolution;
-        var magicVector = (Vector3)(Vector2.left * (0.05f)); 
+        var magicVector = (Vector3)(Vector2.left * (0.05f));
         var clickedCoordinatesViewport = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
         // var transformedCoordinates = CameraToScreenspaceConverter.
@@ -42,17 +42,20 @@ public class ClickToMove : MonoBehaviour
     void Update()
     {
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
-        if (currentLeftMouseDown == false && _previousLeftMouseDown == true)
+        Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
+        bool inRange = Mathf.Abs(worldMousePosition.x) <= Camera.main.orthographicSize * 8 / 5;
+        inRange = inRange && Mathf.Abs(worldMousePosition.y) <= Camera.main.orthographicSize;
+        bool interacting = InteractGame.GetFromScreenSpace(Input.mousePosition) != null;
+        if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false)
         {
-            Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
-            Vector3 CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
+            Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             OnClicked(worldMousePosition);
         }
         _previousLeftMouseDown = currentLeftMouseDown;
     }
 
-    private void OnClicked(Vector2 where)
+    public void OnClicked(Vector2 where, List<IStoryCommand> after = null)
     {
 
         // see if you clicked on another plane.
@@ -115,6 +118,12 @@ public class ClickToMove : MonoBehaviour
                                                                 myActor.MovementSpeed
                                                                 );
             movementCommandChain.Add(internalMoveCommand);
+
+            // Add after commands
+            for (int i = 0; after != null && i < after.Count; i++) {
+                movementCommandChain.Add(after[i]);
+            }
+
             // Send all of the commands to the dispatcher.
             dispatcher.ReceiveSequentialRange(
                 movementCommandChain,
@@ -127,7 +136,23 @@ public class ClickToMove : MonoBehaviour
             // move around in local space
             var planeCoordinates = myActor.CurrentPlane.ScreenToPlane(where);
             var moveCommand = new MoveActorStoryCommand(myActor, myActor.LocalPosition, planeCoordinates, myActor.MovementSpeed);
-            dispatcher.Receive(moveCommand);
+
+
+            List<IStoryCommand> movementCommandChain = new List<IStoryCommand>();
+
+            movementCommandChain.Add(moveCommand);
+
+            // Add after commands
+            for (int i = 0; after != null && i < after.Count; i++) {
+                movementCommandChain.Add(after[i]);
+            }
+
+            // Send all of the commands to the dispatcher.
+            dispatcher.ReceiveSequentialRange(
+                movementCommandChain,
+                blocking: false,
+                flagOverride: StoryCommandExecutionFlags.DiscardAlike
+                );
         }
 
     }

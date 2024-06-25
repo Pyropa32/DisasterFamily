@@ -7,14 +7,16 @@ namespace Diego
 {
     public class InventorySlotOnClick : MonoBehaviour
     {
-        public UnityEvent onClick;
+        public int index = -1;
         private Vector3 origin;
 
         void OnMouseDown()
         {
             // if onClick is null, don't invoke.
-            onClick?.Invoke();
             origin = transform.position;
+            if (index != -1) {
+                transform.parent.GetComponent<InventoryBarManager>()?.clickInventory(index);
+            }
         }
 
         public void MoveSprite(Vector3 dest)
