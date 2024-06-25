@@ -69,7 +69,12 @@ namespace Diego
                 else {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
                     if (hit != null && hit.GetComponent<IInteractable>() != null) {
-                        UITextManager.SetText(hit.gameObject.name);
+                        if (hit.GetComponent<GeneralItem>() != null) {
+                            UITextManager.SetText(ItemLookup.GetItemFromID(hit.GetComponent<GeneralItem>().id).Name);
+                        }
+                        else {
+                            UITextManager.SetText(hit.gameObject.name);
+                        }
                     }
                 }
             }

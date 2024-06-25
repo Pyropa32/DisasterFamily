@@ -64,7 +64,10 @@ namespace Diego
             InventoryManager.toggleInInventory(id);
 
             Vector2 gameSpacePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
-            itemObject.transform.position = new Vector3(gameSpacePosition.x, gameSpacePosition.y, 0);
+            gameSpacePosition += new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y);
+            itemObject.transform.position = new Vector3(gameSpacePosition.x, gameSpacePosition.y, -9.9f);
+            itemObject.name = ItemLookup.GetItemFromID(id).Name;
+            itemObject.GetComponent<GeneralItem>().id = id;
         }
 
         public static void ApplyNoItem()
