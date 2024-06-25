@@ -14,46 +14,35 @@ TagManager:
   - TransparentFX
   - Ignore Raycast
   - Water
+  - Water
   - UI
   - PostProc
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
-  - name: undertow
-    uniqueID: 4160573793
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: overhead
-    uniqueID: 577042105
-    locked: 0
-  - name: super_overhead
-    uniqueID: 1103333715
-    locked: 0
-  - name: overhead supreme
-    uniqueID: 514947067
     locked: 0

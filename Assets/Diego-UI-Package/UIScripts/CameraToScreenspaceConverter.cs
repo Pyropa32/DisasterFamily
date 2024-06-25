@@ -48,5 +48,14 @@ namespace Diego
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             return worldMousePosition;
         }
+        public static bool isInGameBounds(Vector2 pos) {
+            Vector2 gameSpace = new Vector2(pos.x / Screen.width - 0.5f, pos.y / Screen.height - 0.5f);
+            gameSpace.x *= 16;
+            gameSpace.y *= 10;
+            gameSpace += new Vector2(1.2f, 0.75f);
+            gameSpace.x /= 13.6f;
+            gameSpace.y /= 8.5f;
+            return (Mathf.Abs(gameSpace.x) <= 0.5f && Mathf.Abs(gameSpace.y) <= 0.5f);
+        }
     }
 }
