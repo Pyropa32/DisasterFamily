@@ -17250,6 +17250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 0}
 --- !u!61 &3019019818929191057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19050,6 +19051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 0}
 --- !u!114 &6098497443459369671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19138,6 +19140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
   ItemPrefab: {fileID: 0}
 --- !u!1 &6263733252404828830
 GameObject:
@@ -20194,6 +20197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
   ItemPrefab: {fileID: 0}
 --- !u!114 &7080599314671219193
 MonoBehaviour:
@@ -21300,6 +21304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
   ItemPrefab: {fileID: 0}
 --- !u!212 &8544270427885948954
 SpriteRenderer:
