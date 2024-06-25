@@ -36,7 +36,8 @@ namespace Diego
             Transform hit = CameraToScreenspaceConverter.GetFromScreenSpace(Input.mousePosition);
             if (hit != null && hit.GetComponent<IInteractable>() != null)
             {
-                hit.GetComponent<IInteractable>()?.OnInteract(InventoryManager.GetItemFromID(id));
+                ItemsUniverse.TryGetValue(id, out Item i);
+                hit.GetComponent<IInteractable>()?.OnInteract(i);
             }
             ResetPos();
         }
