@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,15 +41,67 @@ namespace Diego
                 hit.GetComponent<IInteractable>()?.GetInRangeAndDo(i, hit.transform.position);
             }
             else {
-                DropItem(id);
+                MoveThenDrop(ItemLookup.GetItemFromID(id), Input.mousePosition);
             }
             ResetPos();
         }
 
-        public static void DropItem(int id){
-            if (!CameraToScreenspaceConverter.isInGameBounds(Input.mousePosition)) {
+        private class DropAction : IStoryCommand {
+            public bool started;
+            public bool finished;
+            public Item item;
+            public event Action<System.Object> OnFinish;
+            public bool IsFinished { get => finished; }
+            public bool IsStarted { get => started; }
+            public bool IsConcurrent { get => true; }
+            public StoryCommandExecutionFlags ExecutionFlags => StoryCommandExecutionFlags.DiscardAlike |
+                                                                StoryCommandExecutionFlags.DiscardConcurrent;
+
+            public DropAction(Item item, Vector2 mousePos) {
+                this.item = item;
+                OnFinish = (object arg) => {
+                    DropItem(item.ID, mousePos);
+                };
+            }
+            public void Start() {
+                OnFinish.Invoke(item);
+                finished = true;
+                started = true;
+            }
+            public void Tick(float delta) {
+                // nothing
+            }
+            public object GetProgressModel() {
+                if (IsStarted && IsFinished) {
+                    return 1f;
+                }
+                return 0f;
+            }
+            public Type InstanceType => GetType();
+        }
+
+        private static void MoveThenDrop(Item item, UnityEngine.Vector2 mousePos) {
+            if (!CameraToScreenspaceConverter.isInGameBounds(mousePos)) {
                 return;
             }
+            float range = 1f;
+            UnityEngine.Vector2 playerPivot = new UnityEngine.Vector2(0, 0.75f);
+
+            UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position + new UnityEngine.Vector3(playerPivot.x, playerPivot.y, 0);
+            UnityEngine.Vector2 dropPos = Camera.main.transform.position;
+            dropPos += CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(mousePos);
+            UnityEngine.Vector2 displacement = dropPos - playerPos;
+            if (displacement.magnitude <= range) {
+                DropItem(item.ID, dropPos);
+                return;
+            }
+            displacement *= 1 - (range / displacement.magnitude);
+            List<IStoryCommand> after = new List<IStoryCommand>();
+            after.Add(new DropAction(item, dropPos));
+            UnityEngine.GameObject.FindWithTag("Player").GetComponent<ClickToMove>().OnClicked(displacement + playerPos - playerPivot, after);
+        }
+
+        public static void DropItem(int id, Vector2 dropPos) {
             //Item item = InventoryManager.GetItemFromID(id);
             //string name = item.GetName();
             //Debug.Log("Dropping item with name: " + item.GetName());
@@ -65,8 +118,7 @@ namespace Diego
 
             InventoryManager.toggleInInventory(id);
 
-            Vector2 gameSpacePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
-            gameSpacePosition += new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y);
+            Vector2 gameSpacePosition = dropPos;
             gameSpacePosition = GameObject.FindWithTag("Player").GetComponent<Prototypal.SimpleActor>().CurrentPlane.ClampGlobal(gameSpacePosition);
             itemObject.transform.position = new Vector3(gameSpacePosition.x, gameSpacePosition.y, -9.9f);
             itemObject.name = ItemLookup.GetItemFromID(id).Name;
