@@ -13,7 +13,6 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
   - Water
   - UI
   - PostProc
@@ -43,9 +42,6 @@ TagManager:
   -
   -
   m_SortingLayers:
-  - name: true undertow
-    uniqueID: 1647334555
-    locked: 0
   - name: undertow
     uniqueID: 4160573793
     locked: 0
@@ -55,7 +51,7 @@ TagManager:
   - name: overhead
     uniqueID: 577042105
     locked: 0
-  - name: super overhead
+  - name: super_overhead
     uniqueID: 1103333715
     locked: 0
   - name: overhead supreme
