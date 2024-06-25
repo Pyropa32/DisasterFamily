@@ -21,6 +21,7 @@ public class WorldItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("loading world item called: " + name);
         if (ItemsUniverse.TryGetValue(ID, out Item data))
         {
             Data = data;
@@ -34,7 +35,7 @@ public class WorldItem : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Hey!!! You!!! Look at ItemsUniverse.cs for item IDs!");
+            Debug.LogError("Hey!!! You!!! Look at ItemsUniverse.cs for item IDs! Cause " + ID + " aint nothing!" );
         }
 
         GameObject SimpleActorObject = GameObject.FindWithTag("Player");

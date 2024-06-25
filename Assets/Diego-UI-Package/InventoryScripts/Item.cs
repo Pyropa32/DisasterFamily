@@ -19,11 +19,12 @@ namespace Diego
                                                 string _remarks = "",
                                                 ItemQuality _quality=ItemQuality.Useless)
         {
-            var path = _spritePath.Trim().ToLower();
+            var name = _spritePath.Trim().ToLower();
+            Debug.Log("attempting to load... " + name);
             return new Item()
             {
                 id = _id,
-                sprite = Resources.Load<Sprite>(Path.Combine(ITEM_SPRITE_PATHS, path)),
+                sprite = Resources.Load<Sprite>(Path.Combine(ITEM_SPRITE_PATHS, name)),
                 name = _name,
                 remarks = _remarks,
                 quality = _quality

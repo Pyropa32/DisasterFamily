@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Prototypal
@@ -8,7 +9,27 @@ namespace Prototypal
     public class SimpleFloorPlaneGateway : ThrowawayPrototypeCode
     {
         // Start is called before the first frame update
+        [SerializeField]
+        SimpleFloorPlane overrideTo;
+        [SerializeField]
+        SimpleFloorPlane overrideFrom;
         SimpleFloorPlaneGraph world;
+
+        public void SetFromToWithOverrides()
+        {
+            if (!HasOverrideFromTo())
+            {
+                Debug.LogError("Could not detect To/From planes, and no override planes present in " + name + "!");
+            }
+            FromPlane = overrideFrom;
+            ToPlane = overrideTo;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool HasOverrideFromTo()
+        {
+            return overrideFrom != null && overrideTo != null;
+        }
 
         public void SetWorld(SimpleFloorPlaneGraph to)
         {

@@ -47,7 +47,14 @@ namespace Prototypal
 
                 if (from == to)
                 {
-                    throw new InvalidOperationException("gate placed wrongly! both from and to are the same: " + gate.name);
+                    if (gate.HasOverrideFromTo())
+                    {
+                        gate.SetFromToWithOverrides();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("gate placed wrongly! both from and to are the same: " + gate.name);
+                    }
                 }
                 if (from == null || to == null)
                 {
