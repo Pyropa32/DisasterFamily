@@ -42,13 +42,12 @@ public class ClickToMove : MonoBehaviour
     void Update()
     {
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
-        Vector2 worldMousePosition = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
+        Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
         bool inRange = Mathf.Abs(worldMousePosition.x) <= Camera.main.orthographicSize * 8 / 5;
         inRange = inRange && Mathf.Abs(worldMousePosition.y) <= Camera.main.orthographicSize;
         bool interacting = InteractGame.GetFromScreenSpace(Input.mousePosition) != null;
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false)
         {
-            Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
             Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             OnClicked(worldMousePosition);

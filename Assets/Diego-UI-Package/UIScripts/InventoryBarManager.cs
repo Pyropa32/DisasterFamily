@@ -29,7 +29,7 @@ namespace Diego
                 worldSpace.x *= -16;
                 worldSpace.y *= 10;
                 childrenSlots[onMouse].MoveSprite(worldSpace+transform.parent.position);
-                UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[onMouse]).getSprite().name);
+                UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[onMouse]).Name);
             }
             else if (onMouse != -1) {
                 childrenSlots[onMouse].Apply(IM.invIds[onMouse]);
@@ -42,7 +42,7 @@ namespace Diego
                 if (inRange) {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
                     if (hit != null && hit.GetComponent<Interactable>() != null) {
-                        hit.GetComponent<Interactable>().GetInRangeAndDo(null, hit.position);
+                        hit.GetComponent<Interactable>().GetInRangeAndDo(Item.Empty, hit.position);
                     }
                 }
             }
@@ -56,7 +56,7 @@ namespace Diego
                     worldSpace.y *= 10;
                     RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(transform.parent.position + worldSpace, transform.parent.forward));
                     if (hit.collider != null && hit.collider.transform.GetComponent<InventorySlotOnClick>() != null && IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)] > -1) {
-                        UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)]).getSprite().name); // TODO: change to use xml (ask dylan)
+                        UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)]).Name); // TODO: change to use xml (ask dylan)
                     }
                 }
                 else {

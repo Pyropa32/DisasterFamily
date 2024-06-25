@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 99736821}
   m_Layer: 0
   m_Name: InventoryManager
-  m_TagString: Untagged
+  m_TagString: InventoryManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,11 +164,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   sprites: []
-  invIds:
-  globalInvIds:
+  invIds: 
+  globalInvIds: 
   invSize: 5
   globalInvSize: 20
 --- !u!1 &272443766
@@ -288,11 +288,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   sprites: []
-  invIds:
-  globalInvIds:
+  invIds: 
+  globalInvIds: 
   invSize: 5
   globalInvSize: 20
 --- !u!1 &1369189812
@@ -390,8 +390,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad7444ffee98ff45b813d20c140de0f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   ID: 0
 --- !u!1 &1697475345
 GameObject:
@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1bd32ca993ef40fa836a9b172f63207, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &111025230864280937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -477,7 +477,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1647334555
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0650376f2510d4c40b2b770499d6d887, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -500,8 +500,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d229f84cdf100a4a9f87c9b1864e81a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   movementSpeed: 6
   currentPlane: {fileID: 0}
 --- !u!4 &294125030578749841
@@ -512,8 +512,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5941040977043301244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.39, y: 8.4, z: 0.6}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -523,7 +523,7 @@ Transform:
   - {fileID: 7982689255425474821}
   - {fileID: 2776886724322128987}
   m_Father: {fileID: 6548323188969480786}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!20 &330159642192376327
 Camera:
   m_ObjectHideFlags: 0
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -806,7 +806,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134393503
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fa96d3dace357bf4a9ea818d9ef58458, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -904,16 +904,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: d703087234d5fa64ca1db572fb031fe5, type: 3}
   - {fileID: 21300000, guid: 6e09b8e558db79442880c18fc40d575e, type: 3}
   - {fileID: 21300000, guid: cb3834a4978b11244932983dddb91602, type: 3}
   - {fileID: 21300000, guid: 45f04001d5bb27b4fa5137179a730103, type: 3}
   - {fileID: 21300000, guid: e8bd4240308882442ad711760a4d8442, type: 3}
-  invIds:
-  globalInvIds:
+  invIds: 
+  globalInvIds: 
   invSize: 5
   globalInvSize: 20
 --- !u!114 &801227110536027785
@@ -926,23 +926,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5806712618679751106}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 3
 --- !u!61 &877884921547076202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1191,7 +1177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1647334555
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 04e64a106f8507d40b8373fd62be54d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1214,8 +1200,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -1237,8 +1223,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1368,8 +1354,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 085e91a3321ae354f9d91723e465215c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   children:
   - {fileID: 1041410699760197366}
   - {fileID: 5901454773520532664}
@@ -1377,6 +1363,7 @@ MonoBehaviour:
   - {fileID: 6397694748572513165}
   - {fileID: 3363101275270252552}
   childrenSlots: []
+  onMouse: -1
 --- !u!114 &1252198081862046523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,8 +1374,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb27e341dc52d941a46de6b36cd44e7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &1283381508332830461
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1486,8 +1473,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2270,8 +2257,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb3c59e9f0f3a54458cd7a663bf795e5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2102885935862637682
 Transform:
   m_ObjectHideFlags: 0
@@ -2297,8 +2284,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 497df89ed0e97214dae4a97424098a82, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &2176054834263511755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2361,8 +2348,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9053e77df008024eb853922dc6ead0a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   uvX: {x: 1.61, y: 0}
   uvY: {x: 1.67, y: 2.58}
   extents: {x: 10, y: 1}
@@ -2376,8 +2363,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18f4f6da7c843044081b762512272b31, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2306361145025408015
 Transform:
   m_ObjectHideFlags: 0
@@ -2802,8 +2789,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9053e77df008024eb853922dc6ead0a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   uvX: {x: 1.67, y: 0}
   uvY: {x: 1.67, y: 2.58}
   extents: {x: 5, y: 1}
@@ -2852,23 +2839,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224848967430739139}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: -1
 --- !u!61 &3019019818929191057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3510,8 +3483,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -3579,23 +3552,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5806712618679751106}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
 --- !u!4 &4052575917608414496
 Transform:
   m_ObjectHideFlags: 0
@@ -3705,8 +3664,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad7444ffee98ff45b813d20c140de0f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   ID: 0
 --- !u!1 &4438006910358748957
 GameObject:
@@ -4000,7 +3959,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134393503
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68d0810c4560e944b957d46f41bb2bdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4403,8 +4362,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 085e91a3321ae354f9d91723e465215c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   children:
   - {fileID: 5833183120526525228}
   - {fileID: 5333070150755496044}
@@ -4412,6 +4371,7 @@ MonoBehaviour:
   - {fileID: 1140326691284897547}
   - {fileID: 2494395459292151261}
   childrenSlots: []
+  onMouse: -1
 --- !u!212 &5833183120526525228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4491,8 +4451,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee20b12bc22ff5f449b9c430750a6f47, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5896913155129492854
 Transform:
   m_ObjectHideFlags: 0
@@ -4657,23 +4617,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224848967430739139}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: -1
 --- !u!114 &6098497443459369671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,8 +4630,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11c82ade6f60b48d0bb9b20c8d2efeb0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   path: Sample
 --- !u!61 &6115398499163121943
 BoxCollider2D:
@@ -4759,23 +4705,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224848967430739139}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: -1
 --- !u!1 &6263733252404828830
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,8 +4849,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -4939,7 +4871,7 @@ GameObject:
   - component: {fileID: 3916196685644644852}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5035,7 +4967,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134393503
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68d0810c4560e944b957d46f41bb2bdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5142,8 +5074,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5152,7 +5084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5278,7 +5210,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1647334555
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25e25ec93bd39e747a7fbe7d01b6fd4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5492,8 +5424,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bc37ae33117ff4a9610fa00acd9c86, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   dispatcher: {fileID: 2280461967517582381}
 --- !u!1 &6843638892472288064
 GameObject:
@@ -5537,8 +5469,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -5665,7 +5597,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134393503
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da144f60b1c83974195ae955a178d96b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5786,23 +5718,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224848967430739139}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: -1
 --- !u!114 &7080599314671219193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,8 +5731,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0e7fd499f1296446b8ba2c5b3b557f1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7098836182197801876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6007,23 +5925,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5806712618679751106}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
 --- !u!1 &7206957916953579163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,8 +6016,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad7444ffee98ff45b813d20c140de0f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   ID: 0
 --- !u!212 &7294869258797452185
 SpriteRenderer:
@@ -6509,8 +6413,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e04c3670f66163d4d8f4d2dddae1097e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   movementSpeed: 2
   currentPlane: {fileID: 0}
   footPosition: {fileID: 0}
@@ -6632,7 +6536,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -134393503
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33684790682904645a7cb1e07b317f01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6655,8 +6559,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e35ac045ab5d704ba9fd7123f43dc5a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8185745437380619473
 Transform:
   m_ObjectHideFlags: 0
@@ -6711,7 +6615,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 577042105
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da144f60b1c83974195ae955a178d96b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6818,23 +6722,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5806712618679751106}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 4
 --- !u!4 &8437764739155838049
 Transform:
   m_ObjectHideFlags: 0
@@ -6860,8 +6750,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb27e341dc52d941a46de6b36cd44e7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &8451610402130522104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6917,23 +6807,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5806712618679751106}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
 --- !u!114 &8467658820278015802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6944,23 +6820,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20dbf09a21c85e4bbca31a5bfa26569, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224848967430739139}
-        m_TargetAssemblyTypeName: InventoryBarManager, Assembly-CSharp
-        m_MethodName: clickInventory
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument:
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: -1
 --- !u!212 &8544270427885948954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7000,7 +6862,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1647334555
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0650376f2510d4c40b2b770499d6d887, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7052,7 +6914,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1647334555
-  m_SortingLayer: -2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 04e64a106f8507d40b8373fd62be54d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7201,7 +7063,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 577042105
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6831fa10e67b5fc459a92de1bc28c881, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7286,8 +7148,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 622b20bf175656142b726b415b773706, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideTo: {fileID: 0}
+  overrideFrom: {fileID: 0}
 --- !u!4 &8925351933630741258
 Transform:
   m_ObjectHideFlags: 0
@@ -7313,8 +7177,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 335972cd73b9ac1488c607baaf49741b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8992681670763122759
 Transform:
   m_ObjectHideFlags: 0
