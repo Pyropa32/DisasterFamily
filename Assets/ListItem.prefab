@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3140637643701394857}
   - component: {fileID: 8841141136135604218}
   m_Layer: 5
-  m_Name: TextDescPair
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aca2583e318d94098e54e9c22d556d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameUI: {fileID: 337001742757723379}
+  descriptionUI: {fileID: 5968114352148786118}
+  gradientBG: {fileID: 7038047936834884907}
+  icon: {fileID: 4398068805289496209}
 --- !u!1 &5679335552378680796
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +466,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285754592
-  m_fontColor: {r: 0.8792453, g: 0.42303306, b: 0.45273408, a: 1}
+    rgba: 4287851744
+  m_fontColor: {r: 0.8784314, g: 0.42352942, b: 0.57454115, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -534,7 +538,7 @@ GameObject:
   - component: {fileID: 2372062640374618081}
   - component: {fileID: 5499715651953067893}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HorizontalRule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -609,7 +613,7 @@ GameObject:
   - component: {fileID: 4961344458953241089}
   - component: {fileID: 4398068805289496209}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

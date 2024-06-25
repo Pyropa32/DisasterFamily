@@ -13,13 +13,16 @@ public class ItemMentionView : MonoBehaviour
     // private Sprite sprite;
     // private ItemMentionsQuality quality;
     [SerializeField]
-    TextMeshPro name;
+    GameObject nameUI;
     [SerializeField]
-    TextMeshPro description;
+    GameObject descriptionUI;
     [SerializeField]
     Image gradientBG;
     [SerializeField]
     Image icon;
+
+    private TextMeshPro nameTMP;
+    private TextMeshPro descriptionTMP;
 
     public static readonly Color descriptionBadColor = new Color(
         0.8784313725490196f,
@@ -46,24 +49,25 @@ public class ItemMentionView : MonoBehaviour
 
     void Start()
     {
-        
+        nameTMP = nameUI.GetComponent<TextMeshPro>();
+        descriptionTMP = descriptionUI.GetComponent<TextMeshPro>();
     }
 
     public void Setup(Item data, ItemMentionsQuality quality)
     {
-        name.text = data.Name;
-        description.text = data.Remarks;
+        nameTMP.text = data.Name;
+        descriptionTMP.text = data.Remarks;
         icon.sprite = data.Sprite;
         
         if (quality == ItemMentionsQuality.Useful)
         {
             //add useful item
-            description.color = descriptionGoodColor;
+            descriptionTMP.color = descriptionGoodColor;
             gradientBG.color = gradientGoodColor;
         }
         else
         {
-            description.color = descriptionBadColor;
+            descriptionTMP.color = descriptionBadColor;
             gradientBG.color = gradientBadColor;
         }
         // populate my children
