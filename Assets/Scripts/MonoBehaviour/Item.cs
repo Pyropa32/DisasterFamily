@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Prototypal;
 using Diego;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 public class WorldItem : MonoBehaviour
 {
     private string weight = "";
