@@ -53,17 +53,32 @@ namespace Prototypal
                     }
                     else
                     {
-                        throw new InvalidOperationException("gate placed wrongly! both from and to are the same: " + gate.name);
+                        throw new InvalidOperationException("gate placed wrongly and without overrides: " + gate.name);
                     }
                 }
-                if (from == null || to == null)
+                if (gate.FromPlane == null || gate.ToPlane == null)
                 {
-                    throw new InvalidOperationException("gate named: " + gate.name + " does not have 2 destinations!");
+                    if (gate.HasOverrideFromTo())
+                    {
+                        gate.SetFromToWithOverrides();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("gate named: " + gate.name + " does not have 2 destinations and without overrides!");
+                    }
                 }
-                from.AddGateway(gate);
-                to.AddGateway(gate);
-                gate.ToPlane = to;
-                gate.FromPlane = from;
+                if (from != to && from != null && to != null)
+                {
+                    gate.ToPlane = to;
+                    gate.FromPlane = from;
+                    from.AddGateway(gate);
+                    to.AddGateway(gate);
+                }
+                else
+                {
+                    gate.FromPlane.AddGateway(gate);
+                    gate.ToPlane.AddGateway(gate);
+                }
             }
 
             allGates.Sort((a, b) =>
@@ -159,22 +174,25 @@ namespace Prototypal
 
         private void SortGraphics()
         { 
-            const float POSITION_INCREMENT = 0.1f;
-            // For the future: only do this if the position of something changes.
-            // sort the sprites by Y position
-            sprites.Sort((spriteA, spriteB) =>
-            {
-                var spriteABottom = spriteA.bounds.center.y + (spriteA.bounds.extents.y / 2f);
-                var spriteBBottom = spriteB.bounds.center.y + (spriteB.bounds.extents.y / 2f);
-                return spriteABottom.CompareTo(spriteBBottom) + (spriteA.sortingOrder - spriteB.sortingOrder);
-            });
-            // assign the Z value;
-            for (int i = 0; i < sprites.Count; i++)
-            {
-                var current = sprites[i].transform;
-                var zValue = transform.position.z + (POSITION_INCREMENT * i);
-                sprites[i].transform.position = new Vector3(current.position.x, current.position.y, zValue);       
-            }
+            // fuck this crap
+            // waste of effort for it to not be that necessary
+
+            // const float POSITION_INCREMENT = 0.1f;
+            // // For the future: only do this if the position of something changes.
+            // // sort the sprites by Y position
+            // sprites.Sort((spriteA, spriteB) =>
+            // {
+            //     var spriteABottom = spriteA.bounds.center.y + (spriteA.bounds.extents.y / 2f);
+            //     var spriteBBottom = spriteB.bounds.center.y + (spriteB.bounds.extents.y / 2f);
+            //     return spriteABottom.CompareTo(spriteBBottom) + (spriteA.sortingOrder - spriteB.sortingOrder);
+            // });
+            // // assign the Z value;
+            // for (int i = 0; i < sprites.Count; i++)
+            // {
+            //     var current = sprites[i].transform;
+            //     var zValue = transform.position.z + (POSITION_INCREMENT * i);
+            //     sprites[i].transform.position = new Vector3(current.position.x, current.position.y, zValue);       
+            // }
         }
 
         // Eventually, this will need to be made private. The public method needs to find a path that is always usable.

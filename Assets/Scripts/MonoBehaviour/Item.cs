@@ -21,7 +21,7 @@ public class WorldItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("loading world item called: " + name);
+        //Debug.Log("loading world item called: " + name);
         if (ItemsUniverse.TryGetValue(ID, out Item data))
         {
             Data = data;
