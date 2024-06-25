@@ -21,8 +21,15 @@ namespace Diego
             for (int i = 0; i < IM.invIds.Length; i++) {
                 if (IM.invIds[i].Equals(Item.Empty)) {
                     children[i].enabled = false;
+                    children[i].sprite = null;
                     continue;
                 }
+                if (children[i].sprite == null) {
+                    ItemsUniverse.TryGetValue(IM.invIds[i].ID, out Item item);
+                    children[i].sprite = item.Sprite;
+                }
+                children[i].enabled = true;
+                continue;
             }
             if (onMouse != -1 && Input.GetMouseButton(0)) {
                 Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);

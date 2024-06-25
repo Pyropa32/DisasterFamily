@@ -11,14 +11,16 @@ namespace Diego
     {
         private Action<Item> action;
         private Sprite mySprite;
+        public int id;
 
         public void Start() {
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
             action = this.Action;
         }
         public void Action(Item item) {
+            Debug.Log("Clicked");
             if (item.Equals(Item.Empty)) {
-                InventoryManager.toggleInInventory(ItemLookup.GetItemFromSprite(mySprite));
+                InventoryManager.addInInventory(id);
                 Destroy(gameObject);
             }
         }
