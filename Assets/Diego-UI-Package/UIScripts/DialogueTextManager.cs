@@ -36,7 +36,8 @@ public class DialogueTextManager : MonoBehaviour {
         if (writing) {
             timer += Time.deltaTime;
             while (timer > 1f / writeSpeed) {
-                if (writingText.Length == currentText.Length) {
+                if (clicked || writingText.Length == currentText.Length) {
+                    currentText = writingText;
                     writing = false;
                     timer = 0;
                     break;
@@ -70,5 +71,13 @@ public class DialogueTextManager : MonoBehaviour {
         foreach (string s in text) {
             EnqueueText(s);
         }
+    }
+    public static void Clear() {
+        instance.q.Clear();
+        instance.writingText = "";
+        instance.currentText = "";
+        instance.writing = false;
+        instance.timer = 0f;
+        instance.tmp.text = "";
     }
 }

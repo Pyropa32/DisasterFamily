@@ -1,98 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+namespace Diego
+{
+    public class InventoryManager : MonoBehaviour
+    {
+        public Item[] invIds;
 
-public class InventoryManager : MonoBehaviour {
-    public Item[] items;
-    public Sprite[] sprites;
+        public int invSize = 5;
 
-    public int[] invIds;
-    public int[] globalInvIds;
-
-    public int invSize = 5;
-    public int globalInvSize = 20;
-
-    public static InventoryManager instance = null;
-
-    void Start() {
-        if (instance != null) {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        invIds = new int[invSize];
-        for (int i = 0; i < invSize; i++) {
-            invIds[i] = -1;
-        }
-        globalInvIds = new int[globalInvSize];
-        for (int i = 0; i < globalInvSize; i++) {
-            globalInvIds[i] = -1;
-        }
-        items = new Item[sprites.Length];
-        for (int i = 0; i < sprites.Length; i++) {
-            items[i] = new Item(i, sprites[i]);
-        }
-    }
-
-    public static Item GetItemFromID(int id) {
-        return instance.items[id];
-    }
-
-    public static bool toggleInInventory(Item item) {
-        return toggleInInventory(item.getID());
-    }
-
-    public static bool toggleInInventory(int id) {
-        bool found = false;
-        for (int i = 0; i < instance.invIds.Length; i++) {
-            if (found) {
-                instance.invIds[i - 1] = instance.invIds[i];
-                instance.invIds[i] = -1;
+        public static InventoryManager SingletonInstance { get => _singletonInstance; }
+        private static InventoryManager _singletonInstance;
+        void Start()
+        {
+            if (_singletonInstance != null)
+            {
+                Destroy(gameObject);
+                return;
             }
-            if (instance.invIds[i] == id) {
-                found = true;
-                instance.invIds[i] = -1;
+            _singletonInstance = this;
+            invIds = new Item[invSize];
+            for (int i = 0; i < invSize; i++)
+            {
+                invIds[i] = Item.Empty;
             }
         }
-        if (found || instance.invIds[instance.invIds.Length - 1] != -1) {
-            return false;
-        }
-        for (int i = instance.invIds.Length - 2; i >= 0; i--) {
-            if (instance.invIds[i] != -1) {
-                instance.invIds[i + 1] = id;
-                return true;
-            }
-        }
-        instance.invIds[0] = id;
-        return true;
-    }
 
-    public static bool toggleInGlobalInventory(Item item) {
-        return toggleInGlobalInventory(item.getID());
-    }
+        public static bool toggleInInventory(Item item)
+        {
+            return toggleInInventory(item.ID);
+        }
 
-    public static bool toggleInGlobalInventory(int id) {
-        bool found = false;
-        for (int i = 0; i < instance.globalInvIds.Length; i++) {
-            if (found) {
-                instance.globalInvIds[i - 1] = instance.globalInvIds[i];
-                instance.globalInvIds[i] = -1;
+        public static bool toggleInInventory(int id)
+        {
+            bool found = false;
+            ItemsUniverse.TryGetValue(id, out Item item);
+            for (int i = 0; i < _singletonInstance.invIds.Length; i++)
+            {
+                if (found)
+                {
+                    _singletonInstance.invIds[i - 1] = _singletonInstance.invIds[i];
+                    _singletonInstance.invIds[i] = Item.Empty;
+                }
+                if (_singletonInstance.invIds[i].Equals(item))
+                {
+                    found = true;
+                    _singletonInstance.invIds[i] = Item.Empty;
+                }
             }
-            if (instance.globalInvIds[i] == id) {
-                found = true;
-                instance.globalInvIds[i] = -1;
+            if (found || !(_singletonInstance.invIds[_singletonInstance.invIds.Length - 1].Equals(Item.Empty)))
+            {
+                return false;
             }
-        }
-        if (found || instance.globalInvIds[instance.globalInvIds.Length - 1] != -1) {
-            return false;
-        }
-        for (int i = instance.globalInvIds.Length - 2; i >= 0; i--) {
-            if (instance.globalInvIds[i] != -1) {
-                instance.globalInvIds[i + 1] = id;
-                return true;
+            for (int i = _singletonInstance.invIds.Length - 2; i >= 0; i--)
+            {
+                if (!_singletonInstance.invIds[i].Equals(Item.Empty))
+                {
+                    _singletonInstance.invIds[i + 1] = item;
+                    return true;
+                }
             }
+            _singletonInstance.invIds[0] = item;
+            return true;
         }
-        instance.globalInvIds[0] = id;
-        return true;
     }
 }

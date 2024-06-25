@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 
 public class OrthographicPlane : MonoBehaviour
@@ -116,3 +116,4 @@ public class OrthographicPlane : MonoBehaviour
 
     }
 }
+*/
