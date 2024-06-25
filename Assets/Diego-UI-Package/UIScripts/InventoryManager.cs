@@ -64,7 +64,8 @@ namespace Diego
 
         public static Item GetItemFromID(int id)
         {
-            return _singletonInstance.items[id];
+            var result = ItemsUniverse.TryGetValue(id, out Item ret);
+            return ret;
         }
 
         public static bool toggleInInventory(Item item)
