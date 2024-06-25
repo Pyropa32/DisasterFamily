@@ -7,7 +7,6 @@ namespace Diego
 {
     public class CameraToScreenspaceConverter
     {
-
         private static CameraToScreenspaceConverter _instance;
 
         public static CameraToScreenspaceConverter SingletonInstance
