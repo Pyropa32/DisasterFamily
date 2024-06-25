@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Prototypal;
+using Diego;
+using UnityEngine.UIElements;
 public class ClickToMove : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,6 +17,27 @@ public class ClickToMove : MonoBehaviour
         myActor = GetComponent<SimpleActor>();
     }
 
+    private Vector2 GetViewportMousePosition()
+    {
+        //var resolution = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
+        var resolution = new Vector2(Screen.currentResolution.width,
+                                    Screen.currentResolution.height);
+        var actualScreenSize = new Vector2(Screen.width, Screen.height);
+        var viewportMax = actualScreenSize / resolution;
+        var magicVector = (Vector3)(Vector2.left * (0.05f));
+        var clickedCoordinatesViewport = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        // var transformedCoordinates = CameraToScreenspaceConverter.
+        //                              SingletonInstance.
+        //                              ViewportToWorld(clickedCoordinatesViewport);
+        // return transformedCoordinates;
+        var transformed = new Vector2(
+            Mathf.Clamp01((clickedCoordinatesViewport.x / viewportMax.x) + magicVector.x),
+            Mathf.Clamp01((clickedCoordinatesViewport.y / viewportMax.y) + magicVector.y)
+        );
+        return transformed;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,17 +48,16 @@ public class ClickToMove : MonoBehaviour
         bool interacting = InteractGame.GetFromScreenSpace(Input.mousePosition) != null;
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false)
         {
+            Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
             Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
             OnClicked(worldMousePosition);
-
         }
         _previousLeftMouseDown = currentLeftMouseDown;
     }
 
     public void OnClicked(Vector2 where, List<IStoryCommand> after = null)
     {
-        // Get the coordinates expressed in plane coords.
 
         // see if you clicked on another plane.
         var otherPlane = myActor.World.GetPlaneByPosition(where);

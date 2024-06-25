@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 
 namespace Prototypal
 {
@@ -36,7 +35,10 @@ namespace Prototypal
 
         public void AddGatewayRange(IEnumerable<SimpleFloorPlaneGateway> toAddRange)
         {
-            myGateways.AddRange(toAddRange);
+            foreach (var gate in toAddRange)
+            {
+                AddGateway(gate);
+            }
         }
 
         public SimpleFloorPlaneGateway[] GetGateways()

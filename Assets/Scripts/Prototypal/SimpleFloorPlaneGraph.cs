@@ -15,14 +15,16 @@ namespace Prototypal
         // Planes are considered edges for a good reason:
         //  You may need to pass through the same room again via a different gate to get somewhere.
         //  But a path will never lead you through the same gate twice.
+        bool hasStarted = false;
+        public bool HasStarted => hasStarted;
         private Graph<SimpleFloorPlaneGateway, SimpleFloorPlane> graph = new Graph<SimpleFloorPlaneGateway, SimpleFloorPlane>();
         private List<SimpleFloorPlane> planes = new List<SimpleFloorPlane>();
         private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
         void Start()
         {
-
-            // add sprites to sorting list.
-            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>());
+            hasStarted = true;
+            // add sprites to sorting list (except the black square ones bound to the main camera + anything UI)
+            sprites.AddRange(GetComponentsInChildren<SpriteRenderer>().Where(sprite => sprite.tag != "DoNotSort"));
 
 
             // TODO: Get all of my child SimpleFloorPlanes and 
@@ -45,16 +47,38 @@ namespace Prototypal
 
                 if (from == to)
                 {
-                    throw new InvalidOperationException("gate placed wrongly! both from and to are the same: " + gate.name);
+                    if (gate.HasOverrideFromTo())
+                    {
+                        gate.SetFromToWithOverrides();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("gate placed wrongly and without overrides: " + gate.name);
+                    }
                 }
-                if (from == null || to == null)
+                if (gate.FromPlane == null || gate.ToPlane == null)
                 {
-                    throw new InvalidOperationException("gate named: " + gate.name + " does not have 2 destinations!");
+                    if (gate.HasOverrideFromTo())
+                    {
+                        gate.SetFromToWithOverrides();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("gate named: " + gate.name + " does not have 2 destinations and without overrides!");
+                    }
                 }
-                from.AddGateway(gate);
-                to.AddGateway(gate);
-                gate.ToPlane = to;
-                gate.FromPlane = from;
+                if (from != to && from != null && to != null)
+                {
+                    gate.ToPlane = to;
+                    gate.FromPlane = from;
+                    from.AddGateway(gate);
+                    to.AddGateway(gate);
+                }
+                else
+                {
+                    gate.FromPlane.AddGateway(gate);
+                    gate.ToPlane.AddGateway(gate);
+                }
             }
 
             allGates.Sort((a, b) =>
@@ -109,6 +133,28 @@ namespace Prototypal
             }
         }
 
+        public Bounds GetBounds()
+        {
+            Bounds result = new Bounds();
+            Vector3 minimum = new Vector2(float.MaxValue, float.MaxValue);
+            Vector3 maximum = new Vector2(float.MinValue, float.MinValue);
+            foreach (var plane in planes)
+            {
+                maximum = new Vector3(
+                    Mathf.Max(plane.TopRight.x, maximum.x),
+                    Mathf.Max(plane.TopRight.y, maximum.y),
+                    transform.position.z
+                );
+                minimum = new Vector3(
+                    Mathf.Min(plane.BottomLeft.x, minimum.x),
+                    Mathf.Min(plane.BottomLeft.y, minimum.y),
+                    transform.position.z
+                );
+            }
+            result.SetMinMax(minimum, maximum);
+            return result;
+        }
+
         public SimpleFloorPlane GetPlaneByPosition(Vector2 where)
         {
             foreach (var plane in planes)
@@ -128,22 +174,25 @@ namespace Prototypal
 
         private void SortGraphics()
         { 
-            const float POSITION_INCREMENT = 0.1f;
-            // For the future: only do this if the position of something changes.
-            // sort the sprites by Y position
-            sprites.Sort((spriteA, spriteB) =>
-            {
-                var spriteABottom = spriteA.bounds.center.y + (spriteA.bounds.extents.y / 2f);
-                var spriteBBottom = spriteB.bounds.center.y + (spriteB.bounds.extents.y / 2f);
-                return spriteABottom.CompareTo(spriteBBottom) + (spriteA.sortingOrder - spriteB.sortingOrder);
-            });
-            // assign the Z value;
-            for (int i = 0; i < sprites.Count; i++)
-            {
-                var current = sprites[i].transform;
-                var zValue = transform.position.z + (POSITION_INCREMENT * i);
-                sprites[i].transform.position = new Vector3(current.position.x, current.position.y, zValue);       
-            }
+            // fuck this crap
+            // waste of effort for it to not be that necessary
+
+            // const float POSITION_INCREMENT = 0.1f;
+            // // For the future: only do this if the position of something changes.
+            // // sort the sprites by Y position
+            // sprites.Sort((spriteA, spriteB) =>
+            // {
+            //     var spriteABottom = spriteA.bounds.center.y + (spriteA.bounds.extents.y / 2f);
+            //     var spriteBBottom = spriteB.bounds.center.y + (spriteB.bounds.extents.y / 2f);
+            //     return spriteABottom.CompareTo(spriteBBottom) + (spriteA.sortingOrder - spriteB.sortingOrder);
+            // });
+            // // assign the Z value;
+            // for (int i = 0; i < sprites.Count; i++)
+            // {
+            //     var current = sprites[i].transform;
+            //     var zValue = transform.position.z + (POSITION_INCREMENT * i);
+            //     sprites[i].transform.position = new Vector3(current.position.x, current.position.y, zValue);       
+            // }
         }
 
         // Eventually, this will need to be made private. The public method needs to find a path that is always usable.
