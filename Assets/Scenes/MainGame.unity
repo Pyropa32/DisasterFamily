@@ -705,11 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  invIds: 
-  globalInvIds: 
   invSize: 5
-  globalInvSize: 20
 --- !u!1 &109908291
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,7 +5264,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1369189813}
   - {fileID: 934956585}
   - {fileID: 1636764077}
   - {fileID: 1053805540}
@@ -8555,11 +8550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  invIds: 
-  globalInvIds: 
   invSize: 5
-  globalInvSize: 20
 --- !u!1 &1292158086
 GameObject:
   m_ObjectHideFlags: 0
@@ -9111,11 +9102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1369189813 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-  m_PrefabInstance: {fileID: 9106966672391285981}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1370998812
 GameObject:
   m_ObjectHideFlags: 0
@@ -15209,16 +15195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed858cde49abd64d8470f2445ac18ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: d703087234d5fa64ca1db572fb031fe5, type: 3}
-  - {fileID: 21300000, guid: 6e09b8e558db79442880c18fc40d575e, type: 3}
-  - {fileID: 21300000, guid: cb3834a4978b11244932983dddb91602, type: 3}
-  - {fileID: 21300000, guid: 45f04001d5bb27b4fa5137179a730103, type: 3}
-  - {fileID: 21300000, guid: e8bd4240308882442ad711760a4d8442, type: 3}
-  invIds: 
-  globalInvIds: 
   invSize: 5
-  globalInvSize: 20
 --- !u!114 &801227110536027785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15232,6 +15209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!61 &877884921547076202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17160,6 +17138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!61 &3019019818929191057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17873,6 +17852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!4 &4052575917608414496
 Transform:
   m_ObjectHideFlags: 0
@@ -18938,6 +18918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!114 &6098497443459369671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19026,6 +19007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!1 &6263733252404828830
 GameObject:
   m_ObjectHideFlags: 0
@@ -20053,6 +20035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!114 &7080599314671219193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20260,6 +20243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!1 &7206957916953579163
 GameObject:
   m_ObjectHideFlags: 0
@@ -21057,6 +21041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!4 &8437764739155838049
 Transform:
   m_ObjectHideFlags: 0
@@ -21142,6 +21127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!114 &8467658820278015802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21155,6 +21141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: -1
+  ItemPrefab: {fileID: 0}
 --- !u!212 &8544270427885948954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21561,63 +21548,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &9106966672391285981
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 879487410}
-    m_Modifications:
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92303216
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.38472292
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467586786606673658, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 45.253
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379861240843467074, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
-      propertyPath: m_Name
-      value: batteries
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 793415cc69e26a9478ec2e5d85aff99d, type: 3}
 --- !u!81 &9112463803974633527
 AudioListener:
   m_ObjectHideFlags: 0
