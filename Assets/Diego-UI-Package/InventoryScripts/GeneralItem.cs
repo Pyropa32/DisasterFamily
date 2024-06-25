@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Diego
 {
+    // Yep, we're throwing away this goddamned prototype, so many goddamn duplicate classes
+    // I think we literally have like 50 classes for what this game is. Holy damn
+    // Let's build it back up not from scratch, reuse some classes, but only consider what we actually need.
     public class GeneralItem : MonoBehaviour, IInteractable
     {
         private Action<Item> action;

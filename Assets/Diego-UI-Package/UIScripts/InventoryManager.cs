@@ -41,8 +41,25 @@ namespace Diego
             items = new Item[sprites.Length];
             for (int i = 0; i < sprites.Length; i++)
             {
-                items[i] = new Item(i, sprites[i]);
+                // Completely absent items
+                // Is used in place of 'null'
+                items[i] = Item.Empty;
             }
+        }
+        public bool TryPush(Diego.Item what)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                var current = items[i];
+                if (items[i].Equals(Item.Empty))
+                {
+                    current = what;
+                    sprites[i] = what.Sprite;
+                    invIds[i] = what.ID;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static Item GetItemFromID(int id)
@@ -87,41 +104,41 @@ namespace Diego
             return true;
         }
 
-        public static bool toggleInGlobalInventory(Item item)
-        {
-            return toggleInGlobalInventory(item.ID);
-        }
+        // public static bool toggleInGlobalInventory(Item item)
+        // {
+        //     return toggleInGlobalInventory(item.ID);
+        // }
 
-        public static bool toggleInGlobalInventory(int id)
-        {
-            bool found = false;
-            for (int i = 0; i < _singletonInstance.globalInvIds.Length; i++)
-            {
-                if (found)
-                {
-                    _singletonInstance.globalInvIds[i - 1] = _singletonInstance.globalInvIds[i];
-                    _singletonInstance.globalInvIds[i] = -1;
-                }
-                if (_singletonInstance.globalInvIds[i] == id)
-                {
-                    found = true;
-                    _singletonInstance.globalInvIds[i] = -1;
-                }
-            }
-            if (found || _singletonInstance.globalInvIds[_singletonInstance.globalInvIds.Length - 1] != -1)
-            {
-                return false;
-            }
-            for (int i = _singletonInstance.globalInvIds.Length - 2; i >= 0; i--)
-            {
-                if (_singletonInstance.globalInvIds[i] != -1)
-                {
-                    _singletonInstance.globalInvIds[i + 1] = id;
-                    return true;
-                }
-            }
-            _singletonInstance.globalInvIds[0] = id;
-            return true;
-        }
+        // public static bool toggleInGlobalInventory(int id)
+        // {
+        //     bool found = false;
+        //     for (int i = 0; i < _singletonInstance.globalInvIds.Length; i++)
+        //     {
+        //         if (found)
+        //         {
+        //             _singletonInstance.globalInvIds[i - 1] = _singletonInstance.globalInvIds[i];
+        //             _singletonInstance.globalInvIds[i] = -1;
+        //         }
+        //         if (_singletonInstance.globalInvIds[i] == id)
+        //         {
+        //             found = true;
+        //             _singletonInstance.globalInvIds[i] = -1;
+        //         }
+        //     }
+        //     if (found || _singletonInstance.globalInvIds[_singletonInstance.globalInvIds.Length - 1] != -1)
+        //     {
+        //         return false;
+        //     }
+        //     for (int i = _singletonInstance.globalInvIds.Length - 2; i >= 0; i--)
+        //     {
+        //         if (_singletonInstance.globalInvIds[i] != -1)
+        //         {
+        //             _singletonInstance.globalInvIds[i + 1] = id;
+        //             return true;
+        //         }
+        //     }
+        //     _singletonInstance.globalInvIds[0] = id;
+        //     return true;
+        // }
     }
 }

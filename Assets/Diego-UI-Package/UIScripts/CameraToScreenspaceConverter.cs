@@ -43,5 +43,13 @@ namespace Diego
             gameSpace.y *= 10 / 8.5f;
             return gameSpace;
         }
+
+        public static Vector2 GetGlobalMousePosition()
+        {
+            Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            Vector3 CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
+            worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
+            return worldMousePosition;
+        }
     }
 }

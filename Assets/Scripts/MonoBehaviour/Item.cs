@@ -35,7 +35,7 @@ public class WorldItem : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Hey!!! You!!! Look at ItemsUniverse.cs for item IDs! Cause " + ID + " aint nothing!" );
+            Debug.LogError("Hey!!! You!!! Look at ItemsUniverse.cs for item IDs! Cause " + ID + " aint nothing!");
         }
 
         GameObject SimpleActorObject = GameObject.FindWithTag("Player");
@@ -47,7 +47,7 @@ public class WorldItem : MonoBehaviour
         {
             Debug.LogError("No SimpleActor found in scene.");
         }
-        Debug.Log("Item generated");
+        //Debug.Log("Item generated");
     }
 
     //load attributes from xml
@@ -80,17 +80,41 @@ public class WorldItem : MonoBehaviour
         }
     }
 
-    bool IsMouseOverSprite(Vector3 mousePosition)
+    public bool IsMouseOverSprite(Vector3 mousePosition)
     {
-        //think about alternative
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
+        Vector2 clickPosition = Diego.CameraToScreenspaceConverter.GetGlobalMousePosition();
+        GameObject.Find("REDLOC").transform.position = mousePosition;
+        GameObject.Find("BLULOC").transform.position = clickPosition;
+        
+        // chad GBD
+        if (Input.GetMouseButtonDown(0))
         {
-            return false;
-        }
+            if (name == "batteries")
+            {
+                int a = 0;
+            }
+            // Convert mouse position to world space
 
-        Bounds bounds = spriteRenderer.bounds;
-        return bounds.Contains(mousePosition);
+            //think about alternative
+            BoxCollider2D collider = GetComponent<BoxCollider2D>();
+            if (collider == null)
+            {
+                Debug.LogError("Sprite " + name + " doesn't have a box collider!");
+                return false;
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                int a = 4;
+            }
+
+            Bounds bounds = collider.bounds;
+            bounds.Expand(Vector3.forward * float.MaxValue);
+
+            return bounds.Contains(clickPosition) || bounds.Contains(mousePosition);
+
+        }
+        return false;
     }
 
     public void ClickToCollect()

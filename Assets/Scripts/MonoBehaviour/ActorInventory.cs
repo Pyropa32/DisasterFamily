@@ -14,5 +14,6 @@ public class ActorInventory : MonoBehaviour
     public void AddItem(WorldItem item)
     {
         inventory.Add(item.Data);
+        // Sync with InventoryManager;
     }
 }

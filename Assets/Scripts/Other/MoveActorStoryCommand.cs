@@ -77,7 +77,7 @@ public sealed class MoveActorStoryCommand : IStoryCommand
         actor.LocalPosition = startPosition;
         // mayhaps?
         actor.SetAnim("walk");
-        Debug.Log("started walk command");
+        //Debug.Log("started walk command");
     }
 
     public void Tick(float delta)

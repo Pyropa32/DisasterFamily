@@ -35,7 +35,7 @@ namespace Prototypal
             // FIXME: do the conversion work in the CurrentPlane property instead.
             // first, convert local coordinates (which are the coordinates of CurrentPlane) to screen coordinates
             // then, convert to the basis of the new plane, then clamp it to fit inside the plane;
-            Debug.Log("set current plane!");
+            //Debug.Log("set current plane!");
 
             // revert old coordinate system, apply new coordinate system
             var val = new Vector2();
@@ -59,6 +59,7 @@ namespace Prototypal
                 throw new InvalidOperationException("World on this actor is null!!");
             }
             Debug.Log("hello, says Actor!");
+            actorInventory = GetComponent<ActorInventory>();
         }
 
         // Update is called once per frame

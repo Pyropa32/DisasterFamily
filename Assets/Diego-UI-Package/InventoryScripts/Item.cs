@@ -20,7 +20,7 @@ namespace Diego
                                                 ItemQuality _quality=ItemQuality.Useless)
         {
             var name = _spritePath.Trim().ToLower();
-            Debug.Log("attempting to load... " + name);
+
             return new Item()
             {
                 id = _id,
