@@ -22,8 +22,7 @@ namespace Diego
             }
         }
 
-        public static Transform GetFromScreenSpace(Vector2 pos)
-        {
+        public static Transform GetFromScreenSpace(Vector2 pos) {
             Vector3 gameSpace = new Vector3(pos.x / Screen.width - 0.5f, pos.y / Screen.height - 0.5f, 0);
             gameSpace.x *= 16;
             gameSpace.y *= 10;
@@ -33,8 +32,7 @@ namespace Diego
             RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(Camera.main.transform.position + gameSpace, Camera.main.transform.forward)); // layer mask for interactables
             return hit.transform;
         }
-        public static Vector2 GetGameSpaceFromScreenSpace(Vector2 pos)
-        {
+        public static Vector2 GetGameSpaceFromScreenSpace(Vector2 pos) {
             Vector2 gameSpace = new Vector2(pos.x / Screen.width - 0.5f, pos.y / Screen.height - 0.5f);
             gameSpace.x *= 16;
             gameSpace.y *= 10;
