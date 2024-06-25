@@ -7150,8 +7150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622b20bf175656142b726b415b773706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overrideTo: {fileID: 0}
-  overrideFrom: {fileID: 0}
+  overrideTo: {fileID: 2913276041499017558}
+  overrideFrom: {fileID: 2254685837570399432}
 --- !u!4 &8925351933630741258
 Transform:
   m_ObjectHideFlags: 0

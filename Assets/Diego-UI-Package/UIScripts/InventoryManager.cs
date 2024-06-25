@@ -5,18 +5,9 @@ namespace Diego
 {
     public class InventoryManager : MonoBehaviour
     {
-        // What I really need
-        // Injected
-        public Item[] items;
-        public Sprite[] sprites;
+        public Item[] invIds;
 
-        public int[] invIds;
-        public int[] globalInvIds;
-
-        // Keep
         public int invSize = 5;
-        // Destroy
-        public int globalInvSize = 20;
 
         public static InventoryManager SingletonInstance { get => _singletonInstance; }
         private static InventoryManager _singletonInstance;
@@ -28,44 +19,11 @@ namespace Diego
                 return;
             }
             _singletonInstance = this;
-            invIds = new int[invSize];
+            invIds = new Item[invSize];
             for (int i = 0; i < invSize; i++)
             {
-                invIds[i] = -1;
+                invIds[i] = Item.Empty;
             }
-            globalInvIds = new int[globalInvSize];
-            for (int i = 0; i < globalInvSize; i++)
-            {
-                globalInvIds[i] = -1;
-            }
-            items = new Item[sprites.Length];
-            for (int i = 0; i < sprites.Length; i++)
-            {
-                // Completely absent items
-                // Is used in place of 'null'
-                items[i] = Item.Empty;
-            }
-        }
-        public bool TryPush(Diego.Item what)
-        {
-            for (int i = 0; i < items.Length; i++)
-            {
-                var current = items[i];
-                if (items[i].Equals(Item.Empty))
-                {
-                    current = what;
-                    sprites[i] = what.Sprite;
-                    invIds[i] = what.ID;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public static Item GetItemFromID(int id)
-        {
-            var result = ItemsUniverse.TryGetValue(id, out Item ret);
-            return ret;
         }
 
         public static bool toggleInInventory(Item item)
@@ -76,70 +34,34 @@ namespace Diego
         public static bool toggleInInventory(int id)
         {
             bool found = false;
+            ItemsUniverse.TryGetValue(id, out Item item);
             for (int i = 0; i < _singletonInstance.invIds.Length; i++)
             {
                 if (found)
                 {
                     _singletonInstance.invIds[i - 1] = _singletonInstance.invIds[i];
-                    _singletonInstance.invIds[i] = -1;
+                    _singletonInstance.invIds[i] = Item.Empty;
                 }
-                if (_singletonInstance.invIds[i] == id)
+                if (_singletonInstance.invIds[i].Equals(item))
                 {
                     found = true;
-                    _singletonInstance.invIds[i] = -1;
+                    _singletonInstance.invIds[i] = Item.Empty;
                 }
             }
-            if (found || _singletonInstance.invIds[_singletonInstance.invIds.Length - 1] != -1)
+            if (found || !(_singletonInstance.invIds[_singletonInstance.invIds.Length - 1].Equals(Item.Empty)))
             {
                 return false;
             }
             for (int i = _singletonInstance.invIds.Length - 2; i >= 0; i--)
             {
-                if (_singletonInstance.invIds[i] != -1)
+                if (!_singletonInstance.invIds[i].Equals(Item.Empty))
                 {
-                    _singletonInstance.invIds[i + 1] = id;
+                    _singletonInstance.invIds[i + 1] = item;
                     return true;
                 }
             }
-            _singletonInstance.invIds[0] = id;
+            _singletonInstance.invIds[0] = item;
             return true;
         }
-
-        // public static bool toggleInGlobalInventory(Item item)
-        // {
-        //     return toggleInGlobalInventory(item.ID);
-        // }
-
-        // public static bool toggleInGlobalInventory(int id)
-        // {
-        //     bool found = false;
-        //     for (int i = 0; i < _singletonInstance.globalInvIds.Length; i++)
-        //     {
-        //         if (found)
-        //         {
-        //             _singletonInstance.globalInvIds[i - 1] = _singletonInstance.globalInvIds[i];
-        //             _singletonInstance.globalInvIds[i] = -1;
-        //         }
-        //         if (_singletonInstance.globalInvIds[i] == id)
-        //         {
-        //             found = true;
-        //             _singletonInstance.globalInvIds[i] = -1;
-        //         }
-        //     }
-        //     if (found || _singletonInstance.globalInvIds[_singletonInstance.globalInvIds.Length - 1] != -1)
-        //     {
-        //         return false;
-        //     }
-        //     for (int i = _singletonInstance.globalInvIds.Length - 2; i >= 0; i--)
-        //     {
-        //         if (_singletonInstance.globalInvIds[i] != -1)
-        //         {
-        //             _singletonInstance.globalInvIds[i + 1] = id;
-        //             return true;
-        //         }
-        //     }
-        //     _singletonInstance.globalInvIds[0] = id;
-        //     return true;
-        // }
     }
 }

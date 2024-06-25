@@ -19,7 +19,7 @@ namespace Diego
         void Update() {
             UITextManager.Clear();
             for (int i = 0; i < IM.invIds.Length; i++) {
-                if (IM.invIds[i] == -1) {
+                if (IM.invIds[i].Equals(Item.Empty)) {
                     children[i].enabled = false;
                     continue;
                 }
@@ -29,10 +29,10 @@ namespace Diego
                 worldSpace.x *= -16;
                 worldSpace.y *= 10;
                 childrenSlots[onMouse].MoveSprite(worldSpace+transform.parent.position);
-                UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[onMouse]).Name);
+                UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[onMouse].ID).Name);
             }
             else if (onMouse != -1) {
-                childrenSlots[onMouse].Apply(IM.invIds[onMouse]);
+                childrenSlots[onMouse].Apply(IM.invIds[onMouse].ID);
                 onMouse = -1;
             }
             else if (Input.GetMouseButtonUp(0)) {
@@ -41,8 +41,8 @@ namespace Diego
                 inRange = inRange && Mathf.Abs(worldSpace.y) <= Camera.main.orthographicSize;
                 if (inRange) {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<Interactable>() != null) {
-                        hit.GetComponent<Interactable>().GetInRangeAndDo(Item.Empty, hit.position);
+                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
+                        hit.GetComponent<IInteractable>().GetInRangeAndDo(Item.Empty, hit.position);
                     }
                 }
             }
@@ -55,13 +55,13 @@ namespace Diego
                     worldSpace.x *= -16;
                     worldSpace.y *= 10;
                     RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(transform.parent.position + worldSpace, transform.parent.forward));
-                    if (hit.collider != null && hit.collider.transform.GetComponent<InventorySlotOnClick>() != null && IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)] > -1) {
-                        UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)]).Name); // TODO: change to use xml (ask dylan)
+                    if (hit.collider != null && hit.collider.transform.GetComponent<InventorySlotOnClick>() != null && !IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)].Equals(Item.Empty)) {
+                        UITextManager.SetText(IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)].Name); // TODO: change to use xml (ask dylan)
                     }
                 }
                 else {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<Interactable>() != null) {
+                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
                         UITextManager.SetText(hit.gameObject.name);
                     }
                 }
@@ -70,7 +70,7 @@ namespace Diego
 
         public void clickInventory(int inventoryInd)
         {
-            if (IM.invIds[inventoryInd] != -1)
+            if (!IM.invIds[inventoryInd].Equals(Item.Empty))
             {
                 onMouse = inventoryInd;
             }
