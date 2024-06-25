@@ -1,0 +1,22 @@
+<ItemList>
+	<item>
+		<id>0</id>
+		<name>Crowbar</name>
+	</item>
+	<item>
+		<id>1</id>
+		<name>Flare</name>
+	</item>
+	<item>
+		<id>2</id>
+		<name>Keys</name>
+	</item>
+	<item>
+		<id>3</id>
+		<name>Wood</name>
+	</item>
+	<item>
+		<id>4</id>
+		<name>Wrench</name>
+	</item>
+</ItemList>

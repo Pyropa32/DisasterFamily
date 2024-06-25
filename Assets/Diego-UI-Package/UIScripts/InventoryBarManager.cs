@@ -7,7 +7,7 @@ public class InventoryBarManager : MonoBehaviour {
     public SpriteRenderer[] children;
     public InventorySlotOnClick[] childrenSlots;
 
-    private int onMouse = -1;
+    public int onMouse = -1;
 
     void Start() {
         IM = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
@@ -15,6 +15,7 @@ public class InventoryBarManager : MonoBehaviour {
     }
 
     void Update() {
+        UITextManager.Clear();
         for (int i = 0; i < IM.invIds.Length; i++) {
             if (IM.invIds[i] == -1) {
                 children[i].enabled = false;
@@ -27,14 +28,43 @@ public class InventoryBarManager : MonoBehaviour {
             Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);
             worldSpace.x *= -16;
             worldSpace.y *= 10;
-            childrenSlots[onMouse].MoveSprite(worldSpace);
+            childrenSlots[onMouse].MoveSprite(worldSpace+transform.parent.position);
+            UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[onMouse]).getSprite().name);
         }
         else if (onMouse != -1) {
-            Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);
-            worldSpace.x *= -16;
-            worldSpace.y *= 10;
             childrenSlots[onMouse].Apply(IM.invIds[onMouse]);
             onMouse = -1;
+        }
+        else if (Input.GetMouseButtonUp(0)) {
+            Vector2 worldSpace = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            bool inRange = Mathf.Abs(worldSpace.x) <= Camera.main.orthographicSize * 8 / 5;
+            inRange = inRange && Mathf.Abs(worldSpace.y) <= Camera.main.orthographicSize;
+            if (inRange) {
+                Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
+                if (hit != null && hit.GetComponent<Interactable>() != null) {
+                    hit.GetComponent<Interactable>().GetInRangeAndDo(null, hit.position);
+                }
+            }
+        }
+        else {
+            Vector2 gameSpace = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            bool inRange = Mathf.Abs(gameSpace.x) <= Camera.main.orthographicSize * 8 / 5;
+            inRange = inRange && Mathf.Abs(gameSpace.y) <= Camera.main.orthographicSize;
+            if (!inRange) {
+                Vector3 worldSpace = new Vector3(Input.mousePosition.x / Screen.width - 0.5f, Input.mousePosition.y / Screen.height - 0.5f, 0);
+                worldSpace.x *= -16;
+                worldSpace.y *= 10;
+                RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(transform.parent.position + worldSpace, transform.parent.forward));
+                if (hit.collider != null && hit.collider.transform.GetComponent<InventorySlotOnClick>() != null && IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)] > -1) {
+                    UITextManager.SetText(ItemLookup.GetItemFromID(IM.invIds[(hit.collider.transform.GetComponent<InventorySlotOnClick>().index)]).getSprite().name); // TODO: change to use xml (ask dylan)
+                }
+            }
+            else {
+                Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
+                if (hit != null && hit.GetComponent<Interactable>() != null) {
+                    UITextManager.SetText(hit.gameObject.name);
+                }
+            }
         }
     }
 

@@ -35,7 +35,8 @@ public class UITextManager : MonoBehaviour {
         if (writing) {
             timer += Time.deltaTime;
             while (timer > 1f / writeSpeed) {
-                if (writingText.Length == currentText.Length) {
+                if (clicked || writingText.Length == currentText.Length) {
+                    currentText = writingText;
                     writing = false;
                     timer = 0;
                     break;
@@ -66,5 +67,19 @@ public class UITextManager : MonoBehaviour {
         foreach (string s in text) {
             EnqueueText(s);
         }
+    }
+    public static void Clear() {
+        instance.q.Clear();
+        instance.writingText = "";
+        instance.currentText = "";
+        instance.writing = false;
+        instance.timer = 0f;
+        instance.tmp.text = "";
+    }
+    public static void SetText(string text) {
+        Clear();
+        instance.writingText = text;
+        instance.currentText = text;
+        instance.tmp.text = text;
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class InventorySlotOnClick : MonoBehaviour {
-    public UnityEvent onClick;
+    public int index = -1;
     private Vector3 origin;
 
     void OnMouseDown() {
-        onClick.Invoke();
+        transform.parent.GetComponent<InventoryBarManager>().clickInventory(index);
         origin = transform.position;
     }
 
@@ -25,7 +25,7 @@ public class InventorySlotOnClick : MonoBehaviour {
     public void Apply(int id) {
         Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
         if (hit != null && hit.GetComponent<Interactable>() != null) {
-            hit.GetComponent<Interactable>().getAction().Invoke(InventoryManager.GetItemFromID(id));
+            hit.GetComponent<Interactable>().GetInRangeAndDo(InventoryManager.GetItemFromID(id), hit.position);
         }
         ResetPos();
     }
