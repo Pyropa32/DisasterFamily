@@ -8,6 +8,7 @@ namespace Diego
     public class InventorySlotOnClick : MonoBehaviour
     {
         public int index = -1;
+        public GameObject ItemPrefab;
         private Vector3 origin;
 
         void OnMouseDown()
@@ -38,7 +39,31 @@ namespace Diego
             {
                 hit.GetComponent<IInteractable>()?.OnInteract(InventoryManager.GetItemFromID(id));
             }
+            else{
+                DropItem(id);
+            }
             ResetPos();
+        }
+
+        public static void DropItem(int id){
+            //Item item = InventoryManager.GetItemFromID(id);
+            //string name = item.GetName();
+            //Debug.Log("Dropping item with name: " + item.GetName());
+            GameObject items = GameObject.Find("Items");
+            //var generatedItem = items.Instantiate();
+            GameObject itemObject = new GameObject();
+            itemObject.AddComponent<CircleCollider2D>();
+            SpriteRenderer spriteRenderer = itemObject.AddComponent<SpriteRenderer>();
+
+            spriteRenderer.sprite = ItemLookup.GetItemFromID(id).Sprite;
+            GeneralItem generalItem = itemObject.AddComponent<GeneralItem>();
+            generalItem.OnInteract = generalItem.Action;
+            itemObject.name = generalItem.name;
+
+            InventoryManager.toggleInInventory(id);
+
+            Vector2 gameSpacePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
+            itemObject.transform.position = new Vector3(gameSpacePosition.x, gameSpacePosition.y, 0);
         }
 
         public static void ApplyNoItem()
