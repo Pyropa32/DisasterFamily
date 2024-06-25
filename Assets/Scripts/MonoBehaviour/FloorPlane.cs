@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using LostTrainDude;
 using UnityEngine;
 
 public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
@@ -33,7 +32,6 @@ public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
     private List<Actor> actors = new List<Actor>();
     private List<Obstacle> obstacles = new List<Obstacle>();
     private BitGrid obstacleGrid;
-    private LostTrainDude.GridGraph obstacleGraph;
 
     // TODO: Support blocking obstacles
     // FloorPlane should also have its own grid built in
@@ -69,7 +67,6 @@ public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
 
         // set up pathfinding grid.
         obstacleGrid = new BitGrid(extents.x, extents.y);
-        obstacleGraph = new LostTrainDude.GridGraph(extents.x, extents.y);
     }
 
     public Vector2 ClampLocal(Vector2 localCoordinates)
@@ -148,8 +145,7 @@ public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
                     i - (obstacle.CellSize.x / 2),
                     j - (obstacle.CellSize.y / 2));
                 obstacleGrid.Set(coordinates.x, coordinates.y, true);
-                
-                obstacleGraph.Walls.Add(coordinates); 
+
             }
         }
         obstacle.transform.position = PlaneToScreen(GridToPlane(gridPosition));
@@ -159,18 +155,6 @@ public class FloorPlane : MonoBehaviour, IEquatable<FloorPlane>
     public List<Vector2> GetShortestInternalPath(Vector2 from, Vector2 to)
     {
         var result = new List<Vector2>();
-
-        var fromGridCoords = PlaneToGrid(ScreenToPlane(from));
-        var toGridCoords = PlaneToGrid(ScreenToPlane(to));
-
-        var untrimmed = AStar.Search(
-            obstacleGraph,
-            obstacleGraph.Grid[fromGridCoords.x,fromGridCoords.y],
-            obstacleGraph.Grid[toGridCoords.x,toGridCoords.y]);
-        
-        // TODO: Add trimming to reduce the amount of walk commands issued.
-        // no trimming yet
-        result = untrimmed.ConvertAll(node => node.Position);
 
         return result;
     }
