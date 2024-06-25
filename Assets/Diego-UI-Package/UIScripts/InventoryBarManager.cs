@@ -41,8 +41,8 @@ namespace Diego
                 inRange = inRange && Mathf.Abs(worldSpace.y) <= Camera.main.orthographicSize;
                 if (inRange) {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<Interactable>() != null) {
-                        hit.GetComponent<Interactable>().GetInRangeAndDo(Item.Empty, hit.position);
+                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
+                        hit.GetComponent<IInteractable>().GetInRangeAndDo(Item.Empty, hit.position);
                     }
                 }
             }
@@ -61,7 +61,7 @@ namespace Diego
                 }
                 else {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<Interactable>() != null) {
+                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
                         UITextManager.SetText(hit.gameObject.name);
                     }
                 }
