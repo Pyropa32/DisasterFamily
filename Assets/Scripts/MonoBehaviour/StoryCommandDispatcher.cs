@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class StoryCommandDispatcher : MonoBehaviour
 {
@@ -19,30 +20,44 @@ public class StoryCommandDispatcher : MonoBehaviour
 
     // Commands that must be completed first: 
 
+    public void ReceiveSequentialRange(IEnumerable<IStoryCommand> commands, bool blocking=true, StoryCommandExecutionFlags flagOverride=StoryCommandExecutionFlags.Ignore)
+    {
+        _Receive(
+            new SequentialStoryCommand(commands, _concurrent:!blocking, flags:flagOverride), true
+        );
+    }
+
     public void Receive(IStoryCommand command)
     {
+        _Receive(command, true);
+    }
+    private void _Receive(IStoryCommand command, bool useFlags)
+    {
 
-        if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardConcurrent))
+        if (useFlags)
         {
-            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardConcurrent))
             {
-                concurrentStoryCommandList.RemoveAll(_command => _command.GetType() == command.GetType());
+                if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
+                {
+                    concurrentStoryCommandList.RemoveAll(_command => _command.InstanceType == command.InstanceType);
+                }
+                if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
+                {
+                    concurrentStoryCommandList.RemoveAll(_command => _command.InstanceType != command.InstanceType);
+                }
             }
-            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
-            {
-                concurrentStoryCommandList.RemoveAll(_command => _command.GetType() != command.GetType());
-            }
-        }
 
-        if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardBlocking))
-        {
-            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
+            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardBlocking))
             {
-                blockingStoryCommandList.RemoveAll(_command => _command.GetType() == command.GetType());
-            }
-            if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
-            {
-                blockingStoryCommandList.RemoveAll(_command => _command.GetType() != command.GetType());
+                if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardAlike))
+                {
+                    blockingStoryCommandList.RemoveAll(_command => _command.InstanceType == command.InstanceType);
+                }
+                if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardNonAlike))
+                {
+                    blockingStoryCommandList.RemoveAll(_command => _command.InstanceType != command.InstanceType);
+                }
             }
         }
 
@@ -54,7 +69,7 @@ public class StoryCommandDispatcher : MonoBehaviour
         {
             blockingStoryCommandList.Add(command);
         }
-        
+
     }
 
     private void ProcessBlockingCommands(float delta)
