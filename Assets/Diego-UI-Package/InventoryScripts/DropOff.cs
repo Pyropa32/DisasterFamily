@@ -24,7 +24,10 @@ namespace Diego {
             items = new List<Item>();
         }
         public void Action(Item item) {
-            if (items.Count >= maxItems) {
+            if (items.Count >= maxItems || item.Equals(Item.Empty)) {
+                if (items.Count >= maxItems) {
+                    DialogueManager.textToLoad("Sample.me.1");
+                }
                 return;
             }
             else {
