@@ -6,6 +6,7 @@ using Diego;
 namespace Diego {
     public class OnResultLoad : MonoBehaviour {
         void FixedUpdate() {
+            int maxNum = DropOff.GetMaxNum();
             List<Item> items = DropOff.GetItemsAndKill();
             ItemMentionsListView mentions = FindObjectOfType<ItemMentionsListView>();
             if (items.Count == 0) {
@@ -16,7 +17,10 @@ namespace Diego {
             }
             int countGood = 0;
             foreach (Item item in items) {
-                if (item.Quality == ItemQuality.Required) {
+                Debug.Log(item.Quality);
+                Debug.Log(item.ID);
+                Debug.Log(item.Name);
+                if (item.Quality.Equals(ItemQuality.Required)) {
                     countGood++;
                     mentions.AddGoodMention(item);
                 }
@@ -24,7 +28,7 @@ namespace Diego {
                     mentions.AddBadMention(item);
                 }
             }
-            mentions.SetScore(countGood/(float)items.Count);
+            mentions.SetScore(countGood/(float)maxNum);
             mentions.Show();
             Destroy(gameObject);
         }

@@ -33,12 +33,12 @@ public class ItemMentionsListView : MonoBehaviour
     private readonly Color maxScoreColor = Color.green;
     private readonly Color midScoreColor = Color.white;
 
-    private TextMeshPro scoreText;
+    private TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = scoreUI.GetComponent<TextMeshPro>();        
+        scoreText = scoreUI.GetComponent<TextMeshProUGUI>();        
     }
     /// <summary>
     /// Once you add everything, make sure to call Show() to cause items to appear
@@ -85,7 +85,7 @@ public class ItemMentionsListView : MonoBehaviour
         }
         scoreText.color = scoreColor;
 
-        var scoreString = String.Format("Survival Rate: {0:0}%", value);
+        var scoreString = String.Format("Survival Rate: {0:0}%", value * 100f);
         scoreText.text = scoreString;
     }
 
@@ -109,7 +109,7 @@ public class ItemMentionsListView : MonoBehaviour
         var goodAndMoreUI = Instantiate(andMorePrefab, goodItemListUI.transform);
 
         var andMoreText = String.Format("+ {0} more items...", goodItemsDataLeftoverCount);
-        goodAndMoreUI.GetComponentInChildren<TextMeshPro>().text = andMoreText;
+        goodAndMoreUI.GetComponentInChildren<TextMeshProUGUI>().text = andMoreText;
         goodAndMoreUI.GetComponent<UnityEngine.UI.Image>().color = ItemMentionView.gradientGoodColor;
 
         var badItemsDataSize = Math.Min(badItemData.Count, maxItemDetailsDisplayed); 
@@ -128,7 +128,7 @@ public class ItemMentionsListView : MonoBehaviour
         var badAndMoreUI = Instantiate(andMorePrefab, badItemListUI.transform);
         
         andMoreText = String.Format("+ {0} more items...", badItemsDataLeftoverCount);
-        badAndMoreUI.GetComponent<TextMeshPro>().text = andMoreText;
+        badAndMoreUI.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = andMoreText;
         badAndMoreUI.GetComponent<UnityEngine.UI.Image>().color = ItemMentionView.gradientBadColor;
 
     }

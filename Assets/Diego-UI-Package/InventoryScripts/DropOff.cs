@@ -54,5 +54,8 @@ namespace Diego {
             Destroy(instance.gameObject);
             return items;
         }
+        public static int GetMaxNum() {
+            return instance.maxItems;
+        }
     }
 }

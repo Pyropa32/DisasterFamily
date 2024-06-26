@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.1302032, y: 0.85324097, z: -2.442276, w: 2.933319}
+  m_margin: {x: 2.1302032, y: 0.85324097, z: -88.83771, w: 2.933319}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -318,6 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameUI: {fileID: 337001742757723379}
   descriptionUI: {fileID: 5968114352148786118}
+  nameTMP: {fileID: 8841141136135604218}
+  descriptionTMP: {fileID: 3204773853348927526}
   gradientBG: {fileID: 7038047936834884907}
   icon: {fileID: 4398068805289496209}
 --- !u!1 &5679335552378680796

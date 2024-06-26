@@ -12,7 +12,7 @@ public static class ItemsUniverse
     {
         AddItem(
             10000,
-            "whiskey",
+            "daniels",
             "Jack Daniel's Single-Barrel Tennessee Whiskey",
             "It escaped the supplies promptly; A sneaky father seems to have broken his vows.",
             ItemQuality.Useless
@@ -88,7 +88,7 @@ public static class ItemsUniverse
         );
         AddItem(
             10011,
-            "long_pillow",
+            "pillow",
             "Suspiciously Long Pillow",
             "Shrek is love, Shrek is life.",
             ItemQuality.Useless
@@ -123,7 +123,7 @@ public static class ItemsUniverse
         );
         AddItem(
             10016,
-            "home_documents",
+            "papers",
             "House Documents",
             "These documents are proof of your home ownership and mortgage payments.",
             ItemQuality.Required
@@ -208,7 +208,8 @@ public static class ItemsUniverse
             id,
             _path,
             _name,
-            _remarks
+            _remarks,
+            quality
         ));
     }
 }

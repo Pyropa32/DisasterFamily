@@ -17,12 +17,16 @@ public class ItemMentionView : MonoBehaviour
     [SerializeField]
     GameObject descriptionUI;
     [SerializeField]
+    TextMeshProUGUI nameTMP;
+    [SerializeField]
+    TextMeshProUGUI descriptionTMP;
+    [SerializeField]
     Image gradientBG;
     [SerializeField]
     Image icon;
 
-    private TextMeshPro nameTMP;
-    private TextMeshPro descriptionTMP;
+    //private TextMeshProUGUI nameTMP;
+    //private TextMeshProUGUI descriptionTMP;
 
     public static readonly Color descriptionBadColor = new Color(
         0.8784313725490196f,
@@ -49,8 +53,8 @@ public class ItemMentionView : MonoBehaviour
 
     void Start()
     {
-        nameTMP = nameUI.GetComponent<TextMeshPro>();
-        descriptionTMP = descriptionUI.GetComponent<TextMeshPro>();
+        nameTMP = nameUI.GetComponent<TextMeshProUGUI>();
+        descriptionTMP = descriptionUI.GetComponent<TextMeshProUGUI>();
     }
 
     public void Setup(Item data, ItemMentionsQuality quality)

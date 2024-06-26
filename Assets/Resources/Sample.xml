@@ -29,5 +29,8 @@
 		<interaction id="0">
 			<page>My inventory is full.</page>
 		</interaction>
+		<interaction id="1">
+			<page>The drop off box is full!</page>
+		</interaction>
 	</character>
 </dialogue>
