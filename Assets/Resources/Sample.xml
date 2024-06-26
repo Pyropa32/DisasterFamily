@@ -1,7 +1,28 @@
 ﻿<dialogue>
-    <page>According to all known laws of aviation,</page>
-    <page>there is no way a bee should be able to fly.</page>
-    <page>Its wings are too small to get its fat little body off the ground.</page>
-    <page>The bee, of course, flies anyway...</page>
-    <page>because bees don't care what humans think is impossible.</page>
+	<character name="mom">
+		<interaction id="0">
+			<page>Hello.</page>
+			<page>I am the mother.</page>
+			<page>Goodbye.</page>
+		</interaction>
+		<interaction id="1">
+			<page>What do you need?</page>
+		</interaction>
+		<interaction id="2">
+			<page>Can't talk right now.</page>
+		</interaction>
+	</character>
+	<character name="dad">
+		<interaction id="0">
+			<page>Hello.</page>
+			<page>I am the father.</page>
+			<page>Goodbye.</page>
+		</interaction>
+		<interaction id="1">
+			<page>What do you need?</page>
+		</interaction>
+		<interaction id="2">
+			<page>Ask your mom.</page>
+		</interaction>
+	</character>
 </dialogue>

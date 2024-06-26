@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TempDialogueDisplay : MonoBehaviour {
+    private int i = 0;
+
     void Start() {
-        gameObject.GetComponent<DialogueClient>()?.load();
+        DialogueManager.loadFromFile("Sample");
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Alpha0)) {
-            gameObject.GetComponent<DialogueClient>()?.displayText();
+        if (Input.GetKeyDown(KeyCode.Alpha0) && i < 3) {
+            DialogueManager.textToLoad("Sample.mom." + i);
+            i++;
         }
     }
 }
