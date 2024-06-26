@@ -47,7 +47,8 @@ public class ClickToMove : MonoBehaviour
         inRange = inRange && Mathf.Abs(worldMousePosition.y) <= Camera.main.orthographicSize;
         bool interacting = InteractGame.GetFromScreenSpace(Input.mousePosition) != null;
         Camera UICamera = GameObject.FindWithTag("UIInclude").GetComponent<Camera>();
-        interacting = interacting || Physics2D.Raycast(UICamera.ScreenToWorldPoint(Input.mousePosition), UICamera.transform.forward).collider?.GetComponent<DialogueTextManager>() != null;
+        Collider2D hit = Physics2D.Raycast(UICamera.ScreenToWorldPoint(Input.mousePosition), UICamera.transform.forward).collider;
+        interacting = interacting || (hit?.GetComponent<DialogueTextManager>() != null && hit.transform.parent.GetComponent<SpriteRenderer>().enabled);
         if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false)
         {
             Vector3 CameraPos = Camera.main.transform.position;

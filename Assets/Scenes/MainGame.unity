@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10018
 --- !u!58 &158872465
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10013
 --- !u!58 &205860141
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10017
 --- !u!58 &478155843
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6008,7 +6008,7 @@ GameObject:
   - component: {fileID: 931577549}
   - component: {fileID: 931577548}
   m_Layer: 0
-  m_Name: radio (1)
+  m_Name: map
   m_TagString: DoNotSort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6093,7 +6093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10014
 --- !u!58 &931577549
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7432,7 +7432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10001
 --- !u!58 &1144901182
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9691,7 +9691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10020
 --- !u!58 &1399049971
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10161,7 +10161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10010
 --- !u!58 &1488216813
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12718,7 +12718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a022f82a15bc9f41aa407596356bedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10023
 --- !u!58 &1768269233
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19828,8 +19828,8 @@ Transform:
   - {fileID: 599584221}
   - {fileID: 99736820}
   - {fileID: 862994779}
-  - {fileID: 294125030578749841}
   - {fileID: 4492261559617131709}
+  - {fileID: 294125030578749841}
   - {fileID: 1697475346}
   - {fileID: 272443767}
   - {fileID: 879487410}
