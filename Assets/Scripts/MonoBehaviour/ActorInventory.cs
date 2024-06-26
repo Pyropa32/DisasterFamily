@@ -15,5 +15,9 @@ public class ActorInventory : MonoBehaviour
     {
         inventory.Add(item.Data);
         // Sync with InventoryManager;
+        //GameObject addedObject = GameObject.Find("Items");
+        //InventoryManager.toggleInInventory(item.ID);
+        //Destroy(addedObject);
+        
     }
 }

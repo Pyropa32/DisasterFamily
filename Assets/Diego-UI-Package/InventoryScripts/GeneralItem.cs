@@ -11,49 +11,36 @@ namespace Diego
     {
         private Action<Item> action;
         private Sprite mySprite;
+        public int id;
 
-        public Action<Item> OnInteract { get => action; set => action = value; }
-
-        public bool CanBeCollected => false;
-
-        public bool CanBeInteractedWith => true;
-
-        public int ID => 0;
-
-        public Sprite Sprite => mySprite;
-
-        public void Start()
-        {
+        public void Start() {
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
             action = this.Action;
         }
-        public void Action(Item item)
-        {
-            if (item.Equals(Item.Empty))
-            {
-                InventoryManager.toggleInInventory(ItemLookup.GetItemFromSprite(mySprite));
-                Destroy(gameObject);
+        public void Action(Item item) {
+            Debug.Log("Clicked");
+            if (item.Equals(Item.Empty)) {
+                bool success = InventoryManager.addInInventory(id);
+                if (success) {
+                    Destroy(gameObject);
+                }
+                else {
+                    //display message saying inventory is full
+                    Debug.Log("Inventory Full!");
+                }
             }
         }
-        public int getID()
-        {
-            return 0;
+        public int ID => 0;
+        public Sprite Sprite => mySprite;
+        public Action<Item> OnInteract {
+            get {
+                return action;
+            }
+            set {
+                action = value;
+            }
         }
-        public Sprite getSprite()
-        {
-            return mySprite;
-        }
-        public Action<Item> getAction()
-        {
-            return action;
-        }
-        public bool isCollectable()
-        {
-            return false;
-        }
-        public bool isInteractable()
-        {
-            return true;
-        }
+        public bool CanBeCollected => false;
+        public bool CanBeInteractedWith => true;
     }
 }

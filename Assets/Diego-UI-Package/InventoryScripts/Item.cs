@@ -51,5 +51,9 @@ namespace Diego
         {
             return id == other.id && sprite == other.sprite;
         }
+
+        public int GetID(){
+            return id;
+        }
     }
 }

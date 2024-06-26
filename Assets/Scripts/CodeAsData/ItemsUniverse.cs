@@ -181,7 +181,7 @@ public static class ItemsUniverse
             10024,
             "steak",
             "Steak",
-            "There's now way to keep the steak from spoiling.",
+            "There's no way to keep the steak from spoiling.",
             ItemQuality.Useless
         );
         AddItem(
@@ -208,8 +208,7 @@ public static class ItemsUniverse
             id,
             _path,
             _name,
-            _remarks,
-            quality
+            _remarks
         ));
     }
 }
