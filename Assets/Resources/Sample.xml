@@ -25,4 +25,9 @@
 			<page>Ask your mom.</page>
 		</interaction>
 	</character>
+	<character name="me">
+		<interaction id="0">
+			<page>My inventory is full.</page>
+		</interaction>
+	</character>
 </dialogue>
