@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Diego-UI-Package/InventoryScripts/GeneralItem.cs.meta
+guid: 7ae9e60b856cd4944a391a5e63f5bf9e
+========
+guid: ab31c60320dbdb940b95655c786a7fd0
+>>>>>>>> Diego-ItemDropOff:Assets/Diego-UI-Package/InventoryScripts/DropOff.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

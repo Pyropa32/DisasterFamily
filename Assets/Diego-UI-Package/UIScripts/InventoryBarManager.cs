@@ -24,10 +24,8 @@ namespace Diego
                     children[i].sprite = null;
                     continue;
                 }
-                if (children[i].sprite == null) {
-                    ItemsUniverse.TryGetValue(IM.invIds[i].ID, out Item item);
-                    children[i].sprite = item.Sprite;
-                }
+                ItemsUniverse.TryGetValue(IM.invIds[i].ID, out Item item);
+                children[i].sprite = item.Sprite;
                 children[i].enabled = true;
                 continue;
             }
