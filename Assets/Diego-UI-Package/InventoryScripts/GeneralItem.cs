@@ -26,6 +26,8 @@ namespace Diego
                 }
                 else {
                     //display message saying inventory is full
+                    //UITextManager.SetTextForSeconds("I can't pick that up my hands are full.", 5f);
+                    DialogueManager.textToLoad("Sample.me.0");
                     Debug.Log("Inventory Full!");
                 }
             }
