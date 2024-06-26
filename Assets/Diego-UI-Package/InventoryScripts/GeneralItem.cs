@@ -20,8 +20,14 @@ namespace Diego
         public void Action(Item item) {
             Debug.Log("Clicked");
             if (item.Equals(Item.Empty)) {
-                InventoryManager.addInInventory(id);
-                Destroy(gameObject);
+                bool success = InventoryManager.addInInventory(id);
+                if (success) {
+                    Destroy(gameObject);
+                }
+                else {
+                    //display message saying inventory is full
+                    Debug.Log("Inventory Full!");
+                }
             }
         }
         public int ID => 0;
