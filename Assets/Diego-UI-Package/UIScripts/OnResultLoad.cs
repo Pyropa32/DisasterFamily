@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Diego;
+using System.Linq;
 
 namespace Diego {
     public class OnResultLoad : MonoBehaviour {
+
         void FixedUpdate() {
             int maxNum = DropOff.GetMaxNum();
             List<Item> items = DropOff.GetItemsAndKill();
@@ -16,6 +18,10 @@ namespace Diego {
                 return;
             }
             int countGood = 0;
+
+            // randomize the items so that we get to see different mentions
+            items = items.OrderBy(x => Random.Range(int.MinValue, int.MaxValue)).ToList();
+
             foreach (Item item in items) {
                 Debug.Log(item.Quality);
                 Debug.Log(item.ID);
