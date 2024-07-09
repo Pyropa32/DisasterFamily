@@ -15,6 +15,10 @@ public class DialogueTextManager : MonoBehaviour {
     private bool writing = false;
     private float timer = 0f;
 
+    public SpriteRenderer face;
+    public TextMeshPro nameText;
+    public GameObject disableOnEmpty;
+
     public const float writeSpeed = 20f;
 
     void Start() {
@@ -30,6 +34,7 @@ public class DialogueTextManager : MonoBehaviour {
     void Update() {
         if (!writing && tmp.text == "" && q.Count > 0) {
             transform.parent.GetComponent<SpriteRenderer>().enabled = true;
+            disableOnEmpty.SetActive(true);
             writingText = q.Dequeue();
             writing = true;
         }
@@ -52,6 +57,7 @@ public class DialogueTextManager : MonoBehaviour {
             writingText = "";
             if (q.Count == 0) {
                 transform.parent.GetComponent<SpriteRenderer>().enabled = false;
+                disableOnEmpty.SetActive(false);
             }
         }
         if (clicked) {
