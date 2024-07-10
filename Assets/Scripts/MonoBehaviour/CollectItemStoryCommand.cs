@@ -5,11 +5,9 @@ using UnityEngine;
 public class CollectItemCommand : IStoryCommand
 {
     private Actor actor;
-    private WorldItem item;
+    private WorldItem item = null;
     private float progress = 0f;
-    private float totalDuration = 0f;
     private bool finished = false;
-    private bool started = false;
     public bool IsFinished { get => finished; }
     public bool IsConcurrent { get => true; }
     public bool IsStarted { get => true; }
@@ -30,7 +28,6 @@ public class CollectItemCommand : IStoryCommand
 
     public void Start()
     {
-        started = true;
     }
     public void Tick(float delta)
     {
