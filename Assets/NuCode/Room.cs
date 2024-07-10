@@ -77,7 +77,7 @@ public class Room : MonoBehaviour, IEquatable<Room>
     /// <param name="end"></param>
     /// <param name="alignAxes">make true if navigating to a door. false if not.</param>
     /// <returns></returns>
-    public Vector2[] GetPathWithinRoom(Vector2 start, Vector2 end, bool alignAxes=false)
+    public Vector2[] GetInteriorPathFrom(Vector2 start, Vector2 end, bool alignAxes=false)
     {
         // TODO: A* Pathfinding within a room if there's time.
         if (alignAxes)

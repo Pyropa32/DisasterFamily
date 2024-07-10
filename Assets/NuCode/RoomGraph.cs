@@ -139,25 +139,33 @@ public class RoomGraph : MonoBehaviour
     }
 
     /// <summary>
-    /// The main driver for pathfinding.
-    /// Use whenever you want to know how to move the character.
+    /// Get the path from point A to point B across many rooms.
     /// </summary>
     /// <param name="start"></param>
     /// <param name="finish"></param>
-    /// <returns></returns>
-    public Vector2[] PathTo(Vector2 start, Vector2 finish)
+    /// <returns>The shortest path linking the room at point A to the room at point B</returns>
+    public Vector2[] GetExteriorPathFrom(Vector2 start, Vector2 finish)
     {
         var startRoom = GetRoomAt(start);
         var finishRoom = GetRoomAt(finish);
 
         if (!startRoom || !finishRoom)
         {
+            Debug.Log("Attempted to find exterior path, but one or both rooms are null!");
             return new Vector2[] {};
         }
 
         if (startRoom.TryGetDoorwayTo(finishRoom, out RoomDoorway doorway))
         {
+            // always 2 elements.
+            var transferRoomPath = doorway.GetTransferRoomPath();
             
+            var pathA = startRoom.GetInteriorPathFrom(start, transferRoomPath[0], alignAxes:true);
+            var pathB = finishRoom.GetInteriorPathFrom(transferRoomPath[1], finish, alignAxes:true);
+            return new Vector2[]
+            {
+                
+            };
         }
 
         var result = new Vector2[] { };
