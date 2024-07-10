@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Room : MonoBehaviour, IEquatable<Room>
@@ -40,6 +41,11 @@ public class Room : MonoBehaviour, IEquatable<Room>
         World = GetComponentInParent<RoomGraph>();
     }
 
+    public RoomDoorway[] GetDoorways()
+    {
+        return doorways.ToArray();
+    }
+
     void Awake()
     {
         // uvX's Y coordinate doesn't hold any weight.
@@ -52,17 +58,22 @@ public class Room : MonoBehaviour, IEquatable<Room>
         );
         offset = transform.position;
     }
-
-    public bool TryGetDoorwayTo(Room adjoining, out RoomDoorway gateway)
+    /// <summary>
+    /// If a doorway is shared between `this` and `adjoining`, return it.
+    /// </summary>
+    /// <param name="adjoining"></param>
+    /// <param name="gateway"></param>
+    /// <returns></returns>
+    public bool TryGetDoorwayTo(Room adjoining, out RoomDoorway doorway)
     {
-        gateway = null;
+        doorway = null;
         // test all gates of mine, and see if it works...
         foreach (var myGate in doorways)
         {
             if (myGate.EntranceRoom == adjoining ||
                 myGate.ExitRoom == adjoining)
             {
-                gateway = myGate;
+                doorway = myGate;
                 return true;
             }
         }
@@ -170,7 +181,7 @@ public class Room : MonoBehaviour, IEquatable<Room>
         return projection;
     }
 
-    public void AddGateway(RoomDoorway toAdd)
+    public void AddDoorway(RoomDoorway toAdd)
     {
         doorways.Add(toAdd);
     }
