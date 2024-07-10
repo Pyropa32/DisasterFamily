@@ -1,0 +1,18 @@
+
+public struct MoveData
+{
+    Vector2 start;
+    Vector2 finish;
+    float walkSpeed = 2f;
+    public MoveData(Vector2 _start, Vector2 _finish, float _walkSpeed=2f)
+    {
+        start = _start;
+        finish = _finish;
+        walkSpeed = _walkSpeed;
+    }
+zasdasdsad
+    public Vector2 Value =>
+    {
+        return start;
+    }
+}
