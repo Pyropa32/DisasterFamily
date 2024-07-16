@@ -1,0 +1,5455 @@
+fileFormatVersion: 2
+guid: ce1f1f657eb1a8341ae6e616c4ce7bf0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: furniture_livingroom_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 500
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f8018032c5c774793f97abcbc0220e
+      internalID: 1723039459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 500
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9ec0cb76ca53942b313b1429915f53
+      internalID: 2043002487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 500
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc78261035731a43bf07741e2c86972
+      internalID: 333451557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 500
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac954491b9bbf5c4d83beaa4197a8773
+      internalID: -1971756551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 500
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85ab1657ec98674d86ea5b63c8463cd
+      internalID: -1458082359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 500
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d02303dfb8080547bb77e89d644ffee
+      internalID: -423621184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 500
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ae2ea2e244dfc4f9bd55de93982a71
+      internalID: 576899138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_7
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 500
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02665df1c0fb42749a5116bd28a268cf
+      internalID: -1207879405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 500
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d4dc1e23b7a5c48985f5ad0f9083c8
+      internalID: 1804069345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_9
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 500
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb176b38d8e6b1438d62dd7033c8dc5
+      internalID: -1704118994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 500
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9e57290821164489f1600addbf701d
+      internalID: 1890930065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_11
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 500
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd8858a999f88f4b9cd7194d92ac4ec
+      internalID: -1153992671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_12
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 500
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd26dea40c59754cbbf0c85dc1149f8
+      internalID: -726013901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_13
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 500
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9810b24d3f125d84aa4f402dbd853ef5
+      internalID: -147684657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_14
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 500
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5c5cd9c22621f4ea3c8b1f7ec87b34
+      internalID: -2048223180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_15
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 500
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f030be8d37d31ce44a4c2b055d87da13
+      internalID: -8814319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 468
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20f546f67d540f4c9b4f9ddd68d3c51
+      internalID: -768363093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 468
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3d1d3292859fd48bbcbc3553918049
+      internalID: 1911279193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 468
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c9458abbb8f7f428bdefd1d0465595
+      internalID: -10674524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 468
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e7359294b75454da5cbab76681edac
+      internalID: -1978591055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_20
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 468
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2ae4709b014784b976425de7d0f23d
+      internalID: 875357570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_21
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 468
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5913925fc1326ec4b9735d800bbb3724
+      internalID: 546142138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_22
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 468
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e3848c9e71b4e43a0706f24b24db35
+      internalID: 133622294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_23
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 468
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51fbc8e189206f442a74ae2bd39fe1cd
+      internalID: -530057514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_24
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 468
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddd05899582e52478c119a796576395
+      internalID: 1480358031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_25
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 468
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211c2bfbaf0ea3f49aaa3873e7166dba
+      internalID: 2010070235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_26
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 468
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4312d898208366744aa63a25870764aa
+      internalID: 2117988666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_27
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 468
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8242da619646de041944dd08db963583
+      internalID: 1275690865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_28
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 468
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7c4873260e3b9449b942813ad52f29
+      internalID: 830217780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_29
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 468
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c253578bc4a2634ea707217075b3676
+      internalID: -524857197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_30
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 468
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca641932e53f55646a19845ba5a6a28e
+      internalID: 663415670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_31
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 468
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fd8e9e818c3c741ba3b243ed522da6
+      internalID: 692774617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 436
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32743401353ad345b727749e3306d93
+      internalID: -313378924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_33
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 340
+        width: 16
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7d317688820ab4d8411e83cf1172dc
+      internalID: 1553893350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_34
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 436
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449b35e0bef83ca47a8e3ee119f83713
+      internalID: 398258229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_35
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 436
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35734c3a5343f5409adbc93d0813e0b
+      internalID: -2098693200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_36
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 436
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7808930dc8156645a29d559d4c01ab8
+      internalID: 1367631210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_37
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 436
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6088893ed4445c844b0448758a1cadf1
+      internalID: -447361057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_38
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 436
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d9e3202401c5143aa5d760132daf6b
+      internalID: -445073710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_39
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 436
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7d815bf78d7c1458a547d691a21098
+      internalID: -1703069780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_40
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 436
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04b741276cd0b74296ae9001a8ed14e
+      internalID: -1894601630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_41
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 340
+        width: 16
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da536df25df4cf4287c6489ec713736
+      internalID: 1119194312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_42
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 436
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec2e42342a975f478cff8105a10fb68
+      internalID: -1561758748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_43
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 436
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d41dc236377a949b84a562ddc35519
+      internalID: 2127942212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_44
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 436
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5c11e1ef8b4eb40bfda8d973cd268d
+      internalID: -2029544925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_45
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 436
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508ac4d895824c84297eb84425472ae7
+      internalID: 923777648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_46
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 436
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b35a12e00aae3d4eb025943cfd7a314
+      internalID: -723150265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_47
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 436
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961e36d5bcb6a2249a01f6ab85c75222
+      internalID: 1001950907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 404
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f4753efc6c5d14a825d859d8613885
+      internalID: -763644630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_49
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 340
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef78444fe9fa76c459de4e40c60f6db2
+      internalID: 153525957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_50
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 404
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416e3907890a5934a9ba0a07fac7234c
+      internalID: 2055417681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_51
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 404
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043c405f6df4cc140a9f84408d1da351
+      internalID: 1861296638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_52
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 404
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40858391743116c48b31f75dcd50162c
+      internalID: -816054401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_53
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 404
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285c35eec9184a049a1763732d24622e
+      internalID: 1312700905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_54
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 404
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d9b3c8c159de841b6609d73f11c2fe
+      internalID: 53990146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_55
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 404
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c933146d7566dc648b0384bdf28cec7a
+      internalID: 568721716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_56
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 340
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9dda767ac56fe04a976fce42c80b29e
+      internalID: -1579762696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_57
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 404
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d90cb0197c710488c4c9ea57b94c9b
+      internalID: 1811341556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_58
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 404
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079604eee0e92df4486efae0223c1396
+      internalID: 1840503704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_59
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 404
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0c053edce382a408c26f7f67ba441c
+      internalID: -1450862388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_60
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 404
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b335868c44892374ab0a6cf1db469881
+      internalID: 390721084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_61
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 404
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2ef9f515a0c1c41b26bc31b36fd6f8
+      internalID: 1911782048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218c5ddc1b05a8d4ba3bf5265faad469
+      internalID: 1394165969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_63
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f118c5b280b1a864884053e0cf790df7
+      internalID: -1527682537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_64
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 372
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffbeef93f73d0a4fa9e130f9558e0e1
+      internalID: -1432349643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_65
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306bca8c8bf8bc24b9f13ffe4f4b0119
+      internalID: 1928238108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_66
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d854b5e04d568f40aeb007e7eca26f4
+      internalID: -1054017921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_67
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 372
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3a36c3deeb1a14888b091b2a4eb519
+      internalID: 1122066974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_68
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d76e106846f170479b577abf614c29d
+      internalID: 1285010842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_69
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 372
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb1c5f191531564b8352e374e97f1aa
+      internalID: 688724979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_70
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 372
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7896b56df35094b81e76c2970a418f
+      internalID: 1654006414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_71
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48892c99fc01f6a46913ca1fb2d524e3
+      internalID: 1423952830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_72
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 372
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b23b330060e6564ea7db2166bef91f4
+      internalID: 245763050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_73
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 372
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d50cc745d1bf1c4782b73429450ca5b
+      internalID: 604076223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_74
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebef4318859e0f44ae7187db6a1ec91
+      internalID: 882278166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_75
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 340
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e0a1b964695554081c9abf011448fc
+      internalID: -710708918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_76
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 340
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aed161d8331914e859b51fed106d3e
+      internalID: -1754620866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_77
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 340
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54092ea344700841b94c5b0708dc598
+      internalID: -449733526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_78
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 340
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2b7d94512ebf04fb4e1708e29b4887
+      internalID: -1509978639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_79
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 340
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff59cb9b8353b8d45be4ed8806c2da24
+      internalID: -1365495086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_80
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 340
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e92082e61237e542b3aa0e7c0b03931
+      internalID: -1251267287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_81
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 340
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e872f576c9fa4540a533a06f128c4a4
+      internalID: 1399716131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_82
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 340
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b339dd769e0f8d44e94c91d11dfa00be
+      internalID: -839384623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_83
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 340
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787de95f1dd2a9646ba65602db4ea074
+      internalID: -1847199591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_84
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 340
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49c0a8105133e74881a1ca2eddcb96f
+      internalID: 73749079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_85
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 340
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd67ab93240168e428d6642bed75d5b3
+      internalID: -1815083359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44ab0e3c81133945864f5bd6fbe2797
+      internalID: 990026471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_87
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 308
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8e10b5b471a8249978a94d6ea682ce
+      internalID: -741008304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_88
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 308
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13079d32ab2463946b2dd7561402639d
+      internalID: -869713656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_89
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 308
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e3365d68dc007459a9f90f144628b8
+      internalID: 499877214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_90
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 308
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7a90200812fa44f897d1d528eb5c1c
+      internalID: -712326161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_91
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 308
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d81fa69c286aa14ebc7ccae9f8307fc
+      internalID: -1938115048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_92
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 308
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de35b7626e809934ca2a43e1ed788e4b
+      internalID: -952862179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_93
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 308
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc10f2fe8dbd0504594f38c91784461e
+      internalID: -36595725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_94
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 308
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7caadbcc9d212f741a62caedb3bbb04f
+      internalID: 312175108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_95
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 308
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f131446ae50dcae459026e636c71f411
+      internalID: -1877649654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_96
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 308
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e5b198436790343959e3e3fffc89e7
+      internalID: 545227385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_97
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 308
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8253f8511489043991ba374faa191c
+      internalID: -1856636382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_98
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 308
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e92354a97e53345bb97a0015884792
+      internalID: 860052499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_99
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 308
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88de36305fdb7ca449044255a113a0b4
+      internalID: -216708589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_100
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 308
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc30e905e185d54ca74e39cb641ae4c
+      internalID: 1875671941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_101
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 308
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b627a2ef74a414ab82b622256e4f30
+      internalID: -601695651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b547d9df6e9ba17449c3fd313ef11edc
+      internalID: -1379684450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_103
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 276
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca43e87942745404998a14aaffeb0f85
+      internalID: 1222133202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_104
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 276
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40deff28e63a8df4dad1ff358e1a5307
+      internalID: -181218725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_105
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 276
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b003012e8bbc2314eb9acac210a69250
+      internalID: 1194783600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_106
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 276
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc16202e617cfe64ab3e50f086895682
+      internalID: 322220400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_107
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 276
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007400ce750cb59449de75328a82a2cb
+      internalID: 2110440539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_108
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 276
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c8289c707ed524f90c9d29089805b0
+      internalID: 1379049327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_109
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 276
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a55bfe57f3ba9941b6087cc4b862b39
+      internalID: 1040980695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_110
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 276
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1465cdda921199d4c92c828844b26b62
+      internalID: -2045397716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_111
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 276
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaea6df286eba104ba4f094a7c6caac9
+      internalID: 143707026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_112
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 276
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c1299a53541f14cb532d86dd1099f8
+      internalID: 1219887555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_113
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 276
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706d127e003a1ac4bbb2358836d0f2a3
+      internalID: 600220087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_114
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 276
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba22f0c2ca1198743b1a749551774898
+      internalID: -1388716399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_115
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 276
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a8749e98c13fe4eabf7952df65a8e5
+      internalID: 1480164979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_116
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 276
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef590d011c6c734994e5a63811204f6
+      internalID: -1249426110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_117
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 276
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e874a50d0c5af4e40ad5799c218c460c
+      internalID: -1553087916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_118
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f41f18f2c6fbd408be87bc99383eb9
+      internalID: -622216747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_119
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 264
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c5a36922f405c4f85221c98671d85e
+      internalID: 637093525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_120
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 264
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2680e66e9e9c44f449fcecb68d27e79e
+      internalID: -379775265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_121
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 264
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9052a905d7466aa4e9c8e4ff3d70774b
+      internalID: -896685779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_122
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 248
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bc8863e6adfd44abd1e9f8b456f431
+      internalID: 1312967898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_123
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 255
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6f7a5b3fc229d46b221084fe298c36
+      internalID: -816467725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_124
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 255
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01435635bf23f5147b242291502bfa33
+      internalID: -16407235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_125
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 248
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49575355607ef8f48953f900c49c63cc
+      internalID: 2056295254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_126
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 200
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0132b75534da814d9e090a0f96c1399
+      internalID: -1958971624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_127
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 200
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41309672752552241871ace5a5e90968
+      internalID: -391818012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_128
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 200
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f6784114395c641b38a4baf25a0ba5
+      internalID: 1010926659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_129
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 200
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414e2cb319140644fbd5e314496a71aa
+      internalID: -357945534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_130
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 200
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a81a85ef710b98418d66b710e216a74
+      internalID: -107326767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_131
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 200
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5352e5fdc46084ea42e162b29bc461
+      internalID: 1872548949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_132
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 200
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea410ee9ef464f45af6ac08b47c5ec6
+      internalID: 1535659939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_133
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 216
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82e4046516aaa242a144315db82eede
+      internalID: 1627558230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_134
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 216
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4a006f01dae6645a3c604335391473
+      internalID: 2094791841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_135
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 216
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c01a6500e89e0c45934454b5a2eb02e
+      internalID: 1063896952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_136
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 216
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a59e5dc087e9354da8d05e13ac888a9
+      internalID: -328560995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_137
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 216
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d09be42e8138804f91d6dfab861cd59
+      internalID: -69669810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_138
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 216
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27006e503db64a743ab9d67818985330
+      internalID: -975180369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_139
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 216
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310237192660c4f4b9a3bd82035f6f3f
+      internalID: 819234226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_140
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 216
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed30e6c95532b842844033f8345ce13
+      internalID: 1003064791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_141
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f77f3ce59065314e8926a12256c79e2
+      internalID: 403563177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_142
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 200
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3ae1e78a41a474da241f0bd081d462
+      internalID: 2124588007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_143
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 200
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60ffd06baaf8e94c914b6d5759867fd
+      internalID: -1611811946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_144
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 200
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233dd6559031d5342a84d444b9de6ac3
+      internalID: -1689544230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_145
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 200
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb59774bff19d4a42b19e9288f8f5572
+      internalID: -45643022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 125
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d89925f3535914eb4a7cdb6ee6e9d0
+      internalID: 1649482695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_147
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 187
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98777fa3cdd2a14abb26fc1e8cf7f3a
+      internalID: -709415755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_148
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 187
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef84afc80cd7c9147b5e81b392afc51a
+      internalID: -928343252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_149
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 187
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1b645ed8e598a49a9ff23fde932554
+      internalID: 500042920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_150
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 187
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d98287ee8864a648b2905ea7dad8ecb
+      internalID: -1346486700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_151
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 192
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc0c0d4c73bbb64e85dc70f69adb74b
+      internalID: 201004797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_152
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 192
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8427cab60f71b46acf62ba4409315c
+      internalID: 196945021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_153
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c17021767061e48bf14983ae180f92
+      internalID: -627223268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_154
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 184
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5278c37f35b3e448b95773dfdbb4bb2
+      internalID: -2035722709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_155
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 184
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18341d90c38aade43be12f6416cb1490
+      internalID: -1974276969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_156
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 184
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d593449069702b4890af513f3dcb7c2
+      internalID: -443330318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_157
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 120
+        width: 29
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1e334cac1810a439df7a33b520ba13
+      internalID: 1298476289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_158
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 104
+        width: 52
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae648385e320bf7478c9870c49fa8b1e
+      internalID: -267335749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_159
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 171
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52912bf53622fbc4e97f7c3816b368cf
+      internalID: 2024079317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_160
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 171
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9013567858f4046428a581bb50405cc7
+      internalID: -353127025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_161
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 171
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5d02d365d060f4baae8b3db4167126
+      internalID: -1271752427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_162
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 171
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0b111fd79d8aa41aba36c94025c2ba
+      internalID: 89059529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_163
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 176
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4775eeed02c72ef468846cc7d4bd6d03
+      internalID: -1875425657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_164
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 176
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51cdbb319b19a4d8a04e79f3f0bfd1
+      internalID: -558482283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_165
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 176
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9b36eaafd5aa241be14df57c47433d
+      internalID: 870121478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_166
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 168
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68bea18acbce7f4478f1118a852527e1
+      internalID: 1588341297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_167
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 168
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c4abb8497fe9948a55a8a1b58c1727
+      internalID: 1418013432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_168
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 168
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c68fae58595dfe4a8fee87b8d786df9
+      internalID: -1352485604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_169
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 155
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02edeaf8b099d9644a6aa8edc51fb104
+      internalID: -1923265069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_170
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 155
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb0cb8ceab96e0428a7fd43b4be539b
+      internalID: 1194189862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_171
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 155
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a894b9c4fb37c44d83360235bc0f261
+      internalID: 454467302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_172
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 155
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e44902c3703234581ae013c503303f
+      internalID: 207582954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_173
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 160
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b806d370670ec514d88bedee14298f42
+      internalID: -996161591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_174
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 160
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d854e6cb28c6243bf06249f0ff6ac3
+      internalID: -2063896049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_175
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3181e23a24f854c4183de9a4b0779c27
+      internalID: 1342418171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_176
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 152
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eac1f25b7efd7941b7a3d08105cbfe2
+      internalID: -1824810426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_177
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 152
+        width: 30
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcc73a1c5a805641897ff4b033a7730
+      internalID: 1218182979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_178
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 152
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0547f01c89a67f429f21b0e0e0be646
+      internalID: -1087575296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_179
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 139
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c055be4f762854b85f494a51b93068
+      internalID: 469227720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_180
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 139
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc69ef38c4ed8b74b97bf216c6426f21
+      internalID: 511106528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_181
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 139
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aafa50cec3338e4693830c0ce91a8d6
+      internalID: 1760715545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_182
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 139
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dac8c2568426b4686858eb4c7bb9c8
+      internalID: -144672371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_183
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 108
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84df4d13a3c087e439a354321468aef1
+      internalID: -1666779036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_184
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 123
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9399fcc3f77623b4ebe9d08ddea520b4
+      internalID: -1686586607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_185
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 123
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5feab319c53c159408969cf0b8144649
+      internalID: 306187070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_186
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 123
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bb8893aa70bb54ca05e56d278dca61
+      internalID: 1065664912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_187
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 123
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9021f7ca1053e06489491e4d44ad7fa6
+      internalID: -2133222264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_188
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 90
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad6b20d0300a3f4c87f92de5213b4ad
+      internalID: -856625318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_189
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 104
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4653663f5543d4ab6ad5c0f0c536ed
+      internalID: -490161158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_190
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 104
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72234d0ade9f1fe4c9b0d6175855352a
+      internalID: -1458501985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_191
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 104
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4bcf3fef807cd4996df2419476d957
+      internalID: -1150830526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_192
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 104
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b077a854f93624c87f6306e3f94021
+      internalID: -1262414811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_193
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 108
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcfc2762c17aed4cbedb7b9f0b687e0
+      internalID: -1687089568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_194
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 108
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3a6ba2f83fb8a4abdbea79a218a47c
+      internalID: 1129391697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_195
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 108
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73eaa5cf0e591214096d6b001a9fdb6d
+      internalID: -689228654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_196
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 96
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fb0a4542b568b4abf500c500491b9c
+      internalID: 1257506243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_197
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec23128743da724ea20f981f2931072
+      internalID: 295233455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_198
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 96
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df216a15285f5fa41ba261c5f05db057
+      internalID: 2032741977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_199
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 96
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9c2b18567cf344b9b755713e230ca9
+      internalID: 1526718397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_200
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 96
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b833b57d6120441a9b04b169bb0b57
+      internalID: 657971939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_201
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 92
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece9588df1a36f145aebff6a2e2d2b50
+      internalID: 511610450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_202
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 93
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e4aa17a3cd85544bbf9851a91f30a0
+      internalID: -1936609232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_203
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750c84d74f85f6744912513cb95c5e40
+      internalID: -1125041728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_204
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 95
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c410eba16f470b418ee939128b86983
+      internalID: 729410715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_205
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 95
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56a83a9791c1a041a0daac0eb55f347
+      internalID: 140147192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_206
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 95
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74460e4144d8b5f4bb30bea85a6df073
+      internalID: -2022150547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_207
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 95
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42485f67c1d90724e8d87f70a664d562
+      internalID: -987717628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_208
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 56
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5492f31b8b44340acb15b1870314b9
+      internalID: -1237176671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_209
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 56
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4504ae89edd96784b99871b5328db72e
+      internalID: 666452246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_210
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 56
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c0fb3a8a2205c48a9642037706d216
+      internalID: 69563465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_211
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 56
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b663b2faeea3964698ff98d2e79eb81
+      internalID: -1759695230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_212
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 56
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46b16eac9c73fd4aa5e96bb1e7f679f
+      internalID: 544447492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_213
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 56
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1556a5ce5c75ffa4cb54e0c219a97e34
+      internalID: 1445158245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_214
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 56
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76e17da831453f46891bac8a375c24c
+      internalID: 1861405818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_215
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 82
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74673dca7fa9c7749bcea85ba54ab319
+      internalID: -2093030821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_216
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 82
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb12d0ff40e4e9143a013e5c2cb8aa89
+      internalID: 1179060871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_217
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 82
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f63639d5036754b9752ef94783d237
+      internalID: -139794125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_218
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 82
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5d1dd41fa6bbd4281de47b4b5ec846
+      internalID: -1789511248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_219
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 69
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc0f3d2b0b6c9e4a8ace7f75f74bd93
+      internalID: 548051343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_220
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 69
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8394e3da0bf584aaecc90183cc1352
+      internalID: -2075738232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_221
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 69
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28b9598b1f5d0249926fba57d97e619
+      internalID: 2118692558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_222
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 69
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af26bbe1c3edb14dbe9570996a9e377
+      internalID: 1329318785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_223
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 56
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bed8cd4da98d6c4e991f7fb70e6b725
+      internalID: 1305105062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_224
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 56
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0662db64f3561f4f96f0eca1f485d50
+      internalID: 937623989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_225
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 56
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970198b54c55cdd40aeb83ad91e9c56a
+      internalID: 1264036336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_226
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 56
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d735d01367eef4aa3526ad82939a95
+      internalID: 32621540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_227
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 181
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17f0d5fab3a7ba43a5a588f63ce869a
+      internalID: -608586942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_228
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 43
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c713b47febeee946a323d98f079d7b1
+      internalID: -2096895062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_229
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 43
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f3fcd56f20aeb4aa7706b70cb53e48
+      internalID: -8728812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_230
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 43
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330fb031459e1b94daf222629d67e229
+      internalID: 401662491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_231
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 43
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21752ab803dadbc4686f25a1292fee38
+      internalID: -737967594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_232
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 30
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b1f638f101fcf479d60c673ba79309
+      internalID: 1951002662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_233
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 30
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01576b478f1d5d4e8317debb6cba19c
+      internalID: -1196801034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_234
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 30
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7b1eb08dfed684cacfdc2247771936
+      internalID: 1445886413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_235
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 30
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c090dc1d24191c74d80478b057f36208
+      internalID: 1084049338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_236
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 30
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cf24ec9e709d34aa4d2b8682c553e9
+      internalID: 843658873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_237
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 17
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9a705799cd8d2488c1a255a1d2237a
+      internalID: -1736765458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_238
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 17
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1d8974a8d330b4fa9753f824775811
+      internalID: 2086828880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_239
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 17
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff8328db255ff54e90835867d498a3a
+      internalID: 879139057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: furniture_livingroom_240
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 17
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affb6c628241e614f8e71161f4cd4b9b
+      internalID: -186568074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      furniture_livingroom_0: 1723039459
+      furniture_livingroom_1: 2043002487
+      furniture_livingroom_10: 1890930065
+      furniture_livingroom_100: 1875671941
+      furniture_livingroom_101: -601695651
+      furniture_livingroom_102: -1379684450
+      furniture_livingroom_103: 1222133202
+      furniture_livingroom_104: -181218725
+      furniture_livingroom_105: 1194783600
+      furniture_livingroom_106: 322220400
+      furniture_livingroom_107: 2110440539
+      furniture_livingroom_108: 1379049327
+      furniture_livingroom_109: 1040980695
+      furniture_livingroom_11: -1153992671
+      furniture_livingroom_110: -2045397716
+      furniture_livingroom_111: 143707026
+      furniture_livingroom_112: 1219887555
+      furniture_livingroom_113: 600220087
+      furniture_livingroom_114: -1388716399
+      furniture_livingroom_115: 1480164979
+      furniture_livingroom_116: -1249426110
+      furniture_livingroom_117: -1553087916
+      furniture_livingroom_118: -622216747
+      furniture_livingroom_119: 637093525
+      furniture_livingroom_12: -726013901
+      furniture_livingroom_120: -379775265
+      furniture_livingroom_121: -896685779
+      furniture_livingroom_122: 1312967898
+      furniture_livingroom_123: -816467725
+      furniture_livingroom_124: -16407235
+      furniture_livingroom_125: 2056295254
+      furniture_livingroom_126: -1958971624
+      furniture_livingroom_127: -391818012
+      furniture_livingroom_128: 1010926659
+      furniture_livingroom_129: -357945534
+      furniture_livingroom_13: -147684657
+      furniture_livingroom_130: -107326767
+      furniture_livingroom_131: 1872548949
+      furniture_livingroom_132: 1535659939
+      furniture_livingroom_133: 1627558230
+      furniture_livingroom_134: 2094791841
+      furniture_livingroom_135: 1063896952
+      furniture_livingroom_136: -328560995
+      furniture_livingroom_137: -69669810
+      furniture_livingroom_138: -975180369
+      furniture_livingroom_139: 819234226
+      furniture_livingroom_14: -2048223180
+      furniture_livingroom_140: 1003064791
+      furniture_livingroom_141: 403563177
+      furniture_livingroom_142: 2124588007
+      furniture_livingroom_143: -1611811946
+      furniture_livingroom_144: -1689544230
+      furniture_livingroom_145: -45643022
+      furniture_livingroom_146: 1649482695
+      furniture_livingroom_147: -709415755
+      furniture_livingroom_148: -928343252
+      furniture_livingroom_149: 500042920
+      furniture_livingroom_15: -8814319
+      furniture_livingroom_150: -1346486700
+      furniture_livingroom_151: 201004797
+      furniture_livingroom_152: 196945021
+      furniture_livingroom_153: -627223268
+      furniture_livingroom_154: -2035722709
+      furniture_livingroom_155: -1974276969
+      furniture_livingroom_156: -443330318
+      furniture_livingroom_157: 1298476289
+      furniture_livingroom_158: -267335749
+      furniture_livingroom_159: 2024079317
+      furniture_livingroom_16: -768363093
+      furniture_livingroom_160: -353127025
+      furniture_livingroom_161: -1271752427
+      furniture_livingroom_162: 89059529
+      furniture_livingroom_163: -1875425657
+      furniture_livingroom_164: -558482283
+      furniture_livingroom_165: 870121478
+      furniture_livingroom_166: 1588341297
+      furniture_livingroom_167: 1418013432
+      furniture_livingroom_168: -1352485604
+      furniture_livingroom_169: -1923265069
+      furniture_livingroom_17: 1911279193
+      furniture_livingroom_170: 1194189862
+      furniture_livingroom_171: 454467302
+      furniture_livingroom_172: 207582954
+      furniture_livingroom_173: -996161591
+      furniture_livingroom_174: -2063896049
+      furniture_livingroom_175: 1342418171
+      furniture_livingroom_176: -1824810426
+      furniture_livingroom_177: 1218182979
+      furniture_livingroom_178: -1087575296
+      furniture_livingroom_179: 469227720
+      furniture_livingroom_18: -10674524
+      furniture_livingroom_180: 511106528
+      furniture_livingroom_181: 1760715545
+      furniture_livingroom_182: -144672371
+      furniture_livingroom_183: -1666779036
+      furniture_livingroom_184: -1686586607
+      furniture_livingroom_185: 306187070
+      furniture_livingroom_186: 1065664912
+      furniture_livingroom_187: -2133222264
+      furniture_livingroom_188: -856625318
+      furniture_livingroom_189: -490161158
+      furniture_livingroom_19: -1978591055
+      furniture_livingroom_190: -1458501985
+      furniture_livingroom_191: -1150830526
+      furniture_livingroom_192: -1262414811
+      furniture_livingroom_193: -1687089568
+      furniture_livingroom_194: 1129391697
+      furniture_livingroom_195: -689228654
+      furniture_livingroom_196: 1257506243
+      furniture_livingroom_197: 295233455
+      furniture_livingroom_198: 2032741977
+      furniture_livingroom_199: 1526718397
+      furniture_livingroom_2: 333451557
+      furniture_livingroom_20: 875357570
+      furniture_livingroom_200: 657971939
+      furniture_livingroom_201: 511610450
+      furniture_livingroom_202: -1936609232
+      furniture_livingroom_203: -1125041728
+      furniture_livingroom_204: 729410715
+      furniture_livingroom_205: 140147192
+      furniture_livingroom_206: -2022150547
+      furniture_livingroom_207: -987717628
+      furniture_livingroom_208: -1237176671
+      furniture_livingroom_209: 666452246
+      furniture_livingroom_21: 546142138
+      furniture_livingroom_210: 69563465
+      furniture_livingroom_211: -1759695230
+      furniture_livingroom_212: 544447492
+      furniture_livingroom_213: 1445158245
+      furniture_livingroom_214: 1861405818
+      furniture_livingroom_215: -2093030821
+      furniture_livingroom_216: 1179060871
+      furniture_livingroom_217: -139794125
+      furniture_livingroom_218: -1789511248
+      furniture_livingroom_219: 548051343
+      furniture_livingroom_22: 133622294
+      furniture_livingroom_220: -2075738232
+      furniture_livingroom_221: 2118692558
+      furniture_livingroom_222: 1329318785
+      furniture_livingroom_223: 1305105062
+      furniture_livingroom_224: 937623989
+      furniture_livingroom_225: 1264036336
+      furniture_livingroom_226: 32621540
+      furniture_livingroom_227: -608586942
+      furniture_livingroom_228: -2096895062
+      furniture_livingroom_229: -8728812
+      furniture_livingroom_23: -530057514
+      furniture_livingroom_230: 401662491
+      furniture_livingroom_231: -737967594
+      furniture_livingroom_232: 1951002662
+      furniture_livingroom_233: -1196801034
+      furniture_livingroom_234: 1445886413
+      furniture_livingroom_235: 1084049338
+      furniture_livingroom_236: 843658873
+      furniture_livingroom_237: -1736765458
+      furniture_livingroom_238: 2086828880
+      furniture_livingroom_239: 879139057
+      furniture_livingroom_24: 1480358031
+      furniture_livingroom_240: -186568074
+      furniture_livingroom_25: 2010070235
+      furniture_livingroom_26: 2117988666
+      furniture_livingroom_27: 1275690865
+      furniture_livingroom_28: 830217780
+      furniture_livingroom_29: -524857197
+      furniture_livingroom_3: -1971756551
+      furniture_livingroom_30: 663415670
+      furniture_livingroom_31: 692774617
+      furniture_livingroom_32: -313378924
+      furniture_livingroom_33: 1553893350
+      furniture_livingroom_34: 398258229
+      furniture_livingroom_35: -2098693200
+      furniture_livingroom_36: 1367631210
+      furniture_livingroom_37: -447361057
+      furniture_livingroom_38: -445073710
+      furniture_livingroom_39: -1703069780
+      furniture_livingroom_4: -1458082359
+      furniture_livingroom_40: -1894601630
+      furniture_livingroom_41: 1119194312
+      furniture_livingroom_42: -1561758748
+      furniture_livingroom_43: 2127942212
+      furniture_livingroom_44: -2029544925
+      furniture_livingroom_45: 923777648
+      furniture_livingroom_46: -723150265
+      furniture_livingroom_47: 1001950907
+      furniture_livingroom_48: -763644630
+      furniture_livingroom_49: 153525957
+      furniture_livingroom_5: -423621184
+      furniture_livingroom_50: 2055417681
+      furniture_livingroom_51: 1861296638
+      furniture_livingroom_52: -816054401
+      furniture_livingroom_53: 1312700905
+      furniture_livingroom_54: 53990146
+      furniture_livingroom_55: 568721716
+      furniture_livingroom_56: -1579762696
+      furniture_livingroom_57: 1811341556
+      furniture_livingroom_58: 1840503704
+      furniture_livingroom_59: -1450862388
+      furniture_livingroom_6: 576899138
+      furniture_livingroom_60: 390721084
+      furniture_livingroom_61: 1911782048
+      furniture_livingroom_62: 1394165969
+      furniture_livingroom_63: -1527682537
+      furniture_livingroom_64: -1432349643
+      furniture_livingroom_65: 1928238108
+      furniture_livingroom_66: -1054017921
+      furniture_livingroom_67: 1122066974
+      furniture_livingroom_68: 1285010842
+      furniture_livingroom_69: 688724979
+      furniture_livingroom_7: -1207879405
+      furniture_livingroom_70: 1654006414
+      furniture_livingroom_71: 1423952830
+      furniture_livingroom_72: 245763050
+      furniture_livingroom_73: 604076223
+      furniture_livingroom_74: 882278166
+      furniture_livingroom_75: -710708918
+      furniture_livingroom_76: -1754620866
+      furniture_livingroom_77: -449733526
+      furniture_livingroom_78: -1509978639
+      furniture_livingroom_79: -1365495086
+      furniture_livingroom_8: 1804069345
+      furniture_livingroom_80: -1251267287
+      furniture_livingroom_81: 1399716131
+      furniture_livingroom_82: -839384623
+      furniture_livingroom_83: -1847199591
+      furniture_livingroom_84: 73749079
+      furniture_livingroom_85: -1815083359
+      furniture_livingroom_86: 990026471
+      furniture_livingroom_87: -741008304
+      furniture_livingroom_88: -869713656
+      furniture_livingroom_89: 499877214
+      furniture_livingroom_9: -1704118994
+      furniture_livingroom_90: -712326161
+      furniture_livingroom_91: -1938115048
+      furniture_livingroom_92: -952862179
+      furniture_livingroom_93: -36595725
+      furniture_livingroom_94: 312175108
+      furniture_livingroom_95: -1877649654
+      furniture_livingroom_96: 545227385
+      furniture_livingroom_97: -1856636382
+      furniture_livingroom_98: 860052499
+      furniture_livingroom_99: -216708589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
