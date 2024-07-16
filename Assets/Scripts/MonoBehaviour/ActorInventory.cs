@@ -6,6 +6,11 @@ public class ActorInventory : MonoBehaviour
 {
     private IList<Item> inventory = new List<Item>();
 
+    void Start()
+    {
+        ItemsUniverse.loadFromFile("ItemList");
+    }
+
     public int Count
     {
         get {return inventory.Count;}

@@ -2,13 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace Diego
 {
+
+    public class SpriteWrapper {
+        // public Sprite sprite;
+        public SpriteWrapper(string _path) {
+            // sprite = _sprite;
+        }
+
+    }
     public struct Item : ISelectable, IEquatable<Item>
     {
         private const string ITEM_SPRITE_PATHS = "ItemSprites";
         private int id;
+        private string spritePath;
         private Sprite sprite;
         private string remarks;
         private string name;
@@ -24,17 +34,18 @@ namespace Diego
             return new Item()
             {
                 id = _id,
-                sprite = Resources.Load<Sprite>(Path.Combine(ITEM_SPRITE_PATHS, name)),
+                spritePath = Path.Combine(ITEM_SPRITE_PATHS, name),
                 name = _name,
                 remarks = _remarks,
                 quality = _quality
             };
         }
 
-        public Item(int id, Sprite _sprite, string _name="", string _remarks="", ItemQuality _quality=ItemQuality.Useless)
+        public Item(int id, string _sprite, string _name="", string _remarks="", ItemQuality _quality=ItemQuality.Useless)
         {
             this.id = id;
-            this.sprite = _sprite;
+            this.spritePath = _sprite;
+            sprite = null;
             name = _name;
             remarks = _remarks;
             quality = _quality;
@@ -42,14 +53,14 @@ namespace Diego
         public bool CanBeCollected => true;
         public bool CanBeInteractedWith => false;
         public int ID => id;
-        public Sprite Sprite => sprite;
+        public Sprite Sprite => sprite ? sprite : sprite = Resources.Load<Sprite>(spritePath);
         public string Name => name;
         public string Remarks => remarks;
         public ItemQuality Quality => quality;
         public static Item Empty => new Item(-1, null, String.Empty, String.Empty);
         public bool Equals(Item other)
         {
-            return id == other.id && sprite == other.sprite;
+            return id == other.id && spritePath == other.spritePath;
         }
 
         public int GetID(){
