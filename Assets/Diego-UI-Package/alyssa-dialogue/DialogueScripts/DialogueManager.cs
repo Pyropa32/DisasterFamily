@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
+using System.Threading;
 
 
 // Next up:
@@ -12,14 +13,22 @@ public class DialogueManager {
     // load dialogue from XML into dict
     private static Dictionary<string, string[]> DialogueDict = new Dictionary<string, string[]>();
 
-    public static void loadFromFile(string path) {
-        if (DialogueDict.ContainsKey(path)) {
+    public static void loadFromFile(string path)
+    {
+        if (DialogueDict.ContainsKey(path))
+        {
             return;
         }
-
         TextAsset textAsset = (TextAsset)Resources.Load(path);
+        string asset = textAsset.text;
+        Thread IOthread = new Thread(() => loadFromFileThread(path, asset));
+        IOthread.Start();
+    }
+
+    // thread for performance 
+    public static void loadFromFileThread(string path, string textAsset) {
         XmlDocument xmldoc = new XmlDocument();
-        xmldoc.LoadXml(textAsset.text);
+        xmldoc.LoadXml(textAsset);
         XmlNodeList dialogue = xmldoc.GetElementsByTagName("dialogue");
 
         //should only be 1 dialogue tag in XML
