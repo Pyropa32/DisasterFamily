@@ -7,7 +7,6 @@ using Diego;
 using Unity.VisualScripting;
 public class WorldItem : MonoBehaviour
 {
-    private string weight = "";
     private bool collected = false;
     private SimpleActor SimpleActor;
 
@@ -89,10 +88,6 @@ public class WorldItem : MonoBehaviour
         // chad GBD
         if (Input.GetMouseButtonDown(0))
         {
-            if (name == "batteries")
-            {
-                int a = 0;
-            }
             // Convert mouse position to world space
 
             //think about alternative
@@ -101,11 +96,6 @@ public class WorldItem : MonoBehaviour
             {
                 Debug.LogError("Sprite " + name + " doesn't have a box collider!");
                 return false;
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                int a = 4;
             }
 
             Bounds bounds = collider.bounds;
