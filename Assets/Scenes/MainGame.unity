@@ -1056,6 +1056,7 @@ GameObject:
   - component: {fileID: 121267354}
   - component: {fileID: 121267356}
   - component: {fileID: 121267355}
+  - component: {fileID: 121267357}
   m_Layer: 0
   m_Name: rubber_duck
   m_TagString: DoNotSort
@@ -1178,6 +1179,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.46852946
+--- !u!95 &121267357
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121267350}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &123149746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1296,7 @@ GameObject:
   - component: {fileID: 145114753}
   - component: {fileID: 145114755}
   - component: {fileID: 145114754}
+  - component: {fileID: 145114756}
   m_Layer: 0
   m_Name: flare
   m_TagString: DoNotSort
@@ -1396,6 +1419,27 @@ CircleCollider2D:
   m_Offset: {x: -0.00000023841858, y: 0}
   serializedVersion: 2
   m_Radius: 0.38750005
+--- !u!95 &145114756
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145114749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &150851520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1452,7 @@ GameObject:
   - component: {fileID: 150851524}
   - component: {fileID: 150851526}
   - component: {fileID: 150851525}
+  - component: {fileID: 150851527}
   m_Layer: 0
   m_Name: tuna
   m_TagString: DoNotSort
@@ -1530,6 +1575,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.000000059604645}
   serializedVersion: 2
   m_Radius: 0.52
+--- !u!95 &150851527
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150851520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &155417564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1692,7 @@ GameObject:
   - component: {fileID: 158872463}
   - component: {fileID: 158872465}
   - component: {fileID: 158872464}
+  - component: {fileID: 158872466}
   m_Layer: 0
   m_Name: can opener
   m_TagString: DoNotSort
@@ -1748,6 +1815,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.3171428
+--- !u!95 &158872466
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158872459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &169419526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1932,7 @@ GameObject:
   - component: {fileID: 205860139}
   - component: {fileID: 205860141}
   - component: {fileID: 205860140}
+  - component: {fileID: 205860142}
   m_Layer: 0
   m_Name: radio
   m_TagString: DoNotSort
@@ -1966,6 +2055,27 @@ CircleCollider2D:
   m_Offset: {x: 0.0000009536743, y: -0.00000011920929}
   serializedVersion: 2
   m_Radius: 0.36
+--- !u!95 &205860142
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205860135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &264630073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2238,7 @@ GameObject:
   - component: {fileID: 283366849}
   - component: {fileID: 283366851}
   - component: {fileID: 283366850}
+  - component: {fileID: 283366852}
   m_Layer: 0
   m_Name: whiskey
   m_TagString: DoNotSort
@@ -2250,6 +2361,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0000019073486}
   serializedVersion: 2
   m_Radius: 0.7116666
+--- !u!95 &283366852
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283366845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &283544066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,6 +3836,7 @@ GameObject:
   - component: {fileID: 478155841}
   - component: {fileID: 478155843}
   - component: {fileID: 478155842}
+  - component: {fileID: 478155844}
   m_Layer: 0
   m_Name: sleeping_bag
   m_TagString: DoNotSort
@@ -3826,6 +3959,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.53999996
+--- !u!95 &478155844
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478155837}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &489615376
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4584,7 @@ GameObject:
   - component: {fileID: 586988642}
   - component: {fileID: 586988644}
   - component: {fileID: 586988643}
+  - component: {fileID: 586988645}
   m_Layer: 0
   m_Name: plank
   m_TagString: DoNotSort
@@ -4552,6 +4707,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.48562506
+--- !u!95 &586988645
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586988638}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &599584219
 GameObject:
   m_ObjectHideFlags: 0
@@ -4865,6 +5041,7 @@ GameObject:
   - component: {fileID: 708590692}
   - component: {fileID: 708590694}
   - component: {fileID: 708590693}
+  - component: {fileID: 708590695}
   m_Layer: 0
   m_Name: torch
   m_TagString: DoNotSort
@@ -4987,6 +5164,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.60500014
+--- !u!95 &708590695
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708590688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &723824842
 GameObject:
   m_ObjectHideFlags: 0
@@ -6295,6 +6493,7 @@ GameObject:
   - component: {fileID: 907310707}
   - component: {fileID: 907310709}
   - component: {fileID: 907310708}
+  - component: {fileID: 907310710}
   m_Layer: 0
   m_Name: wrench
   m_TagString: DoNotSort
@@ -6417,6 +6616,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.8299998
+--- !u!95 &907310710
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907310703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &918526255
 GameObject:
   m_ObjectHideFlags: 0
@@ -6597,6 +6817,7 @@ GameObject:
   - component: {fileID: 931577547}
   - component: {fileID: 931577549}
   - component: {fileID: 931577548}
+  - component: {fileID: 931577550}
   m_Layer: 0
   m_Name: map
   m_TagString: DoNotSort
@@ -6719,6 +6940,27 @@ CircleCollider2D:
   m_Offset: {x: -0.00000023841858, y: 0}
   serializedVersion: 2
   m_Radius: 0.5774999
+--- !u!95 &931577550
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931577543}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &934956584
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,6 +6973,7 @@ GameObject:
   - component: {fileID: 934956588}
   - component: {fileID: 934956590}
   - component: {fileID: 934956589}
+  - component: {fileID: 934956591}
   m_Layer: 0
   m_Name: paperwork
   m_TagString: Untagged
@@ -6853,6 +7096,27 @@ CircleCollider2D:
   m_Offset: {x: 0.0000009536743, y: 0}
   serializedVersion: 2
   m_Radius: 0.4175
+--- !u!95 &934956591
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934956584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &948190330
 GameObject:
   m_ObjectHideFlags: 0
@@ -7500,6 +7764,7 @@ GameObject:
   - component: {fileID: 1053805543}
   - component: {fileID: 1053805545}
   - component: {fileID: 1053805544}
+  - component: {fileID: 1053805546}
   m_Layer: 0
   m_Name: burnout_revenge
   m_TagString: DoNotSort
@@ -7622,6 +7887,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0000009536743}
   serializedVersion: 2
   m_Radius: 0.5142858
+--- !u!95 &1053805546
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053805539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1078194006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,6 +8050,7 @@ GameObject:
   - component: {fileID: 1115440546}
   - component: {fileID: 1115440548}
   - component: {fileID: 1115440547}
+  - component: {fileID: 1115440549}
   m_Layer: 0
   m_Name: crowbar
   m_TagString: DoNotSort
@@ -7886,6 +8173,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5107143
+--- !u!95 &1115440549
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115440542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1118208795
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,6 +8290,7 @@ GameObject:
   - component: {fileID: 1144901180}
   - component: {fileID: 1144901182}
   - component: {fileID: 1144901181}
+  - component: {fileID: 1144901183}
   m_Layer: 0
   m_Name: bear
   m_TagString: DoNotSort
@@ -8104,6 +8413,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.00000014901161}
   serializedVersion: 2
   m_Radius: 0.715
+--- !u!95 &1144901183
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144901176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1151723198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8368,6 +8698,7 @@ GameObject:
   - component: {fileID: 1164306765}
   - component: {fileID: 1164306767}
   - component: {fileID: 1164306766}
+  - component: {fileID: 1164306768}
   m_Layer: 0
   m_Name: first_aid_kit
   m_TagString: DoNotSort
@@ -8490,6 +8821,27 @@ CircleCollider2D:
   m_Offset: {x: -0.0000009536743, y: 0}
   serializedVersion: 2
   m_Radius: 0.34
+--- !u!95 &1164306768
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164306761}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1179226632
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,6 +9022,7 @@ GameObject:
   - component: {fileID: 1184828178}
   - component: {fileID: 1184828180}
   - component: {fileID: 1184828179}
+  - component: {fileID: 1184828181}
   m_Layer: 0
   m_Name: keys
   m_TagString: DoNotSort
@@ -8792,6 +9145,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.51
+--- !u!95 &1184828181
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184828174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1188305277
 GameObject:
   m_ObjectHideFlags: 0
@@ -10242,6 +10616,7 @@ GameObject:
   - component: {fileID: 1399049969}
   - component: {fileID: 1399049971}
   - component: {fileID: 1399049970}
+  - component: {fileID: 1399049972}
   m_Layer: 0
   m_Name: manifesto
   m_TagString: DoNotSort
@@ -10364,6 +10739,27 @@ CircleCollider2D:
   m_Offset: {x: 0.00000047683716, y: 0}
   serializedVersion: 2
   m_Radius: 0.38285708
+--- !u!95 &1399049972
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399049965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1400397627
 GameObject:
   m_ObjectHideFlags: 0
@@ -10712,6 +11108,7 @@ GameObject:
   - component: {fileID: 1488216811}
   - component: {fileID: 1488216813}
   - component: {fileID: 1488216812}
+  - component: {fileID: 1488216814}
   m_Layer: 0
   m_Name: gauze
   m_TagString: DoNotSort
@@ -10834,6 +11231,27 @@ CircleCollider2D:
   m_Offset: {x: 0.0000019073486, y: -0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!95 &1488216814
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488216807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1513164457
 GameObject:
   m_ObjectHideFlags: 0
@@ -11686,6 +12104,7 @@ GameObject:
   - component: {fileID: 1597749460}
   - component: {fileID: 1597749462}
   - component: {fileID: 1597749461}
+  - component: {fileID: 1597749463}
   m_Layer: 0
   m_Name: fire_extinguisher
   m_TagString: DoNotSort
@@ -11808,6 +12227,27 @@ CircleCollider2D:
   m_Offset: {x: -0.0000009536743, y: 0}
   serializedVersion: 2
   m_Radius: 0.48999998
+--- !u!95 &1597749463
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597749456}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1607552255
 GameObject:
   m_ObjectHideFlags: 0
@@ -12160,6 +12600,7 @@ GameObject:
   - component: {fileID: 1636764080}
   - component: {fileID: 1636764081}
   - component: {fileID: 1636764082}
+  - component: {fileID: 1636764083}
   m_Layer: 0
   m_Name: pillow
   m_TagString: DoNotSort
@@ -12282,6 +12723,27 @@ CircleCollider2D:
   m_Offset: {x: 0.0000009536743, y: 0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.8066667
+--- !u!95 &1636764083
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636764076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1644240991
 GameObject:
   m_ObjectHideFlags: 0
@@ -13525,6 +13987,7 @@ GameObject:
   - component: {fileID: 1768269231}
   - component: {fileID: 1768269233}
   - component: {fileID: 1768269232}
+  - component: {fileID: 1768269234}
   m_Layer: 0
   m_Name: fan
   m_TagString: DoNotSort
@@ -13647,6 +14110,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000011920929}
   serializedVersion: 2
   m_Radius: 0.625
+--- !u!95 &1768269234
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768269227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1772451387
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,6 +14410,7 @@ GameObject:
   - component: {fileID: 1899639174}
   - component: {fileID: 1899639176}
   - component: {fileID: 1899639175}
+  - component: {fileID: 1899639177}
   m_Layer: 0
   m_Name: steak
   m_TagString: DoNotSort
@@ -14048,6 +14533,27 @@ CircleCollider2D:
   m_Offset: {x: 0.0000009536743, y: 0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.32944447
+--- !u!95 &1899639177
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899639170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1914904491
 GameObject:
   m_ObjectHideFlags: 0
@@ -14060,6 +14566,7 @@ GameObject:
   - component: {fileID: 1914904495}
   - component: {fileID: 1914904497}
   - component: {fileID: 1914904496}
+  - component: {fileID: 1914904498}
   m_Layer: 0
   m_Name: medicine
   m_TagString: DoNotSort
@@ -14182,6 +14689,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0000019073486}
   serializedVersion: 2
   m_Radius: 0.5053333
+--- !u!95 &1914904498
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914904491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1944331111
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,6 +15325,7 @@ GameObject:
   - component: {fileID: 2041651125}
   - component: {fileID: 2041651127}
   - component: {fileID: 2041651126}
+  - component: {fileID: 2041651128}
   m_Layer: 0
   m_Name: cash
   m_TagString: DoNotSort
@@ -14919,6 +15448,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!95 &2041651128
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041651121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2051020414
 GameObject:
   m_ObjectHideFlags: 0
@@ -18884,6 +19434,7 @@ GameObject:
   - component: {fileID: 1808467679108846169}
   - component: {fileID: 6287881557338809348}
   - component: {fileID: 6287881557338809349}
+  - component: {fileID: 6287881557338809350}
   m_Layer: 0
   m_Name: batteries
   m_TagString: DoNotSort
@@ -20223,6 +20774,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10019
+--- !u!95 &6287881557338809350
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3891595526866810942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b470f6731cbb7be4984d9655d54819f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &6344244098848278587
 BoxCollider2D:
   m_ObjectHideFlags: 0
