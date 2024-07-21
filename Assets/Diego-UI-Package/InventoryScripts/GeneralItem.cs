@@ -17,12 +17,15 @@ namespace Diego
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
             action = this.Action;
         }
+        public void Kill() {
+            Destroy(gameObject);
+        }
         public void Action(Item item) {
             Debug.Log("Clicked");
             if (item.Equals(Item.Empty)) {
                 bool success = InventoryManager.addInInventory(id);
                 if (success) {
-                    Destroy(gameObject);
+                    transform.GetComponent<Animator>().SetTrigger("click");
                 }
                 else {
                     //display message saying inventory is full
