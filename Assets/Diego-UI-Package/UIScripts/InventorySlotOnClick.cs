@@ -11,8 +11,10 @@ namespace Diego
         public int index = -1;
         private Vector3 origin;
 
-        void OnMouseDown()
-        {
+        void OnMouseDown() {
+            if (Timer.isPaused()) {
+                return;
+            }
             // if onClick is null, don't invoke.
             origin = transform.position;
             if (index != -1) {
@@ -35,7 +37,7 @@ namespace Diego
         public void Apply(int id)
         {
             Transform hit = CameraToScreenspaceConverter.GetFromScreenSpace(Input.mousePosition);
-            if (hit != null && hit.GetComponent<IInteractable>() != null && !Timer.isPaused())
+            if (hit != null && hit.GetComponent<IInteractable>() != null)
             {
                 ItemsUniverse.TryGetValue(id, out Item i);
                 hit.GetComponent<IInteractable>()?.GetInRangeAndDo(i, hit.transform.position);
