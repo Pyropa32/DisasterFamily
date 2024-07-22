@@ -14,6 +14,11 @@ namespace Diego
         void Start() {
             IM = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
             childrenSlots = transform.GetComponentsInChildren<InventorySlotOnClick>();
+            InventoryManager.OnSlotAnimationRequested += TriggerSlotAnimation;
+        }
+
+        void OnDestroy() {
+            InventoryManager.OnSlotAnimationRequested -= TriggerSlotAnimation;
         }
 
         void Update() {
@@ -83,6 +88,14 @@ namespace Diego
             if (!IM.invIds[inventoryInd].Equals(Item.Empty))
             {
                 onMouse = inventoryInd;
+            }
+        }
+
+        private void TriggerSlotAnimation(int slotIndex)
+        {
+            if (slotIndex >= 0 && slotIndex < childrenSlots.Length) {
+                childrenSlots[slotIndex].ItemAnimation();
+                Debug.Log("Item should animate");
             }
         }
     }
