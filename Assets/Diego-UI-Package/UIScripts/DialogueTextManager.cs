@@ -5,7 +5,7 @@ using TMPro;
 
 public class DialogueTextManager : MonoBehaviour {
     private static DialogueTextManager instance = null;
-    private Queue<string> q;
+    private Queue<Page> q;
     private TextMeshPro tmp;
 
     private bool clicked = false;
@@ -27,7 +27,7 @@ public class DialogueTextManager : MonoBehaviour {
             return;
         }
         instance = this;
-        q = new Queue<string>();
+        q = new Queue<Page>();
         tmp = instance.transform.GetComponent<TextMeshPro>();
     }
 
@@ -35,8 +35,11 @@ public class DialogueTextManager : MonoBehaviour {
         if (!writing && tmp.text == "" && q.Count > 0) {
             transform.parent.GetComponent<SpriteRenderer>().enabled = true;
             disableOnEmpty.SetActive(true);
-            writingText = q.Dequeue();
+            Page display = q.Dequeue();
+            writingText = display.dialogue;
             writing = true;
+            Timer.stopTimer();
+            disableOnEmpty.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = DialogueManager.getSprite(display.avatar);
         }
         if (writing) {
             timer += Time.deltaTime;
@@ -58,6 +61,7 @@ public class DialogueTextManager : MonoBehaviour {
             if (q.Count == 0) {
                 transform.parent.GetComponent<SpriteRenderer>().enabled = false;
                 disableOnEmpty.SetActive(false);
+                Timer.startTimer();
             }
         }
         if (clicked) {
@@ -70,12 +74,13 @@ public class DialogueTextManager : MonoBehaviour {
         clicked = true;
     }
 
-    public static void EnqueueText(string text) {
+    public static void EnqueueText(Page text)
+    {
         instance.q.Enqueue(text);
     }
-    public static void EnqueueTexts(string[] text) {
-        foreach (string s in text) {
-            EnqueueText(s);
+    public static void EnqueueTexts(Page[] text) {
+        foreach (Page p in text) {
+            EnqueueText(p);
         }
     }
     public static void Clear() {
@@ -83,6 +88,7 @@ public class DialogueTextManager : MonoBehaviour {
         instance.writingText = "";
         instance.currentText = "";
         instance.writing = false;
+        Timer.startTimer();
         instance.timer = 0f;
         instance.tmp.text = "";
     }

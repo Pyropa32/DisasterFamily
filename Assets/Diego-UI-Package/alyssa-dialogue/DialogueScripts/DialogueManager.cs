@@ -8,10 +8,20 @@ using System.Threading;
 // Next up:
 // Include Actor data
 // Actor Expression Data as well
+public class Page
+{
+    public string dialogue;
+    public string avatar;
+    public Page(string dialogue, string avatar){
+        this.dialogue = dialogue;
+        this.avatar = avatar;
+    }
+}
 
 public class DialogueManager {
     // load dialogue from XML into dict
-    private static Dictionary<string, string[]> DialogueDict = new Dictionary<string, string[]>();
+    private static Dictionary<string, Page[]> DialogueDict = new Dictionary<string, Page[]>();
+    private static Dictionary<string, Sprite> SpriteDict = new Dictionary<string, Sprite>();
 
     public static void loadFromFile(string path)
     {
@@ -23,6 +33,18 @@ public class DialogueManager {
         string asset = textAsset.text;
         Thread IOthread = new Thread(() => loadFromFileThread(path, asset));
         IOthread.Start();
+    }
+
+    public static Sprite getSprite(string path)
+    {
+        Sprite returnVal;
+        if (SpriteDict.ContainsKey(path)) {
+            SpriteDict.TryGetValue(path, out returnVal);
+            return returnVal;
+        }
+        returnVal = Resources.Load<Sprite>(path);
+        SpriteDict.Add(path, returnVal);
+        return returnVal;
     }
 
     // thread for performance 
@@ -39,16 +61,19 @@ public class DialogueManager {
         // follows XML format : dialogue > character name > interaction id > page
         XmlNodeList characters = dialogue[0].ChildNodes;
         for (int i = 0; i < characters.Count; i++) {
+            if (characters[i].Attributes.Count != 2)
+            {
+                Debug.LogError("We only want two attribute tag per character -- the name and the sprite!");
+                continue;
+            }
+            string name = characters[i].Attributes[0].Value;
+            string defaultAvatar = "AvatarSprites/" + name + "/" + characters[i].Attributes[1].Value;
+
             XmlNodeList interactions = characters[i].ChildNodes;
             for (int j = 0; j < interactions.Count; j++) {
                 //changes dict key to be specific per character interaction
                 string key = path;
-                if (characters[i].Attributes.Count != 1 || characters[i].Attributes[0].Name != "name") {
-                    Debug.LogError("We only want one attribute tag per character -- the name!");
-                    continue;
-                }
-
-                key += "." + characters[i].Attributes[0].Value;
+                key += "." + name;
 
                 if (interactions[j].Attributes.Count != 1 || interactions[j].Attributes[0].Name != "id") {
                     Debug.LogError("We only want one attribute tag per interactions -- the id!");
@@ -58,9 +83,15 @@ public class DialogueManager {
                 key += "." + interactions[j].Attributes[0].Value;
 
                 XmlNodeList pages = interactions[j].ChildNodes;
-                string[] sequence = new string[pages.Count];
+                Page[] sequence = new Page[pages.Count];
                 for (int k = 0; k < pages.Count; k++) {
-                    sequence[k] = pages[k].InnerText;
+                    Page currPage = new Page(pages[k].InnerText, defaultAvatar);
+                    if (pages[k].Attributes.Count == 1)
+                    {
+                        string currAvatar = "AvatarSprites/" + name + "/" + pages[k].Attributes[0].Value;
+                        currPage.avatar = currAvatar;
+                    }
+                    sequence[k] = currPage;
                 }
                 DialogueDict.Add(key, sequence);
             }
@@ -79,5 +110,3 @@ public class DialogueManager {
 
 }
 
-// to use : call textToLoad("FileName.characterName.interactionID")
-// need to know which character & which interaction to use >> see XML

@@ -40,13 +40,13 @@ namespace Diego
                 childrenSlots[onMouse].Apply(IM.invIds[onMouse].ID);
                 onMouse = -1;
             }
-            else if (Input.GetMouseButtonUp(0)) {
+            else if (Input.GetMouseButtonDown(0)) {
                 Vector2 worldSpace = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
                 bool inRange = Mathf.Abs(worldSpace.x) <= Camera.main.orthographicSize * 8 / 5;
                 inRange = inRange && Mathf.Abs(worldSpace.y) <= Camera.main.orthographicSize;
                 if (inRange) {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
+                    if (hit != null && hit.GetComponent<IInteractable>() != null && !Timer.isPaused()) {
                         hit.GetComponent<IInteractable>().GetInRangeAndDo(Item.Empty, hit.position);
                     }
                 }

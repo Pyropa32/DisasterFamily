@@ -84,7 +84,7 @@ public static class ItemsUniverse
             "gauze",
             "Gauze",
             "Any wounds that come flying at you are stopped by a thick gauze wrapping.",
-            ItemQuality.Useless
+            ItemQuality.Required
         );
         AddItem(
             10011,

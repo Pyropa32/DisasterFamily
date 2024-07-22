@@ -1,36 +1,14 @@
 ﻿<dialogue>
-	<character name="mom">
+	<character name="Depparin" default="DepparinBase">
 		<interaction id="0">
-			<page>Hello.</page>
-			<page>I am the mother.</page>
-			<page>Goodbye.</page>
+			<page avatar="DepparinTired">My inventory is full.</page>
 		</interaction>
 		<interaction id="1">
-			<page>What do you need?</page>
+			<page>The drop off box is full.</page>
 		</interaction>
 		<interaction id="2">
-			<page>Can't talk right now.</page>
-		</interaction>
-	</character>
-	<character name="dad">
-		<interaction id="0">
-			<page>Hello.</page>
-			<page>I am the father.</page>
-			<page>Goodbye.</page>
-		</interaction>
-		<interaction id="1">
-			<page>What do you need?</page>
-		</interaction>
-		<interaction id="2">
-			<page>Ask your mom.</page>
-		</interaction>
-	</character>
-	<character name="me">
-		<interaction id="0">
-			<page>My inventory is full.</page>
-		</interaction>
-		<interaction id="1">
-			<page>The drop off box is full!</page>
+			<page>Oh no! An earthquake!</page>
+			<page>I should grab as many supplies as possible...</page>
 		</interaction>
 	</character>
 </dialogue>

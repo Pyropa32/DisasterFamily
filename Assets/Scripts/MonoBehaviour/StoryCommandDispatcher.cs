@@ -33,7 +33,6 @@ public class StoryCommandDispatcher : MonoBehaviour
     }
     private void _Receive(IStoryCommand command, bool useFlags)
     {
-
         if (useFlags)
         {
             if (command.ExecutionFlags.HasFlag(StoryCommandExecutionFlags.DiscardConcurrent))

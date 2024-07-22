@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InteractGame {
     public static Transform GetFromScreenSpace(Vector2 pos) {
+        // no interaction if dialogue open (timer is paused)
+        if (Timer.isPaused()) {
+            return null;
+        }
         Vector3 gameSpace = new Vector3(pos.x / Screen.width - 0.5f, pos.y / Screen.height - 0.5f, 0);
         gameSpace.x *= 16;
         gameSpace.y *= 10;

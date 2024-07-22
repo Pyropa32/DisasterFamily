@@ -6,23 +6,30 @@ using TMPro;
 
 public class SceneChanger : MonoBehaviour
 {
-    Timer timer;
     public TextMeshPro tmp;
+    private bool gameStart = false;
 
     void Start()
     {
-        timer = new Timer(60);
-        timer.StartTimer();
+        Timer.restartTimer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer.CountdownTimer();
-        tmp.text = ((int)timer.GetTime()).ToString();
-        if (timer.GetTime() <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Timer.countdownTimer();
+        if (gameStart) {
+            tmp.text = ((int)Timer.getTime()).ToString();
+        }
+        if (Timer.getTime() <= 0) {
+            if (gameStart) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                return;
+            }
+            tmp.text = "60";
+            gameStart = true;
+            Timer.restartTimer();
+            DialogueManager.textToLoad("Sample.Depparin.2");
         }
     }
 }
