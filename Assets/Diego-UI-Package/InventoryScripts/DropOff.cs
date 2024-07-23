@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Diego;
+using UnityEngine;
 
 namespace Diego {
     public class DropOff : UnityEngine.MonoBehaviour, IInteractable {
@@ -41,6 +42,7 @@ namespace Diego {
             }
         }
         public int ID => 0;
+        public float Range => 1.5f;
         public UnityEngine.Sprite Sprite => mySprite;
         public Action<Item> OnInteract {
             get {

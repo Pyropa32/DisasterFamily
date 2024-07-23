@@ -11,7 +11,7 @@ public static class ItemsUniverse
     // runs at the start of the program
     static ItemsUniverse()
     {
-        //loadFromFile("ItemList");
+        loadFromFile("ItemList");
         //Debug.LogError("ItemList size is " + _data.Count);
         /*AddItem(
             10000,

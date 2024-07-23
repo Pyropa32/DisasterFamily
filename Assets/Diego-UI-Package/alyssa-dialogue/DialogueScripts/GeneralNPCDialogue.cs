@@ -53,6 +53,7 @@ namespace Diego {
             }
         }
         public int ID => ind;
+        public float Range => 1f;
         public Sprite Sprite => GetComponent<SpriteRenderer>()?.sprite;
         public Action<Item> OnInteract {
             get {

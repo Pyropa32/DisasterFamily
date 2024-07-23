@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
     public RoomGraph World { get; protected set; }
 
     private MoveDataChain currentMovementQueue;
+    private IRangeDependent currentActionQueue = null;
     void Start()
     {
         World = GetComponentInParent<RoomGraph>();
@@ -44,8 +45,10 @@ public class Character : MonoBehaviour
     /// Moves the character to each finish point one-by-one.
     /// </summary>
     /// <param name="points">Can be an Array, List, whatever the hell you want.</param>
-    public void MoveAlongPath(IEnumerable<Vector2> points)
-    {
+    public void MoveAlongPath(IEnumerable<Vector2> points, IRangeDependent rangeDependent = null) {
+        currentActionQueue?.cancel();
+        currentActionQueue = rangeDependent;
+        currentActionQueue?.start();
         var startPos = transform.position;
         currentMovementQueue = new MoveDataChain(startPos, points.ToArray(), walkSpeed);
     }
@@ -59,10 +62,14 @@ public class Character : MonoBehaviour
         // movement chain context
         // wraps a list of movement commands
         // 
-        if (currentMovementQueue != null && !currentMovementQueue.IsFinished)
-        {
+        if (currentMovementQueue != null && !currentMovementQueue.IsFinished) {
             transform.position = currentMovementQueue.Value;
             currentMovementQueue.Tick();
+            if (currentActionQueue != null && currentActionQueue.isInRange(transform.position)) {
+                currentActionQueue.finish();
+                currentActionQueue = null;
+                currentMovementQueue = null;
+            }
         }
     }
 }

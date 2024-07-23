@@ -24,7 +24,6 @@ public class PlayerAdapter : MonoBehaviour
     void Update()
     {
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
-        // Maybe this works?
         Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
         bool inRange = Mathf.Abs(worldMousePosition.x) <= Camera.main.orthographicSize * 8 / 5;
         inRange = inRange && Mathf.Abs(worldMousePosition.y) <= Camera.main.orthographicSize;
@@ -32,9 +31,7 @@ public class PlayerAdapter : MonoBehaviour
         Camera UICamera = GameObject.FindWithTag("UIInclude").GetComponent<Camera>();
         Collider2D hit = Physics2D.Raycast(UICamera.ScreenToWorldPoint(Input.mousePosition), UICamera.transform.forward).collider;
         interacting = interacting || (hit?.GetComponent<DialogueTextManager>() != null && hit.transform.parent.GetComponent<SpriteRenderer>().enabled);
-        //
-        if (currentLeftMouseDown == false && previousLeftMouseDown == true && inRange == true && interacting == false)
-        {
+        if (currentLeftMouseDown == false && previousLeftMouseDown == true && inRange == true && interacting == false && Timer.isPaused() == false) {
             // adjust?
             Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);

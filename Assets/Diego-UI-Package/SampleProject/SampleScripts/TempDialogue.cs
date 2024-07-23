@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TempDialogue : MonoBehaviour {
-    private bool check = false;
+    //private bool check = false;
     void Update() {
         //if (check) {
         //    return;

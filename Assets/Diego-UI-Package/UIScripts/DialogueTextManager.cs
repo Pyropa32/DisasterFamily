@@ -75,8 +75,7 @@ public class DialogueTextManager : MonoBehaviour {
         clicked = true;
     }
 
-    public static void EnqueueText(Page text)
-    {
+    public static void EnqueueText(Page text) {
         instance.q.Enqueue(text);
     }
     public static void EnqueueTexts(Page[] text) {

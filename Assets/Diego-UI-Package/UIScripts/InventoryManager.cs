@@ -4,9 +4,9 @@ using System;
 using UnityEngine;
 namespace Diego
 {
-    public class InventoryManager : MonoBehaviour
-    {
+    public class InventoryManager : MonoBehaviour {
         public Item[] invIds;
+        public bool[] invActive;
 
         public int invSize = 5;
 
@@ -24,10 +24,31 @@ namespace Diego
             }
             _singletonInstance = this;
             invIds = new Item[invSize];
-            for (int i = 0; i < invSize; i++)
-            {
+            for (int i = 0; i < invSize; i++) {
                 invIds[i] = Item.Empty;
             }
+            invActive = new bool[invSize];
+            for (int i = 0; i < invSize; i++) {
+                invActive[i] = true;
+            }
+        }
+
+        public static void toggleActivity(int ind) {
+            if (ind == -1) {
+                return;
+            }
+            _singletonInstance.invActive[ind] = !_singletonInstance.invActive[ind];
+        }
+        public static int getIndInInv(Item item) {
+            if (item.Equals(Item.Empty)) {
+                return -1;
+            }
+            for (int i = 0; i < _singletonInstance.invSize; i++) {
+                if (item.Equals(_singletonInstance.invIds[i])) {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public static RuntimeAnimatorController GetAnimatorController() {
@@ -99,7 +120,6 @@ namespace Diego
             if (!(_singletonInstance.invIds[_singletonInstance.invIds.Length - 1].Equals(Item.Empty))) {
                 return false;
             }
-            Debug.Log(id);
             ItemsUniverse.TryGetValue(id, out Item item);
             for (int i = _singletonInstance.invIds.Length - 2; i >= 0; i--)
             {
