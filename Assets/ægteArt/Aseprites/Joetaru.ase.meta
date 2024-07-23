@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 39
       height: 63
-    spriteID: 13a504756a97f3c41ba77bdc9c29c7cc
+    spriteID: 37f051d97a1019d48a8b189e627553cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 75
       width: 39
       height: 63
-    spriteID: beb61cdba4cb2ea4fa84df0d18d83843
+    spriteID: 9cc40613defaa51459cdd81c3ef75461
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 146
       width: 39
       height: 62
-    spriteID: 8ff1c6bbea7068948a12f7f2b3bf7f6d
+    spriteID: e11e2267d08ec4343b53bb822fffbccc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,7 +198,7 @@ ScriptedImporter:
         y: 0
         width: 39
         height: 63
-      spriteId: 13a504756a97f3c41ba77bdc9c29c7cc
+      spriteId: 37f051d97a1019d48a8b189e627553cd
     - name: Joetaru_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -207,7 +207,7 @@ ScriptedImporter:
         y: 0
         width: 39
         height: 63
-      spriteId: beb61cdba4cb2ea4fa84df0d18d83843
+      spriteId: 9cc40613defaa51459cdd81c3ef75461
     - name: Joetaru_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -216,7 +216,7 @@ ScriptedImporter:
         y: 0
         width: 39
         height: 62
-      spriteId: 8ff1c6bbea7068948a12f7f2b3bf7f6d
+      spriteId: e11e2267d08ec4343b53bb822fffbccc
     linkedCells: []
     parentIndex: -1
   platformSettings: []
