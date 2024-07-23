@@ -88,6 +88,6 @@ public class Timer
     }
 
     public static bool isPaused() {
-        return !getInstance().timerActive || getInstance().timerUnpausedCalled;
+        return instance == null || !getInstance().timerActive || getInstance().timerUnpausedCalled;
     }
 }
