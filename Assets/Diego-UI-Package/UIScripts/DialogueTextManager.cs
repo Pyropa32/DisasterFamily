@@ -40,6 +40,7 @@ public class DialogueTextManager : MonoBehaviour {
             writing = true;
             Timer.stopTimer();
             disableOnEmpty.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = DialogueManager.getSprite(display.avatar);
+            disableOnEmpty.transform.GetChild(1).GetComponent<TextMeshPro>().text = display.name;
         }
         if (writing) {
             timer += Time.deltaTime;

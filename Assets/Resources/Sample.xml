@@ -11,9 +11,12 @@
 			<page>I should grab as many supplies as possible...</page>
 		</interaction>
 	</character>
-	<character name="Bland" default="DepparinBase">
+	<character name="Bland" default="BlandBase">
 		<interaction id="0">
 			<page>JavaScript is bad. :(</page>
+		</interaction>
+		<interaction id="1">
+			<page>Late stage capitalism is bad. :(</page>
 		</interaction>
 	</character>
 </dialogue>

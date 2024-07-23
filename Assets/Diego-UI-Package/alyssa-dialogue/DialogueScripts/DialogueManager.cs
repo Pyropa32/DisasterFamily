@@ -12,9 +12,11 @@ public class Page
 {
     public string dialogue;
     public string avatar;
-    public Page(string dialogue, string avatar){
+    public string name;
+    public Page(string dialogue, string avatar, string name){
         this.dialogue = dialogue;
         this.avatar = avatar;
+        this.name = name;
     }
 }
 
@@ -85,7 +87,7 @@ public class DialogueManager {
                 XmlNodeList pages = interactions[j].ChildNodes;
                 Page[] sequence = new Page[pages.Count];
                 for (int k = 0; k < pages.Count; k++) {
-                    Page currPage = new Page(pages[k].InnerText, defaultAvatar);
+                    Page currPage = new Page(pages[k].InnerText, defaultAvatar, name);
                     if (pages[k].Attributes.Count == 1)
                     {
                         string currAvatar = "AvatarSprites/" + name + "/" + pages[k].Attributes[0].Value;

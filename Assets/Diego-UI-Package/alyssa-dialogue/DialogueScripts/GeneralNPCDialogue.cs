@@ -10,6 +10,7 @@ namespace Diego {
         public bool loop = false;
         public bool infinite = true;
         public int[] steps;
+        public int changeIndOnStart = -1;
 
         private int ind = 0;
         private Action<Item> action;
@@ -18,6 +19,12 @@ namespace Diego {
             action = this.Action;
             if (gameObject.GetComponent<Collider2D>() == null) {
                 gameObject.AddComponent<BoxCollider2D>();
+            }
+        }
+        public void Update() {
+            if (SceneChanger.getState() && changeIndOnStart != -1) {
+                ind = changeIndOnStart;
+                changeIndOnStart = -1;
             }
         }
         public void Action(Item item) {
@@ -38,7 +45,7 @@ namespace Diego {
                     ind %= dialoguePaths.Length;
                 }
                 else {
-                    ind = Mathf.Clamp(0, dialoguePaths.Length-1, ind);
+                    ind = Mathf.Clamp(ind, 0, dialoguePaths.Length-1);
                 }
                 if (!infinite && temp != ind) {
                     ind = -1;
