@@ -180,6 +180,7 @@ public class RoomGraph : MonoBehaviour
                 // The doorways should not be adjacent here.
 
                 var path = data.Dijkstra(from.PathfindingID, to.PathfindingID);
+                sprList.Add(path);
             }
         }
 
@@ -210,7 +211,7 @@ public class RoomGraph : MonoBehaviour
         //  starting point to first doorway
         //
 
-        var firstPath = startRoom.GetInteriorPathFrom(start, doorway.transform.position, alignAxes:true); 
+        var firstPath = startRoom.GetInteriorPathFrom(start, currentDoorway.transform.position, alignAxes:true); 
         points.AddRange(firstPath);
 
         //
@@ -253,7 +254,7 @@ public class RoomGraph : MonoBehaviour
         //  last doorway to end point.
         //
 
-        var lastPath = finishRoom.GetInteriorPathFrom(doorway.transform.position, finish, alignAxes:true); 
+        var lastPath = finishRoom.GetInteriorPathFrom(currentDoorway.transform.position, finish, alignAxes:true); 
         points.AddRange(lastPath);
 
         return points.ToArray();

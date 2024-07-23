@@ -25,7 +25,7 @@ public class Character : MonoBehaviour
     private Queue<MoveData> moveCommandsQueue = new Queue<MoveData>();
     void Start()
     {
-        World = GetComponent<RoomGraph>();
+        World = GetComponentInParent<RoomGraph>();
     }
 
     /// <summary>

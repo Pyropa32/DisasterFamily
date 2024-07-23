@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class RoomDoorway : MonoBehaviour
@@ -16,6 +12,17 @@ public class RoomDoorway : MonoBehaviour
 
     public uint PathfindingID { get; protected set; }
     public RoomGraph World { get; set; }
+
+    private static uint currID = 1; 
+
+    void Start()
+    {
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            Destroy(sprite);
+        }
+    }
 
     public void UseOverridenEntranceExit()
     {
@@ -88,7 +95,7 @@ public class RoomDoorway : MonoBehaviour
 
     void Awake()
     {
-        PathfindingID = (uint)GetHashCode();
+        PathfindingID = currID++;
         World = GetComponentInParent<RoomGraph>();
         if (World == null)
         {

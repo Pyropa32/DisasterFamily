@@ -15,7 +15,7 @@ public static class PathHelper
         for (int i = 0; i < paths.Length; i++)
         {
             var path = paths[i];
-            for (int j = 0; j < path.Length; i++)
+            for (int j = 0; j < path.Length; j++)
             {
                 var point = path[j];
                 if (AreVectorsApproximatelyEqual(point, previous))

@@ -91,6 +91,9 @@ public class Room : MonoBehaviour, IEquatable<Room>
     public Vector2[] GetInteriorPathFrom(Vector2 start, Vector2 end, bool alignAxes=false)
     {
         // TODO: A* Pathfinding within a room if there's time.
+
+        alignAxes = false;
+
         if (alignAxes)
         {
             // \
@@ -129,17 +132,17 @@ public class Room : MonoBehaviour, IEquatable<Room>
 
     internal Room.Side WhichSide(Vector2 globalPosition)
     {
-        var position = GlobalToLocal(globalPosition);
+        var position = GlobalToLocalNoClamp(globalPosition);
         var middle = Vector2.one / 2f;
         var diff = position - middle;
         var diffAbs = new Vector2(Mathf.Abs(diff.x), Mathf.Abs(diff.y));
         if (diffAbs.x > diffAbs.y)
         {
-            return diff.x > middle.x ? Side.Right : Side.Left; 
+            return diff.x >= middle.x ? Side.Right : Side.Left; 
         }
         else
         {
-            return diff.y > middle.y ? Side.Top : Side.Bottom;
+            return diff.y >= middle.y ? Side.Top : Side.Bottom;
         }
     }
     /// <summary>
@@ -215,6 +218,12 @@ public class Room : MonoBehaviour, IEquatable<Room>
     {
         var result = transformation.inverse * (GlobalCoordinates - offset);
         return ClampLocal(result);
+    }
+
+    private Vector2 GlobalToLocalNoClamp(Vector2 GlobalCoordinates)
+    {
+        var result = transformation.inverse * (GlobalCoordinates - offset);
+        return result;
     }
 
     public Vector2 LocalToGlobal(Vector2 worldCoordinates)
