@@ -10,6 +10,7 @@ namespace Diego {
 
         public UnityEngine.Sprite close;
         public UnityEngine.Sprite open;
+        public Room parentRoom;
 
         private Action<Item> action;
         private UnityEngine.Sprite mySprite;
@@ -43,6 +44,7 @@ namespace Diego {
         }
         public int ID => 0;
         public float Range => 1.5f;
+        public Room ParentRoom => parentRoom;
         public UnityEngine.Sprite Sprite => mySprite;
         public Action<Item> OnInteract {
             get {

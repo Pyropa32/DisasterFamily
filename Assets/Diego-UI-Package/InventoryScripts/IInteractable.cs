@@ -7,6 +7,7 @@ using Diego;
 public interface IInteractable : ISelectable {
     public Action<Item> OnInteract { get; set; }
     public float Range { get; }
+    public Room ParentRoom { get; }
     public void GetInRangeAndDo(Item item, Vector2 itemPos) {
         if (!CameraToScreenspaceConverter.isInGameBounds(Input.mousePosition)) {
             return;
@@ -18,6 +19,9 @@ public interface IInteractable : ISelectable {
         Vector2 playerPos = GameObject.FindWithTag("Player").transform.position;// + new Vector3(playerPivot.x, playerPivot.y, 0);
         Vector2 dropPos = Camera.main.transform.position;
         dropPos += CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
+        if (ParentRoom != null) {
+            dropPos = ParentRoom.ClampGlobal(dropPos);
+        }
         ItemInteraction interactAction = new ItemInteraction(item, InventoryManager.getIndInInv(item), this, dropPos, range);
 
         if (Timer.isPaused() == false) {

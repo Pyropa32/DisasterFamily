@@ -12,6 +12,7 @@ namespace Diego
         private Action<Item> action;
         private Sprite mySprite;
         public int id;
+        public Room parentRoom;
 
         public void Start() {
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -37,7 +38,8 @@ namespace Diego
             }
         }
         public int ID => 0;
-        public float Range => 0.25f;
+        public float Range => 1f;
+        public Room ParentRoom => parentRoom;
         public Sprite Sprite => mySprite;
         public Action<Item> OnInteract {
             get {

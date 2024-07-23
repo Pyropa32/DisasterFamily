@@ -36,7 +36,7 @@ public class PlayerAdapter : MonoBehaviour
             Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);
 
-            GameObject.Find("OrbPosition").transform.position = worldMousePosition;
+            //GameObject.Find("OrbPosition").transform.position = worldMousePosition;
             
             // pathfind
             var start = player.transform.position;

@@ -16,7 +16,7 @@ namespace Diego
     }
     public struct Item : ISelectable, IEquatable<Item>
     {
-        private const string ITEM_SPRITE_PATHS = "ItemSprites";
+        private const string ITEM_SPRITE_PATHS = "ItemSprites/Release";
         private int id;
         private string spritePath;
         private Sprite sprite;

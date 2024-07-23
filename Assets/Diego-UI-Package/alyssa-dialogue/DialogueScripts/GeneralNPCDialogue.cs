@@ -11,6 +11,7 @@ namespace Diego {
         public bool infinite = true;
         public int[] steps;
         public int changeIndOnStart = -1;
+        public Room parentRoom;
 
         private int ind = 0;
         private Action<Item> action;
@@ -54,6 +55,7 @@ namespace Diego {
         }
         public int ID => ind;
         public float Range => 1f;
+        public Room ParentRoom => parentRoom;
         public Sprite Sprite => GetComponent<SpriteRenderer>()?.sprite;
         public Action<Item> OnInteract {
             get {
