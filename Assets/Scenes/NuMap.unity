@@ -13486,7 +13486,7 @@ Transform:
   m_GameObject: {fileID: 599043977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2682023, y: -17.993093, z: -0.23880753}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14257,7 +14257,7 @@ Transform:
   m_GameObject: {fileID: 675780020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.81, y: -1.35, z: -6.1}
+  m_LocalPosition: {x: 5.05, y: -2.98, z: -6.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19460,7 +19460,7 @@ Transform:
   m_GameObject: {fileID: 1163704503}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.6, y: -1.57, z: 0}
+  m_LocalPosition: {x: 5.34, y: -3.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22657,7 +22657,7 @@ Transform:
   m_GameObject: {fileID: 1568186323}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.41, y: -2.5, z: 0}
+  m_LocalPosition: {x: 7.41, y: -2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35953,7 +35953,7 @@ Transform:
   m_GameObject: {fileID: 1774233939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.518202, y: 19.133093, z: 0.23880753}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36264,7 +36264,7 @@ Transform:
   m_GameObject: {fileID: 1819909937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.92, y: -4.57, z: 0}
+  m_LocalPosition: {x: 5.92, y: -4.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38039,7 +38039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceOverride: {fileID: 1765018208}
-  exitOverride: {fileID: 772318613}
+  exitOverride: {fileID: 333451280}
 --- !u!1 &2024404835
 GameObject:
   m_ObjectHideFlags: 0

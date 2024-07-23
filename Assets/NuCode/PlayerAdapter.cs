@@ -44,6 +44,11 @@ public class PlayerAdapter : MonoBehaviour
             // pathfind
             var start = player.transform.position;
             var clickedRoom = world.GetRoomAt(worldMousePosition);
+            if (player.CurrentRoom == null)
+            {
+                previousLeftMouseDown = currentLeftMouseDown;
+                return;
+            }
             if (clickedRoom == null || clickedRoom == player.CurrentRoom)
             {
                 // If no room is clicked, just move in the current room.
