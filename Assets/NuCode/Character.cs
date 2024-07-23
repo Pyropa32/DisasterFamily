@@ -8,27 +8,55 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float walkSpeed;
-    
+
     // PERFORMANT ELEMENT: Reduce number of times this is called.
     /// <summary>
     /// Expensive
     /// </summary>
-    public Room CurrentRoom 
+    public Room CurrentRoom
     {
         get
         {
             return World.GetRoomAt(transform.position);
         }
     }
-
+    private bool isPaused = false;
+    public bool IsMoving => currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused;
     public RoomGraph World { get; protected set; }
-
     private MoveDataChain currentMovementQueue;
     private IRangeDependent currentActionQueue = null;
     void Start()
     {
         World = GetComponentInParent<RoomGraph>();
     }
+
+    public void Stop()
+    {
+        currentMovementQueue = null;
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public Vector2 MoveDirection
+    {
+        get
+        {
+            if (!IsMoving || currentMovementQueue == null)
+            {
+                return Vector2.zero;
+            }
+            return currentMovementQueue.CurrentDirection();
+        }
+    }
+
 
     /// <summary>
     /// Moves the character to `finish`. Speed is determined by character's walk speed.
@@ -61,8 +89,9 @@ public class Character : MonoBehaviour
     {
         // movement chain context
         // wraps a list of movement commands
-        // 
-        if (currentMovementQueue != null && !currentMovementQueue.IsFinished) {
+        //
+        if (currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused)
+        {
             transform.position = currentMovementQueue.Value;
             currentMovementQueue.Tick();
             if (currentActionQueue != null && currentActionQueue.isInRange(transform.position)) {

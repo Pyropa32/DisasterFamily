@@ -10,8 +10,8 @@ using UnityEngine;
 /// 
 public class MoveDataChain
 {
-    const float FULL_ACCEL_STOP_DISTANCE = 0.3f;
-    const float FULL_DECEL_STOP_DISTANCE = 0.8f;
+    const float FULL_ACCEL_STOP_DISTANCE = 0.1f;
+    const float FULL_DECEL_STOP_DISTANCE = 1.7f;
     public float WalkSpeed { get; set; }
     public bool IsFinished => (Progress >= (1.0f - Mathf.Epsilon)) || forceIsFinished;
     public float Progress => totalProgressedLength / pathLength;
@@ -22,6 +22,7 @@ public class MoveDataChain
     private float totalProgressedLength;
     private int dataIndex;
     private bool forceIsFinished = false;
+    private Vector2 previousValue;
     public MoveDataChain(Vector2 start, Vector2[] path, float _walkSpeed = 2f)
     {
         // needs start + (path.size * 2 - 1)
@@ -29,6 +30,7 @@ public class MoveDataChain
         totalProgressedLength = 0f;
         dataIndex = 0;
         value = start;
+        previousValue = Vector2.zero;
 
         pathLength = 0f;
         Vector2 currentStart = start;
@@ -37,29 +39,39 @@ public class MoveDataChain
             data[i] = new MoveData(currentStart, path[i], _walkSpeed);
 
             currentStart = data[i].Destination;
-            pathLength += (data[i].Destination - data[i].Value).sqrMagnitude;
+            pathLength += (data[i].Destination - data[i].Value).magnitude;
         }
     }
 
     public void Tick()
     {
-        var previousValue = value;
+        previousValue = value;
         var currentData = data[dataIndex];
         var speedModifier = 1f;
-        Debug.Log("progressed: " + totalProgressedLength + " | threshold: " + ((pathLength) - FULL_DECEL_STOP_DISTANCE));
+        var decelBegin = Math.Abs((pathLength) - FULL_DECEL_STOP_DISTANCE);
+        Debug.Log("percent there: " + decimal.Round((decimal)(totalProgressedLength / decelBegin * 100)));
         if (totalProgressedLength < FULL_ACCEL_STOP_DISTANCE)
         {
             speedModifier = Mathf.Lerp(0.5f, 1f, totalProgressedLength / FULL_ACCEL_STOP_DISTANCE);
         }
-        else if (totalProgressedLength >= (pathLength) - FULL_DECEL_STOP_DISTANCE)
+        else if (Math.Abs(totalProgressedLength) >= decelBegin &&
+                 pathLength > FULL_DECEL_STOP_DISTANCE)
         {
             var start = (pathLength) - FULL_DECEL_STOP_DISTANCE;
             speedModifier = Mathf.Lerp(1f, 0f, (totalProgressedLength - start) / pathLength - start);
-            Debug.Log(speedModifier);
+            Debug.Log("DECREASING!");
+        }
+        if (speedModifier < 0.1f)
+        {
+            forceIsFinished = true;
+            return;
         }
         currentData.Tick(speedModifier);
+        
+        previousValue = value;
         value = currentData.Value;
-        totalProgressedLength += (value - previousValue).sqrMagnitude;
+        
+        totalProgressedLength += (value - previousValue).magnitude;
         if (currentData.IsFinished)
         {
             dataIndex += 1;
@@ -69,6 +81,11 @@ public class MoveDataChain
                 return;
             }
         }
+    }
+
+    public Vector2 CurrentDirection()
+    {
+        return (Value - previousValue).normalized;
     }
 
 }
