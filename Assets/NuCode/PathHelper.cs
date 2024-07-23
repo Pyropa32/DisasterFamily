@@ -32,7 +32,7 @@ public static class PathHelper
         }
         return pathList.ToArray();
     }
-    public static bool AreVectorsApproximatelyEqual(Vector2 a, Vector2 b, float epsilon=float.Epsilon)
+    public static bool AreVectorsApproximatelyEqual(Vector2 a, Vector2 b, float epsilon=0.2f)
     {
         return Mathf.Abs(b.x - a.x) < epsilon && 
                Mathf.Abs(b.y - a.y) < epsilon;
