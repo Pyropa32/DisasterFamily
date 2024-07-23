@@ -30,7 +30,6 @@ namespace Diego
                                                 ItemQuality _quality=ItemQuality.Useless)
         {
             var name = _spritePath.Trim().ToLower();
-            Debug.Log(Path.Combine(ITEM_SPRITE_PATHS, name));
 
             return new Item()
             {
