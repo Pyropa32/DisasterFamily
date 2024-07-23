@@ -17,7 +17,7 @@ namespace Diego
         }
 
         void Update() {
-            UITextManager.Clear();
+            UITextManager.SetText("");
             for (int i = 0; i < IM.invIds.Length; i++) {
                 if (IM.invIds[i].Equals(Item.Empty)) {
                     children[i].enabled = false;

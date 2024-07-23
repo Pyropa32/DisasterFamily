@@ -7,6 +7,9 @@ namespace Diego {
     public class DropOff : UnityEngine.MonoBehaviour, IInteractable {
         private static DropOff instance;
 
+        public UnityEngine.Sprite close;
+        public UnityEngine.Sprite open;
+
         private Action<Item> action;
         private UnityEngine.Sprite mySprite;
         private List<Item> items;
@@ -24,7 +27,7 @@ namespace Diego {
             items = new List<Item>();
         }
         public void Action(Item item) {
-            if (item.Equals(Item.Empty)) {
+            if (item.Equals(Item.Empty) || !SceneChanger.getState()) {
                 return;
             }
             if (items.Count >= maxItems) {
@@ -57,6 +60,14 @@ namespace Diego {
         }
         public static int GetMaxNum() {
             return instance.maxItems;
+        }
+        void Update() {
+            if (SceneChanger.getState()) {
+                transform.GetComponent<UnityEngine.SpriteRenderer>().sprite = open;
+            }
+            else {
+                transform.GetComponent<UnityEngine.SpriteRenderer>().sprite = close;
+            }
         }
     }
 }

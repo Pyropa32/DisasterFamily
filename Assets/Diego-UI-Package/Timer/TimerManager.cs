@@ -17,6 +17,7 @@ public class Timer
     private Timer(float time) {
         timeLimit = time;
         currTime = timeLimit;
+        timerActive = true;
     }
     private void StartTimer() {
         timerUnpausedCalled = true;
