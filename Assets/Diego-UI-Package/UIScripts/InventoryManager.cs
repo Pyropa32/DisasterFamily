@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 namespace Diego
 {
@@ -11,6 +12,7 @@ namespace Diego
 
         public static InventoryManager SingletonInstance { get => _singletonInstance; }
         private static InventoryManager _singletonInstance;
+        public static event Action<int> OnSlotAnimationRequested;
         void Start()
         {
             if (_singletonInstance != null)
@@ -98,10 +100,12 @@ namespace Diego
                 if (!_singletonInstance.invIds[i].Equals(Item.Empty))
                 {
                     _singletonInstance.invIds[i + 1] = item;
+                    OnSlotAnimationRequested?.Invoke(i + 1);
                     return true;
                 }
             }
             _singletonInstance.invIds[0] = item;
+            OnSlotAnimationRequested?.Invoke(0);
             return true;
         }
     }

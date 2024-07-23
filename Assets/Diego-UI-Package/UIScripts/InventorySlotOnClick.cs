@@ -11,6 +11,11 @@ namespace Diego
         public int index = -1;
         private Vector3 origin;
 
+        public void ItemAnimation() {
+            transform.GetComponent<Animator>().SetTrigger("insert");
+            Debug.Log("Item really should animate");
+        }
+        
         void OnMouseDown() {
             if (Timer.isPaused()) {
                 return;
