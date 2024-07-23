@@ -115,13 +115,19 @@ namespace Diego
             GameObject items = GameObject.Find("Items");
             //var generatedItem = items.Instantiate();
             GameObject itemObject = new GameObject();
-            itemObject.AddComponent<CircleCollider2D>();
-            SpriteRenderer spriteRenderer = itemObject.AddComponent<SpriteRenderer>();
 
+
+            SpriteRenderer spriteRenderer = itemObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = ItemLookup.GetItemFromID(id).Sprite;
+
+            itemObject.AddComponent<CircleCollider2D>();
+
             GeneralItem generalItem = itemObject.AddComponent<GeneralItem>();
             generalItem.OnInteract = generalItem.Action;
             itemObject.name = generalItem.name;
+
+            Animator anim = itemObject.AddComponent<Animator>();
+            anim.runtimeAnimatorController = InventoryManager.GetAnimatorController();
 
             InventoryManager.toggleInInventory(id);
 

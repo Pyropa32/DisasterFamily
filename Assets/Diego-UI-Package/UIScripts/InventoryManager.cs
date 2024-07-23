@@ -13,6 +13,8 @@ namespace Diego
         public static InventoryManager SingletonInstance { get => _singletonInstance; }
         private static InventoryManager _singletonInstance;
         public static event Action<int> OnSlotAnimationRequested;
+        public RuntimeAnimatorController GeneralItemAnimController;
+
         void Start()
         {
             if (_singletonInstance != null)
@@ -26,6 +28,10 @@ namespace Diego
             {
                 invIds[i] = Item.Empty;
             }
+        }
+
+        public static RuntimeAnimatorController GetAnimatorController() {
+            return _singletonInstance.GeneralItemAnimController;
         }
 
         public static bool toggleInInventory(Item item)

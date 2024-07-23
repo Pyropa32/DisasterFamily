@@ -16,6 +16,9 @@ namespace Diego
         public void Start() {
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
             action = this.Action;
+            if (gameObject.GetComponent<Collider2D>() == null) {
+                gameObject.AddComponent<Collider2D>();
+            }
         }
         public void Kill() {
             Destroy(gameObject);
