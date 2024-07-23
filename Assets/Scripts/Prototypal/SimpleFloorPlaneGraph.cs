@@ -71,14 +71,9 @@ namespace Prototypal
                 {
                     gate.ToPlane = to;
                     gate.FromPlane = from;
-                    from.AddGateway(gate);
-                    to.AddGateway(gate);
                 }
-                else
-                {
-                    gate.FromPlane.AddGateway(gate);
-                    gate.ToPlane.AddGateway(gate);
-                }
+                gate.FromPlane.AddGateway(gate);
+                gate.ToPlane.AddGateway(gate);
             }
 
             allGates.Sort((a, b) =>
@@ -173,7 +168,7 @@ namespace Prototypal
         }
 
         private void SortGraphics()
-        { 
+        {
             // fuck this crap
             // waste of effort for it to not be that necessary
 
