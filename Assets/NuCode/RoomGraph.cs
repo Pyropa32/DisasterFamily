@@ -156,7 +156,7 @@ public class RoomGraph : MonoBehaviour
         if (startRoom.TryGetDoorwayTo(finishRoom, out RoomDoorway doorway))
         {
             // always 2 elements.
-            var transferRoomPath = doorway.GetTransferRoomPath();
+            var transferRoomPath = doorway.GetTransferRoomPathFrom(start);
             var pathA = startRoom.GetInteriorPathFrom(start, transferRoomPath[0], alignAxes: true);
             var pathB = finishRoom.GetInteriorPathFrom(transferRoomPath[1], finish, alignAxes: true);
             return PathHelper.CombinePaths(pathA, transferRoomPath, pathB);
@@ -192,13 +192,22 @@ public class RoomGraph : MonoBehaviour
             Debug.Log("no paths found!");
             return new Vector2[] {};
         }
-        // Sort the results by distance
-        sprList.Sort((a, b) =>
+        // // Sort the results by distance
+        // sprList.Sort((a, b) =>
+        // {
+        //     return a.Distance.CompareTo(b.Distance);
+        // });
+
+        // // Hyper-Inneficiencah!!
+        var paths = sprList.ConvertAll(item => item.GetPath().ToList());
+
+        // sort the results by path size
+        paths.Sort((a,b) =>
         {
-            return a.Distance.CompareTo(b.Distance);
+            return a.Count.CompareTo(b.Count);
         });
 
-        var doorwayIDList = sprList[0].GetPath().ToArray();
+        var doorwayIDList = paths[0];
 
         Room currentRoom = startRoom;
         Room nextRoom = finishRoom;
@@ -216,10 +225,10 @@ public class RoomGraph : MonoBehaviour
 
         //
 
-        for (int i = 0; i < doorwayIDList.Length; i++)
+        for (int i = 0; i < doorwayIDList.Count; i++)
         {
             currentDoorway = data[doorwayIDList[i]].Item;
-            if (i == doorwayIDList.Length - 1)
+            if (i == doorwayIDList.Count - 1)
             {
                 // cap off with the end room.
                 nextRoom = finishRoom;
@@ -237,7 +246,7 @@ public class RoomGraph : MonoBehaviour
             }
 
             //  doorway transfer path
-            var doorwayTransferPath = currentDoorway.GetTransferRoomPath();
+            var doorwayTransferPath = currentDoorway.GetTransferRoomPathFrom(currentPos);
             //  current position to next doorway path
             var currentPosToDoorwayPath = currentRoom.GetInteriorPathFrom(currentPos, doorwayTransferPath[0], alignAxes:true); 
 

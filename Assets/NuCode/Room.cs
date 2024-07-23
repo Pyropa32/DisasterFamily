@@ -138,11 +138,13 @@ public class Room : MonoBehaviour, IEquatable<Room>
         var diffAbs = new Vector2(Mathf.Abs(diff.x), Mathf.Abs(diff.y));
         if (diffAbs.x > diffAbs.y)
         {
-            return diff.x >= middle.x ? Side.Right : Side.Left; 
+            // positive diff = right
+            return diff.x >= 0f ? Side.Right : Side.Left; 
         }
         else
         {
-            return diff.y >= middle.y ? Side.Top : Side.Bottom;
+            // positive diff = up
+            return diff.y >= 0f ? Side.Top : Side.Bottom;
         }
     }
     /// <summary>
