@@ -1,12 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Dijkstra.NET.ShortestPath;
 using Dijkstra.NET.Graph;
-using Unity.VisualScripting;
 using System;
-using System.Net.NetworkInformation;
 using System.Linq;
+using UnityEditor.ProjectWindowCallback;
 
 public class RoomGraph : MonoBehaviour
 {
@@ -92,8 +90,8 @@ public class RoomGraph : MonoBehaviour
                 currentDoorway.EntranceRoom = to;
                 currentDoorway.ExitRoom = from;
             }
-            currentDoorway.EntranceRoom.AddGateway(currentDoorway);
-            currentDoorway.ExitRoom.AddGateway(currentDoorway);
+            currentDoorway.EntranceRoom.AddDoorway(currentDoorway);
+            currentDoorway.ExitRoom.AddDoorway(currentDoorway);
         }
 
         // PERFORMANT ELEMENT: Faster Sorting
@@ -152,23 +150,112 @@ public class RoomGraph : MonoBehaviour
         if (!startRoom || !finishRoom)
         {
             Debug.Log("Attempted to find exterior path, but one or both rooms are null!");
-            return new Vector2[] {};
+            return new Vector2[] { };
         }
-
+        // Trivial Pathfinding: Adjacent room
         if (startRoom.TryGetDoorwayTo(finishRoom, out RoomDoorway doorway))
         {
             // always 2 elements.
             var transferRoomPath = doorway.GetTransferRoomPath();
-            
-            var pathA = startRoom.GetInteriorPathFrom(start, transferRoomPath[0], alignAxes:true);
-            var pathB = finishRoom.GetInteriorPathFrom(transferRoomPath[1], finish, alignAxes:true);
-            return new Vector2[]
-            {
-                
-            };
+            var pathA = startRoom.GetInteriorPathFrom(start, transferRoomPath[0], alignAxes: true);
+            var pathB = finishRoom.GetInteriorPathFrom(transferRoomPath[1], finish, alignAxes: true);
+            return PathHelper.CombinePaths(pathA, transferRoomPath, pathB);
         }
 
-        var result = new Vector2[] { };
-        return result;
+        // otherwise, do pathfinding.
+        var startRoomDoorways = startRoom.GetDoorways();
+        var finishRoomDoorways = finishRoom.GetDoorways();
+
+        // If the start/end rooms have multiple doorways each,
+        // each one has to be considered.
+
+        List<ShortestPathResult> sprList = new List<ShortestPathResult>();
+
+        for (int i = 0; i < startRoomDoorways.Length; i++)
+        {
+            for (int j = 0; j < finishRoomDoorways.Length; j++)
+            {
+                var from = startRoomDoorways[i];
+                var to = finishRoomDoorways[j];
+                // The doorways should not be adjacent here.
+
+                var path = data.Dijkstra(from.PathfindingID, to.PathfindingID);
+            }
+        }
+
+        // delete the paths that weren't found:
+        sprList.RemoveAll(path => path.IsFounded == false);
+
+        if (sprList.Count < 1)
+        {
+            Debug.Log("no paths found!");
+            return new Vector2[] {};
+        }
+        // Sort the results by distance
+        sprList.Sort((a, b) =>
+        {
+            return a.Distance.CompareTo(b.Distance);
+        });
+
+        var doorwayIDList = sprList[0].GetPath().ToArray();
+
+        Room currentRoom = startRoom;
+        Room nextRoom = finishRoom;
+        RoomDoorway currentDoorway = data[doorwayIDList[0]].Item;
+        List<Vector2> points = new List<Vector2>();
+
+        Vector2 currentPos = start;
+
+        //
+        //  starting point to first doorway
+        //
+
+        var firstPath = startRoom.GetInteriorPathFrom(start, doorway.transform.position, alignAxes:true); 
+        points.AddRange(firstPath);
+
+        //
+
+        for (int i = 0; i < doorwayIDList.Length; i++)
+        {
+            currentDoorway = data[doorwayIDList[i]].Item;
+            if (i == doorwayIDList.Length - 1)
+            {
+                // cap off with the end room.
+                nextRoom = finishRoom;
+            }
+            else
+            {
+                if (currentDoorway.EntranceRoom == currentRoom)
+                {
+                    nextRoom = currentDoorway.EntranceRoom;
+                }
+                else
+                {
+                    nextRoom = currentDoorway.ExitRoom;
+                }
+            }
+
+            //  doorway transfer path
+            var doorwayTransferPath = currentDoorway.GetTransferRoomPath();
+            //  current position to next doorway path
+            var currentPosToDoorwayPath = currentRoom.GetInteriorPathFrom(currentPos, doorwayTransferPath[0], alignAxes:true); 
+
+            // combine and add these paths
+            var bothPaths = PathHelper.CombinePaths(doorwayTransferPath, currentPosToDoorwayPath);
+            points.AddRange(bothPaths);
+
+            currentRoom = nextRoom;
+            // current pos is now the latest point (other side of the transfer)
+            currentPos = doorwayTransferPath[1];
+        }
+
+        //
+        //  last doorway to end point.
+        //
+
+        var lastPath = finishRoom.GetInteriorPathFrom(doorway.transform.position, finish, alignAxes:true); 
+        points.AddRange(lastPath);
+
+        return points.ToArray();
     }
 }
