@@ -30,6 +30,7 @@ namespace Diego
                                                 ItemQuality _quality=ItemQuality.Useless)
         {
             var name = _spritePath.Trim().ToLower();
+            Debug.Log(Path.Combine(ITEM_SPRITE_PATHS, name));
 
             return new Item()
             {
@@ -53,7 +54,7 @@ namespace Diego
         public bool CanBeCollected => true;
         public bool CanBeInteractedWith => false;
         public int ID => id;
-        public Sprite Sprite => sprite ? sprite : sprite = Resources.Load<Sprite>(spritePath);
+        public Sprite Sprite => sprite != null ? sprite : sprite = Resources.Load<Sprite>(spritePath);
         public string Name => name;
         public string Remarks => remarks;
         public ItemQuality Quality => quality;
