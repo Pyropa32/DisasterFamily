@@ -20,14 +20,42 @@ public class Character : MonoBehaviour
             return World.GetRoomAt(transform.position);
         }
     }
-
+    private bool isPaused = false;
+    public bool IsMoving => currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused;
     public RoomGraph World { get; protected set; }
-
     private MoveDataChain currentMovementQueue;
     void Start()
     {
         World = GetComponentInParent<RoomGraph>();
     }
+
+    public void Stop()
+    {
+        currentMovementQueue = null;
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public Vector2 MoveDirection 
+    {
+        get
+        {
+            if (!IsMoving || currentMovementQueue == null)
+            {
+                return Vector2.zero;
+            }
+            return currentMovementQueue.CurrentDirection();
+        }
+    }
+
 
     /// <summary>
     /// Moves the character to `finish`. Speed is determined by character's walk speed.
@@ -59,7 +87,7 @@ public class Character : MonoBehaviour
         // movement chain context
         // wraps a list of movement commands
         // 
-        if (currentMovementQueue != null && !currentMovementQueue.IsFinished)
+        if (currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused)
         {
             transform.position = currentMovementQueue.Value;
             currentMovementQueue.Tick();

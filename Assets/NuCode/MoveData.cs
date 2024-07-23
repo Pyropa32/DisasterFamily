@@ -22,6 +22,7 @@ public class MoveDataChain
     private float totalProgressedLength;
     private int dataIndex;
     private bool forceIsFinished = false;
+    private Vector2 previousValue;
     public MoveDataChain(Vector2 start, Vector2[] path, float _walkSpeed = 2f)
     {
         // needs start + (path.size * 2 - 1)
@@ -29,6 +30,7 @@ public class MoveDataChain
         totalProgressedLength = 0f;
         dataIndex = 0;
         value = start;
+        previousValue = Vector2.zero;
 
         pathLength = 0f;
         Vector2 currentStart = start;
@@ -43,7 +45,7 @@ public class MoveDataChain
 
     public void Tick()
     {
-        var previousValue = value;
+        previousValue = value;
         var currentData = data[dataIndex];
         var speedModifier = 1f;
         var decelBegin = Math.Abs((pathLength) - FULL_DECEL_STOP_DISTANCE);
@@ -65,7 +67,10 @@ public class MoveDataChain
             return;
         }
         currentData.Tick(speedModifier);
+        
+        previousValue = value;
         value = currentData.Value;
+        
         totalProgressedLength += (value - previousValue).magnitude;
         if (currentData.IsFinished)
         {
@@ -76,6 +81,11 @@ public class MoveDataChain
                 return;
             }
         }
+    }
+
+    public Vector2 CurrentDirection()
+    {
+        return (Value - previousValue).normalized;
     }
 
 }
