@@ -59,7 +59,7 @@ public class Character : MonoBehaviour
         // movement chain context
         // wraps a list of movement commands
         // 
-        if (!currentMovementQueue.IsFinished)
+        if (currentMovementQueue != null && !currentMovementQueue.IsFinished)
         {
             transform.position = currentMovementQueue.Value;
             currentMovementQueue.Tick();

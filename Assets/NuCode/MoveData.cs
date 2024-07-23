@@ -10,8 +10,8 @@ using UnityEngine;
 /// 
 public class MoveDataChain
 {
-    const float FULL_ACCEL_STOP_DISTANCE = 2f;
-    const float FULL_DECEL_STOP_DISTANCE = 2f;
+    const float FULL_ACCEL_STOP_DISTANCE = 0.3f;
+    const float FULL_DECEL_STOP_DISTANCE = 0.8f;
     public float WalkSpeed { get; set; }
     public bool IsFinished => (Progress >= (1.0f - Mathf.Epsilon)) || forceIsFinished;
     public float Progress => totalProgressedLength / pathLength;
@@ -32,9 +32,9 @@ public class MoveDataChain
 
         pathLength = 0f;
         Vector2 currentStart = start;
-        for (int i = 0; i < path.Length; i += 2)
+        for (int i = 0; i < path.Length; i += 1)
         {
-            data[i] = new MoveData(currentStart, path[i / 2], _walkSpeed);
+            data[i] = new MoveData(currentStart, path[i], _walkSpeed);
 
             currentStart = data[i].Destination;
             pathLength += (data[i].Destination - data[i].Value).sqrMagnitude;
@@ -46,6 +46,7 @@ public class MoveDataChain
         var previousValue = value;
         var currentData = data[dataIndex];
         var speedModifier = 1f;
+        Debug.Log("progressed: " + totalProgressedLength + " | threshold: " + ((pathLength) - FULL_DECEL_STOP_DISTANCE));
         if (totalProgressedLength < FULL_ACCEL_STOP_DISTANCE)
         {
             speedModifier = Mathf.Lerp(0.5f, 1f, totalProgressedLength / FULL_ACCEL_STOP_DISTANCE);
@@ -54,6 +55,7 @@ public class MoveDataChain
         {
             var start = (pathLength) - FULL_DECEL_STOP_DISTANCE;
             speedModifier = Mathf.Lerp(1f, 0f, (totalProgressedLength - start) / pathLength - start);
+            Debug.Log(speedModifier);
         }
         currentData.Tick(speedModifier);
         value = currentData.Value;

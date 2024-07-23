@@ -228,17 +228,12 @@ public class RoomGraph : MonoBehaviour
 
         var firstPath = startRoom.GetInteriorPathFrom(start, currentDoorway.transform.position, alignAxes: true);
         points.AddRange(firstPath);
-        Debug.Log("big path ordering summary:");
-        Debug.Log("START POS: " + start);
-        Debug.Log("FINISH POS: " + finish);
-        //
 
         Vector2 redirectStartPosition = Vector2.zero;
 
         for (int i = 0; i < doorwayIDList.Count; i++)
         {
             currentDoorway = data[doorwayIDList[i]].Item;
-            Debug.Log("navigating doorway called:" + currentDoorway.name);
             if (i == doorwayIDList.Count - 1)
             {
                 // cap off with the end room.
@@ -258,17 +253,8 @@ public class RoomGraph : MonoBehaviour
 
             //  doorway transfer path
             var doorwayTransferPath = currentDoorway.GetTransferRoomPathFrom(currentPos);
-            foreach (var p in doorwayTransferPath)
-            {
-                Debug.Log("DoorTransfer" + p);
-            }
-
             //  current position to next doorway path
             var currentPosToDoorwayPath = currentRoom.GetInteriorPathFrom(currentPos, doorwayTransferPath[0], alignAxes: true);
-            foreach (var p in currentPosToDoorwayPath)
-            {
-                Debug.Log("Pos2Doorway" + p);
-            }
 
             // combine and add these paths
             var bothPaths = PathHelper.CombinePaths(currentPosToDoorwayPath, doorwayTransferPath);
