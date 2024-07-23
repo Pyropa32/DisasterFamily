@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -22,7 +23,7 @@ public class Character : MonoBehaviour
 
     public RoomGraph World { get; protected set; }
 
-    private Queue<MoveData> moveCommandsQueue = new Queue<MoveData>();
+    private MoveDataChain currentMovementQueue;
     void Start()
     {
         World = GetComponentInParent<RoomGraph>();
@@ -36,9 +37,7 @@ public class Character : MonoBehaviour
     public void MoveToPoint(Vector2 finish)
     {
         var startPos = transform.position;
-        var movement = new MoveData(startPos, finish, walkSpeed);
-        moveCommandsQueue.Clear();
-        moveCommandsQueue.Enqueue(movement);
+        currentMovementQueue = new MoveDataChain(startPos, new Vector2[] {finish}, walkSpeed);
     }
 
     /// <summary>
@@ -48,13 +47,7 @@ public class Character : MonoBehaviour
     public void MoveAlongPath(IEnumerable<Vector2> points)
     {
         var startPos = transform.position;
-        moveCommandsQueue.Clear();
-        foreach (var point in points)
-        {
-            var movement = new MoveData(startPos, point, walkSpeed);
-            moveCommandsQueue.Enqueue(movement);
-            startPos = point;
-        }
+        currentMovementQueue = new MoveDataChain(startPos, points.ToArray(), walkSpeed);
     }
 
 
@@ -63,16 +56,13 @@ public class Character : MonoBehaviour
     // Fixed to physics
     void FixedUpdate()
     {
-        if (moveCommandsQueue.Count < 1)
+        // movement chain context
+        // wraps a list of movement commands
+        // 
+        if (!currentMovementQueue.IsFinished)
         {
-            return;
-        }
-        var currentMove = moveCommandsQueue.Peek();
-        currentMove.Tick();
-        transform.position = currentMove.Value;
-        if (currentMove.IsFinished)
-        {
-            moveCommandsQueue.Dequeue();
+            transform.position = currentMovementQueue.Value;
+            currentMovementQueue.Tick();
         }
     }
 }
