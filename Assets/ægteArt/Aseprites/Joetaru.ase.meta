@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 39
       height: 63
-    spriteID: 902e3e5f74babb1419108aa0c785357a
+    spriteID: 13a504756a97f3c41ba77bdc9c29c7cc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,11 +148,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 51
-      y: 4
+      x: 4
+      y: 75
       width: 39
-      height: 62
-    spriteID: 69987414c5a0916448645418b6dd0add
+      height: 63
+    spriteID: beb61cdba4cb2ea4fa84df0d18d83843
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,7 +160,27 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 51, y: 4}
+    uvTransform: {x: 4, y: 75}
+  - name: Joetaru_Frame_2
+    originalName: 
+    pivot: {x: 0.51282054, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 146
+      width: 39
+      height: 62
+    spriteID: 8ff1c6bbea7068948a12f7f2b3bf7f6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 146}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -178,7 +198,7 @@ ScriptedImporter:
         y: 0
         width: 39
         height: 63
-      spriteId: 902e3e5f74babb1419108aa0c785357a
+      spriteId: 13a504756a97f3c41ba77bdc9c29c7cc
     - name: Joetaru_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -186,8 +206,17 @@ ScriptedImporter:
         x: 4
         y: 0
         width: 39
+        height: 63
+      spriteId: beb61cdba4cb2ea4fa84df0d18d83843
+    - name: Joetaru_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 39
         height: 62
-      spriteId: 69987414c5a0916448645418b6dd0add
+      spriteId: 8ff1c6bbea7068948a12f7f2b3bf7f6d
     linkedCells: []
     parentIndex: -1
   platformSettings: []
