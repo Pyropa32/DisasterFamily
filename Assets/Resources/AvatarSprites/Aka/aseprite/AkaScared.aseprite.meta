@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40b84ad7a25f694408574c07409f0281
+guid: 030a806b66152c948a3db1779177f001
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638573946594460365
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Joetaru_Frame_0
+  - name: AkaScared
     originalName: 
-    pivot: {x: 0.51282054, y: 0}
+    pivot: {x: 0.52, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 39
-      height: 63
-    spriteID: 37f051d97a1019d48a8b189e627553cd
+      width: 50
+      height: 58
+    spriteID: 6a4c856bdfb0f7e49afb21ea04a7c391
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,110 +141,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Joetaru_Frame_1
-    originalName: 
-    pivot: {x: 0.51282054, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 75
-      width: 39
-      height: 63
-    spriteID: 9cc40613defaa51459cdd81c3ef75461
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 75}
-  - name: Joetaru_Frame_2
-    originalName: 
-    pivot: {x: 0.51282054, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 146
-      width: 39
-      height: 62
-    spriteID: e11e2267d08ec4343b53bb822fffbccc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 146}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1998310610
-    name: Joetaru
+    guid: 1116936297
+    name: AkaScared
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Joetaru_Frame_0
+    - name: AkaScared
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 4
+        x: 6
         y: 0
-        width: 39
-        height: 63
-      spriteId: 37f051d97a1019d48a8b189e627553cd
-    - name: Joetaru_Frame_1
-      frameIndex: 1
-      additiveSortOrder: 0
-      cellRect:
-        x: 4
-        y: 0
-        width: 39
-        height: 63
-      spriteId: 9cc40613defaa51459cdd81c3ef75461
-    - name: Joetaru_Frame_2
-      frameIndex: 2
-      additiveSortOrder: 0
-      cellRect:
-        x: 4
-        y: 0
-        width: 39
-        height: 62
-      spriteId: e11e2267d08ec4343b53bb822fffbccc
+        width: 50
+        height: 58
+      spriteId: 6a4c856bdfb0f7e49afb21ea04a7c391
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 48, y: 64}
+  canvasSize: {x: 64, y: 64}

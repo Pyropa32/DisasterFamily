@@ -13,10 +13,40 @@
 	</character>
 	<character name="Bland" default="BlandBase">
 		<interaction id="0">
-			<page>JavaScript is bad. :(</page>
+			<page>Moving in was a bit chaotic... We still have so much stuff laying around.</page>
+			<page>Including this emergency supply box we got.</page>
 		</interaction>
 		<interaction id="1">
-			<page>Late stage capitalism is bad. :(</page>
+			<page>Lucky that we had stuff at the ready.</page>
+			<page avatar="BlandCaution">But the box is only so big, be careful with what you put in it!</page>
+		</interaction>
+	</character>
+	<character name="Isamu" default="IsamuBase">
+		<interaction id="0">
+			<page>At least my stuff has been put where it belongs.</page>
+		</interaction>
+		<interaction id="1">
+			<page>My things won't help too much here unfortunately.</page>
+			<page avatar="IsamuAccept">There's no time or space to waste for it.</page>
+		</interaction>
+	</character>
+	<character name="Kazue" default="KazueBase">
+		<interaction id="0">
+			<page>They said earthquakes were a higher risk here...</page>
+			<page>It makes me nervous to think about.</page>
+		</interaction>
+		<interaction id="1">
+			<page avatar="KazueShock">I can't believe it's already happening so soon.</page>
+			<page>We need to pack what we need quick! Only things that will help for the after math.</page>
+			<page>There probably won't be power, so keep that in mind.</page>
+		</interaction>
+	</character>
+	<character name="Aka" default="AkaBase">
+		<interaction id="0">
+			<page>I have my rubber ducky :D</page>
+		</interaction>
+		<interaction id="1">
+			<page avatar="AkaScared">This is too scary! Can we make room for Mr. Quack?</page>
 		</interaction>
 	</character>
 </dialogue>
