@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638573552689573797
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 62
-    spriteID: cec22003edc4d134fb3fb83cf76e502d
+    spriteID: eba39c0ff7fc57645baf182470faeefc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 74
       width: 27
       height: 62
-    spriteID: d2d85ab09aece7041bd61e96fd2f0fa0
+    spriteID: 0a425c73d235f054992d439021ae492d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 144
       width: 27
       height: 62
-    spriteID: 3014d56501a439243aa4341b774eae9f
+    spriteID: 3c99c27da3eeaf9429c413a45fd19356
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 62
-    spriteID: 60bdc1fcd1bd03546978d8c4c655a332
+    spriteID: bb821ce1c6a90534abe05636ea54d7bd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 74
       width: 27
       height: 62
-    spriteID: 003bf5dcaee74124c827d73a150e34ba
+    spriteID: cf24b0fe795faf248a1709ba4db681cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 144
       width: 27
       height: 61
-    spriteID: a20e3876c0bc64746adcbc39fd1e879d
+    spriteID: 6a850ee0d2bce51438a9042504a733db
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 4
       width: 27
       height: 61
-    spriteID: 7fee0774b96bc7e418da8d630e8a8d01
+    spriteID: 033fed2a85a3f19438f30e95a955539f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 73
       width: 27
       height: 61
-    spriteID: 84f2b0c60e2f25a4ea3d983b9a9dccfe
+    spriteID: 0af25d6d777fc9441b778212179ee3aa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -298,7 +298,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 62
-      spriteId: cec22003edc4d134fb3fb83cf76e502d
+      spriteId: eba39c0ff7fc57645baf182470faeefc
     - name: dotter-idle_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -307,7 +307,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 62
-      spriteId: d2d85ab09aece7041bd61e96fd2f0fa0
+      spriteId: 0a425c73d235f054992d439021ae492d
     - name: dotter-idle_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -316,7 +316,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 62
-      spriteId: 3014d56501a439243aa4341b774eae9f
+      spriteId: 3c99c27da3eeaf9429c413a45fd19356
     - name: dotter-idle_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -325,7 +325,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 62
-      spriteId: 60bdc1fcd1bd03546978d8c4c655a332
+      spriteId: bb821ce1c6a90534abe05636ea54d7bd
     - name: dotter-idle_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -334,7 +334,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 62
-      spriteId: 003bf5dcaee74124c827d73a150e34ba
+      spriteId: cf24b0fe795faf248a1709ba4db681cd
     - name: dotter-idle_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
@@ -343,7 +343,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 61
-      spriteId: a20e3876c0bc64746adcbc39fd1e879d
+      spriteId: 6a850ee0d2bce51438a9042504a733db
     - name: dotter-idle_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
@@ -352,7 +352,7 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 61
-      spriteId: 7fee0774b96bc7e418da8d630e8a8d01
+      spriteId: 033fed2a85a3f19438f30e95a955539f
     - name: dotter-idle_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
@@ -361,34 +361,10 @@ ScriptedImporter:
         y: 0
         width: 27
         height: 61
-      spriteId: 84f2b0c60e2f25a4ea3d983b9a9dccfe
+      spriteId: 0af25d6d777fc9441b778212179ee3aa
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 32
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638573552689528152
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bland-chard
+  - name: bland-chard_Frame_0
     originalName: 
     pivot: {x: 0.42857143, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 28
       height: 62
-    spriteID: f4e3c159732f9ee4aa419a64649095ea
+    spriteID: c35ab8c196dfe7142b21e75ded1a3f1c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 73
       width: 29
       height: 62
-    spriteID: af50216992f9a084e9ec57dc595e0a06
+    spriteID: 44e5fcc6f4ceff047b91dd00dd4d10b1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 144
       width: 34
       height: 62
-    spriteID: ab0dc7c1cc3e9be4289f2bb3f992d53b
+    spriteID: 02917de79cb752840bf334bfda54a765
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 4
       width: 35
       height: 62
-    spriteID: d47ff744f04bbd8419da7b2f343d93ea
+    spriteID: c103ce50c93305a479327f27882f511a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 74
       width: 35
       height: 62
-    spriteID: 29a21137c195852438c54255854079ab
+    spriteID: 0ffac3922a66e644992b0240ac20f9d5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 4
       width: 34
       height: 61
-    spriteID: 6260f3cc948888444966d6bdd055daa1
+    spriteID: 732b61d019d348a448d65a8e7f33093f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 143
       width: 29
       height: 61
-    spriteID: 68ba83af76ef9b949bc7600b5312ef8e
+    spriteID: 6cd669e7890e20c4b9ab5f00035554ab
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 74
       width: 28
       height: 61
-    spriteID: db4797ba67f2c254c8adbf6d676dac59
+    spriteID: e1800711fe1aaab47bd2655a6a91c2ea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -298,7 +298,7 @@ ScriptedImporter:
         y: 0
         width: 28
         height: 62
-      spriteId: f4e3c159732f9ee4aa419a64649095ea
+      spriteId: c35ab8c196dfe7142b21e75ded1a3f1c
     - name: bland-chard_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -307,7 +307,7 @@ ScriptedImporter:
         y: 0
         width: 29
         height: 62
-      spriteId: af50216992f9a084e9ec57dc595e0a06
+      spriteId: 44e5fcc6f4ceff047b91dd00dd4d10b1
     - name: bland-chard_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -316,7 +316,7 @@ ScriptedImporter:
         y: 0
         width: 34
         height: 62
-      spriteId: ab0dc7c1cc3e9be4289f2bb3f992d53b
+      spriteId: 02917de79cb752840bf334bfda54a765
     - name: bland-chard_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -325,7 +325,7 @@ ScriptedImporter:
         y: 0
         width: 35
         height: 62
-      spriteId: d47ff744f04bbd8419da7b2f343d93ea
+      spriteId: c103ce50c93305a479327f27882f511a
     - name: bland-chard_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
@@ -334,7 +334,7 @@ ScriptedImporter:
         y: 0
         width: 35
         height: 62
-      spriteId: 29a21137c195852438c54255854079ab
+      spriteId: 0ffac3922a66e644992b0240ac20f9d5
     - name: bland-chard_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
@@ -343,7 +343,7 @@ ScriptedImporter:
         y: 0
         width: 34
         height: 61
-      spriteId: 6260f3cc948888444966d6bdd055daa1
+      spriteId: 732b61d019d348a448d65a8e7f33093f
     - name: bland-chard_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
@@ -352,7 +352,7 @@ ScriptedImporter:
         y: 0
         width: 29
         height: 61
-      spriteId: 68ba83af76ef9b949bc7600b5312ef8e
+      spriteId: 6cd669e7890e20c4b9ab5f00035554ab
     - name: bland-chard_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
@@ -361,34 +361,10 @@ ScriptedImporter:
         y: 0
         width: 28
         height: 61
-      spriteId: db4797ba67f2c254c8adbf6d676dac59
+      spriteId: e1800711fe1aaab47bd2655a6a91c2ea
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

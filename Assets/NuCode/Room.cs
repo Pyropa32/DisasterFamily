@@ -27,18 +27,23 @@ public class Room : MonoBehaviour, IEquatable<Room>
     public Vector2 TopLeft => new Vector2(transform.position.x + (uvY.x * extents.y), transform.position.y + (uvY.y * extents.y));
     public Vector2 TopRight => new Vector2(transform.position.x + (uvX.x * extents.x) + (uvY.x * extents.y),
                                            transform.position.y + (uvY.y * extents.y) + uvX.y /* not broken (yet)*/);
+    // Lazy AF
+    public Vector2 Center => LocalToGlobal(new Vector2(0.5f,0.5f));
     private Vector2 offset;
     private HashSet<RoomDoorway> doorways = new HashSet<RoomDoorway>();
 
     private Matrix4x4 transformation;
-
     public RoomGraph World { get; set; }
+    public bool DoesRedirect => redirection != null && redirection.IsValid;
+    private RedirectRoomTransfer redirection;
+    public RedirectRoomTransfer Redirection => redirection;
 
 
     // Start is called before the first frame update
     void Start()
     {
         World = GetComponentInParent<RoomGraph>();
+        redirection = GetComponent<RedirectRoomTransfer>();
     }
 
     public RoomDoorway[] GetDoorways()
@@ -91,6 +96,9 @@ public class Room : MonoBehaviour, IEquatable<Room>
     public Vector2[] GetInteriorPathFrom(Vector2 start, Vector2 end, bool alignAxes=false)
     {
         // TODO: A* Pathfinding within a room if there's time.
+
+        alignAxes = false;
+
         if (alignAxes)
         {
             // \
@@ -129,17 +137,19 @@ public class Room : MonoBehaviour, IEquatable<Room>
 
     internal Room.Side WhichSide(Vector2 globalPosition)
     {
-        var position = GlobalToLocal(globalPosition);
+        var position = GlobalToLocalNoClamp(globalPosition);
         var middle = Vector2.one / 2f;
         var diff = position - middle;
         var diffAbs = new Vector2(Mathf.Abs(diff.x), Mathf.Abs(diff.y));
         if (diffAbs.x > diffAbs.y)
         {
-            return diff.x > middle.x ? Side.Right : Side.Left; 
+            // positive diff = right
+            return diff.x >= 0f ? Side.Right : Side.Left; 
         }
         else
         {
-            return diff.y > middle.y ? Side.Top : Side.Bottom;
+            // positive diff = up
+            return diff.y >= 0f ? Side.Top : Side.Bottom;
         }
     }
     /// <summary>
@@ -215,6 +225,12 @@ public class Room : MonoBehaviour, IEquatable<Room>
     {
         var result = transformation.inverse * (GlobalCoordinates - offset);
         return ClampLocal(result);
+    }
+
+    private Vector2 GlobalToLocalNoClamp(Vector2 GlobalCoordinates)
+    {
+        var result = transformation.inverse * (GlobalCoordinates - offset);
+        return result;
     }
 
     public Vector2 LocalToGlobal(Vector2 worldCoordinates)

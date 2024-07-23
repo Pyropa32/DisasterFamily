@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Prototypal;
 using UnityEngine;
 
 public class GameCamera : MonoBehaviour
 {
     // Start is called before the first frame update
-    SimpleFloorPlaneGraph world;
+    RoomGraph world;
     BoundedVector boundedPosition; 
     Actor focusedActor;
     bool _hasSetInitialBounds = false;
@@ -18,7 +15,7 @@ public class GameCamera : MonoBehaviour
         boundedPosition.LockAxis(BoundedVector.Axis.Y);
         if (world == null)
         {
-            world = GetComponentInParent<SimpleFloorPlaneGraph>();
+            world = GetComponentInParent<RoomGraph>();
             if (world == null)
             {
                 throw new InvalidOperationException("unable to obtain reference to World");
@@ -30,7 +27,7 @@ public class GameCamera : MonoBehaviour
 
     void SetUpBounds()
     {
-        var bounds = world.GetBounds();
+        var bounds = world.GetMapBounds();
         boundedPosition.SetAxisLowerBound(BoundedVector.Axis.X, bounds.min.x);
         boundedPosition.SetAxisLowerBound(BoundedVector.Axis.Y, bounds.min.y);
 
@@ -41,7 +38,7 @@ public class GameCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (world.HasStarted && !_hasSetInitialBounds)
+        if (world.IsSetupComplete && !_hasSetInitialBounds)
         {
             _hasSetInitialBounds = false;
             SetUpBounds();
