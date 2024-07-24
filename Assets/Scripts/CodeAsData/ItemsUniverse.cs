@@ -268,23 +268,23 @@ public static class ItemsUniverse
     private static void AddItem(int id, string _path, string _name, string _remarks, ItemQuality quality=ItemQuality.Useless)
     {
         lock (_lock)
-    {
-        if (!_data.ContainsKey(id))
         {
-            _data.Add(id, Item.CreateWithSpritePath(
-                id,
-                _path,
-                _name,
-                _remarks,
-                quality
-            ));
+            if (!_data.ContainsKey(id))
+            {
+                _data.Add(id, Item.CreateWithSpritePath(
+                    id,
+                    _path,
+                    _name,
+                    _remarks,
+                    quality
+                ));
+            }
+            else
+            {
+                // Handle the case where the item already exists, if needed
+                UnityEngine.Debug.LogWarning($"Item with ID {id} already exists.");
+            }
         }
-        else
-        {
-            // Handle the case where the item already exists, if needed
-            UnityEngine.Debug.LogWarning($"Item with ID {id} already exists.");
-        }
-    }
     }
 }
 

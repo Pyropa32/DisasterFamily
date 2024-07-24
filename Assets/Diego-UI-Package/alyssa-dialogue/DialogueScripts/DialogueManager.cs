@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System;
 
 
 // Next up:
@@ -25,12 +28,32 @@ public static class DialogueManager {
     private static Dictionary<string, Page[]> DialogueDict = new Dictionary<string, Page[]>();
     private static Dictionary<string, Sprite> SpriteDict = new Dictionary<string, Sprite>();
 
-    static DialogueManager() {
+    /*static DialogueManager() {
         loadFromFile("Sample");
-    }
+    }*/
 
     public static void NoOp() {
         //idk im so tired dont come for me
+    }
+
+    public static IEnumerator MeasureLoadSpeed(string path)
+    {
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        loadFromFileSingleThreaded(path);
+        stopwatch.Stop();
+        TimeSpan singleThreadedTime = stopwatch.Elapsed;
+        UnityEngine.Debug.Log($"Single-threaded dialogue load time: {singleThreadedTime.TotalMilliseconds} ms");
+
+        DialogueDict.Clear();
+        stopwatch.Reset();
+        stopwatch.Start();
+        loadFromFile(path);
+        stopwatch.Stop();
+        TimeSpan multiThreadedTime = stopwatch.Elapsed;
+        UnityEngine.Debug.Log($"Multi-threaded dialogue load time: {multiThreadedTime.TotalMilliseconds} ms");
+
+        yield return null;
     }
 
     public static void loadFromFile(string path)
@@ -43,6 +66,17 @@ public static class DialogueManager {
         string asset = textAsset.text;
         Thread IOthread = new Thread(() => loadFromFileThread(path, asset));
         IOthread.Start();
+    }
+
+    public static void loadFromFileSingleThreaded(string path)
+    {
+        if (DialogueDict.ContainsKey(path))
+        {
+            return;
+        }
+        TextAsset textAsset = (TextAsset)Resources.Load(path);
+        string asset = textAsset.text;
+        loadFromFileThread(path, asset);
     }
 
     public static Sprite getSprite(string path)
@@ -65,7 +99,7 @@ public static class DialogueManager {
 
         //should only be 1 dialogue tag in XML
         if (dialogue.Count != 1) {
-            Debug.LogError("There should only be 1 dialogue tag! Check " + path);
+            UnityEngine.Debug.LogError("There should only be 1 dialogue tag! Check " + path);
             return;
         }
         // follows XML format : dialogue > character name > interaction id > page
@@ -73,7 +107,7 @@ public static class DialogueManager {
         for (int i = 0; i < characters.Count; i++) {
             if (characters[i].Attributes.Count != 2)
             {
-                Debug.LogError("We only want two attribute tag per character -- the name and the sprite!");
+                UnityEngine.Debug.LogError("We only want two attribute tag per character -- the name and the sprite!");
                 continue;
             }
             string name = characters[i].Attributes[0].Value;
@@ -86,7 +120,7 @@ public static class DialogueManager {
                 key += "." + name;
 
                 if (interactions[j].Attributes.Count != 1 || interactions[j].Attributes[0].Name != "id") {
-                    Debug.LogError("We only want one attribute tag per interactions -- the id!");
+                    UnityEngine.Debug.LogError("We only want one attribute tag per interactions -- the id!");
                     continue;
                 }
 
