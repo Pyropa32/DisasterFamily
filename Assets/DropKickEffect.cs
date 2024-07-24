@@ -144,7 +144,10 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
         myDropKickableCharacter.enabled = false;
         // JANK!
         myDropKickableCharacter.GetComponent<SpriteRenderer>().color = Color.clear;
-        Destroy(myDropKickableCharacter);
+        dropKickOptionUI.color = Color.clear;
+        // FUCK YOU!! I thought that shit would remove the COMPONENT'S GAME OBJECT OMG!!!
+        // NO, I HAVE TO SPECIFY THE GAME OBJECT
+        Destroy(myDropKickableCharacter.gameObject);
     }
 
     void PollOptionAvailability()
