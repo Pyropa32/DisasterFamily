@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2038449607361723225}
   - component: {fileID: 1656257210607829905}
   - component: {fileID: 3083570080811135509}
+  - component: {fileID: 8918970102745276274}
   m_Layer: 0
   m_Name: GeneralNPC
   m_TagString: Untagged
@@ -75,15 +76,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5042619058563414290, guid: 962df9584704d9e44b8c219be4193c10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.875, y: 1.9375}
+  m_Size: {x: 0.28, y: 0.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1656257210607829905
@@ -96,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 4819228671796960912}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 6056691610296146889, guid: 962df9584704d9e44b8c219be4193c10, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -119,8 +120,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6982b2950098f4eb0aaa2e94cea291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePaths: []
-  incrementBy1: 1
+  dialoguePaths:
+  - Sample.Bland.0
+  - Sample.Bland.1
+  incrementBy1: 0
   loop: 0
   infinite: 1
-  steps: 
+  steps: 0000000000000000
+  changeIndOnStart: 1
+  parentRoom: {fileID: 0}
+--- !u!114 &8918970102745276274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819228671796960912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469f4055792d8144eaf03881e81a9cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0

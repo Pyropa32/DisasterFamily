@@ -9,6 +9,12 @@ using System.Linq;
 public class RoomGraph : MonoBehaviour
 {
     // Start is called before the first frame update
+    public void HeyGoKillTheBaby()
+    {
+        Debug.Log("this was called!");
+        var baby = GameObject.Find("Aka");
+        GameObject.Destroy(baby);
+    }
     public bool IsSetupComplete { get; protected set; }
     private Graph<RoomDoorway, Room> data = new Graph<RoomDoorway, Room>();
     private Room[] rooms;
