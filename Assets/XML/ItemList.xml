@@ -1,22 +1,171 @@
 <ItemList>
     <item>
-        <id>0</id>
+        <id>10000</id>
+        <path>Sake</path>
+        <name>Sake Bottle</name>
+        <remarks>It escaped the supplies promptly; A sneaky father seems to have broken his vows.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10001</id>
+        <path>kuma</path>
+        <name>Kuma</name>
+        <remarks>A gentle reminder of childhood innocence, yet with no place here in times like these.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10002</id>
+        <path>Flashlight</path>
+        <name>Flashlight</name>
+        <remarks>Amidst the destruction, the flashlight serves its valiant purpose well in recovering your essentials.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10003</id>
+        <path>fosh</path>
+        <name>Canned Tuna</name>
+        <remarks>A classic snack enjoyed thoroughly by the father. He gingerly pries off the tin lid, and serves it to his children.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10004</id>
+        <path>fak</path>
+        <name>First Aid Kit</name>
+        <remarks>Your daughter is injured... You address it with this First Aid Kit.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10005</id>
+        <path>shamisen</path>
+        <name>Shamisen</name>
+        <remarks>Those were some impressive tunes, you've missed your calling as a musician. But I'm still hungry.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10006</id>
+        <path>crobebar</path>
         <name>Crowbar</name>
+        <remarks>The right man in the wrong place can make all the difference in the world.</remarks>
+        <item_quality>Required</item_quality>
     </item>
     <item>
-        <id>1</id>
-        <name>Flare</name>
+        <id>10007</id>
+        <path>whistle</path>
+        <name>Whistle</name>
+        <remarks>The whistle alerts a search and rescue team to your location.</remarks>
+        <item_quality>Required</item_quality>
     </item>
     <item>
-        <id>2</id>
-        <name>Keys</name>
+        <id>10008</id>
+        <path>IDCard</path>
+        <name>IDCard</name>
+        <remarks>You'll need this when registering your status at an evacuation center.</remarks>
+        <item_quality>Required</item_quality>
     </item>
     <item>
-        <id>3</id>
-        <name>Wood</name>
+        <id>10009</id>
+        <path>wrench</path>
+        <name>Pipe Wrench</name>
+        <remarks>Would you kindly toss that wrench back into the rubble? You're not the town plumber!</remarks>
+        <item_quality>Useless</item_quality>
     </item>
     <item>
-        <id>4</id>
-        <name>Wrench</name>
+        <id>10010</id>
+        <path>toilet_paper</path>
+        <name>Toilet Paper</name>
+        <remarks>Nature's call is inevitable.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10011</id>
+        <path>sheck</path>
+        <name>Suspiciously Long Pillow</name>
+        <remarks>Sheck is love, Sheck is life. Dreamworks I swear, the resemblance is purely coincidential.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10012</id>
+        <path>fire-extinguisher</path>
+        <name>Fire Extinguisher</name>
+        <remarks>A fire immolates the debris. You fend it off with this handy Fire Extinguisher.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10013</id>
+        <path>radio</path>
+        <name>Portable Radio</name>
+        <remarks>The radio keeps the family updated on all happenings through the aftermath of the quake.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10014</id>
+        <path>map</path>
+        <name>Town Map</name>
+        <remarks>The map helps you navigate through the destruction of the city to the evacuation point.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10015</id>
+        <path>cash</path>
+        <name>Cash<name>
+        <remarks>You'll need your cash to live through these trying times. And afterwards. The bus doesn't accept subway cards or one day passes,
+        so please pay in Japanese yen.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10016</id>
+        <path>stack_of_papers</path>
+        <name>House Documents<name>
+        <remarks>These documents are proof of your home ownership and mortgage payments.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10017</id>
+        <path>sleeping_bag</path>
+        <name>Sleeping Bag<name>
+        <remarks>An uncomfortable but essential place to sleep in the night.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10018</id>
+        <path>canopener</path>
+        <name>Can Opener</name>
+        <remarks>It won't be too uncommon to find canned sardines around here.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10019</id>
+        <path>battery</path>
+        <name>Spare Batteries</name>
+        <remarks>It's a good idea to keep your electronics charged.</remarks>
+        <item_quality>Required</item_quality>
+    </item>
+    <item>
+        <id>10020</id>
+        <path>Duck</path>
+        <name>Rubber Duck</name>
+        <remarks>Useful for screaming at when debugging code, less so for surviving a natural disaester.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10021</id>
+        <path>handheld-fan</path>
+        <name>Pocket Fan</name>
+        <remarks>The flimsy pocket fan blows 1 kt of air at your forehead.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10022</id>
+        <path>steak</path>
+        <name>Steak</name>
+        <remarks>There's no way to keep the steak from spoiling.</remarks>
+        <item_quality>Useless</item_quality>
+    </item>
+    <item>
+        <id>10023</id>
+        <path>medicine</path>
+        <name>Medicine</name>
+        <remarks>Your wife has a health condition. Lucky of you to bring the medicine.</remarks>
+        <item_quality>Required</item_quality>
     </item>
 </ItemList>

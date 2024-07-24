@@ -1,59 +1,48 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using Diego;
 
-public class InteractableActionStoryCommand : IStoryCommand {
-    public bool started;
-    public bool finished;
-    public Item item;
-    public event Action<Object> OnFinish;
-    public bool IsFinished { get => finished; }
-    public bool IsStarted { get => started; }
-    public bool IsConcurrent { get => true; }
-    public StoryCommandExecutionFlags ExecutionFlags => StoryCommandExecutionFlags.DiscardAlike |
-                                                        StoryCommandExecutionFlags.DiscardConcurrent;
-
-    public InteractableActionStoryCommand(Action<Item> onFinish, Item item) {
-        this.item = item;
-        OnFinish = (object arg) => {
-            onFinish.Invoke(item);
-        };
-    }
-    public void Start() {
-        OnFinish.Invoke(item);
-        finished = true;
-        started = true;
-    }
-    public void Tick(float delta) {
-        // nothing
-    }
-    public object GetProgressModel() {
-        if (IsStarted && IsFinished) {
-            return 1f;
-        }
-        return 0f;
-    }
-    public Type InstanceType => GetType();
-}
 public interface IInteractable : ISelectable {
     public Action<Item> OnInteract { get; set; }
-    private InteractableActionStoryCommand ToStoryCommand(Item item) {
-        return new InteractableActionStoryCommand(OnInteract, item);
-    }
-    public void GetInRangeAndDo(Item item, UnityEngine.Vector2 itemPos) {
-        float range = 1f;
-        UnityEngine.Vector2 playerPivot = new UnityEngine.Vector2(0, 0.75f);
-
-        UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position + new UnityEngine.Vector3(playerPivot.x, playerPivot.y, 0);
-        UnityEngine.Vector2 displacement = itemPos - playerPos;
-        if (displacement.magnitude <= range) {
-            OnInteract.Invoke(item);
+    public float Range { get; }
+    public Room ParentRoom { get; }
+    public void GetInRangeAndDo(Item item, Vector2 itemPos) {
+        if (!CameraToScreenspaceConverter.isInGameBounds(Input.mousePosition)) {
             return;
         }
-        displacement *= 1 - (range / displacement.magnitude);
-        List<IStoryCommand> after = new List<IStoryCommand>();
-        after.Add(ToStoryCommand(item));
-        UnityEngine.GameObject.FindWithTag("Player").GetComponent<ClickToMove>().OnClicked(displacement + playerPos - playerPivot, after);
+        float range = Range;
+        //Vector2 playerPivot = new Vector2(0, 0.75f);
+        var player = GameObject.FindWithTag("Player").GetComponent<Character>();
+        var world = GameObject.FindWithTag("Player").GetComponentInParent<RoomGraph>();
+        Vector2 playerPos = GameObject.FindWithTag("Player").transform.position;// + new Vector3(playerPivot.x, playerPivot.y, 0);
+        Vector2 dropPos = Camera.main.transform.position;
+        dropPos += CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
+        if (ParentRoom != null) {
+            dropPos = ParentRoom.ClampGlobal(dropPos);
+        }
+        ItemInteraction interactAction = new ItemInteraction(item, InventoryManager.getIndInInv(item), this, dropPos, range);
+
+        if (Timer.isPaused() == false) {
+            var start = GameObject.FindWithTag("Player").transform.position;
+            var clickedRoom = world.GetRoomAt(dropPos);
+            if (player.CurrentRoom == null) {
+                return;
+            }
+            if (clickedRoom == null || clickedRoom == player.CurrentRoom) {
+                // If no room is clicked, just move in the current room.
+                var currentRoom = player.CurrentRoom;
+                var destination = currentRoom.ClampGlobal(dropPos);
+                var path = currentRoom.GetInteriorPathFrom(start, destination);
+                player.MoveAlongPath(path, interactAction);
+            }
+            else {
+                // pathfind to other room
+                var destination = clickedRoom.ClampGlobal(dropPos);
+                var path = world.GetExteriorPathFrom(start, destination);
+                player.MoveAlongPath(path, interactAction);
+            }
+        }
     }
 }

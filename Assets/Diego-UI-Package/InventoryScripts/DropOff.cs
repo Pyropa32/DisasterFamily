@@ -2,10 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Diego;
+using UnityEngine;
 
 namespace Diego {
     public class DropOff : UnityEngine.MonoBehaviour, IInteractable {
         private static DropOff instance;
+
+        public UnityEngine.Sprite close;
+        public UnityEngine.Sprite open;
+        public Room parentRoom;
 
         private Action<Item> action;
         private UnityEngine.Sprite mySprite;
@@ -24,19 +29,23 @@ namespace Diego {
             items = new List<Item>();
         }
         public void Action(Item item) {
-            if (items.Count >= maxItems || item.Equals(Item.Empty)) {
-                if (items.Count >= maxItems) {
-                    DialogueManager.textToLoad("Sample.me.1");
-                }
+            if (item.Equals(Item.Empty) || !SceneChanger.getState()) {
+                return;
+            }
+            if (items.Count >= maxItems) {
+                DialogueManager.textToLoad("Sample.Depparin.1");
                 return;
             }
             else {
                 items.Add(item);
+                GameObject.FindWithTag("MainCamera")?.GetComponent<switchAudioOnStart>()?.playSound(2);
                 InventoryManager.removeInInventory(item.ID);
                 transform.GetChild(0).GetComponent<FullnessBar>().SetValue(items.Count, maxItems);
             }
         }
         public int ID => 0;
+        public float Range => 1.5f;
+        public Room ParentRoom => parentRoom;
         public UnityEngine.Sprite Sprite => mySprite;
         public Action<Item> OnInteract {
             get {
@@ -56,6 +65,14 @@ namespace Diego {
         }
         public static int GetMaxNum() {
             return instance.maxItems;
+        }
+        void Update() {
+            if (SceneChanger.getState()) {
+                transform.GetComponent<UnityEngine.SpriteRenderer>().sprite = open;
+            }
+            else {
+                transform.GetComponent<UnityEngine.SpriteRenderer>().sprite = close;
+            }
         }
     }
 }

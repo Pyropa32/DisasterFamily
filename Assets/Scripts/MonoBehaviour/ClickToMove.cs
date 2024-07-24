@@ -49,7 +49,7 @@ public class ClickToMove : MonoBehaviour
         Camera UICamera = GameObject.FindWithTag("UIInclude").GetComponent<Camera>();
         Collider2D hit = Physics2D.Raycast(UICamera.ScreenToWorldPoint(Input.mousePosition), UICamera.transform.forward).collider;
         interacting = interacting || (hit?.GetComponent<DialogueTextManager>() != null && hit.transform.parent.GetComponent<SpriteRenderer>().enabled);
-        if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false)
+        if (currentLeftMouseDown == false && _previousLeftMouseDown == true && inRange == true && interacting == false && Timer.isPaused() == false)
         {
             Vector3 CameraPos = Camera.main.transform.position;
             worldMousePosition += new Vector2(CameraPos.x, CameraPos.y);

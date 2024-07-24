@@ -11,8 +11,15 @@ namespace Diego
         public int index = -1;
         private Vector3 origin;
 
-        void OnMouseDown()
-        {
+        public void ItemAnimation() {
+            transform.GetComponent<Animator>().SetTrigger("insert");
+            Debug.Log("Item really should animate");
+        }
+        
+        void OnMouseDown() {
+            if (Timer.isPaused() || !InventoryManager.SingletonInstance.invActive[index]) {
+                return;
+            }
             // if onClick is null, don't invoke.
             origin = transform.position;
             if (index != -1) {
@@ -41,89 +48,45 @@ namespace Diego
                 hit.GetComponent<IInteractable>()?.GetInRangeAndDo(i, hit.transform.position);
             }
             else {
-                MoveThenDrop(ItemLookup.GetItemFromID(id), Input.mousePosition);
+                MoveThenDrop(ItemLookup.GetItemFromID(id), Input.mousePosition, index);
             }
             ResetPos();
         }
 
-        private class DropAction : IStoryCommand {
-            public bool started;
-            public bool finished;
-            public Item item;
-            public event Action<System.Object> OnFinish;
-            public bool IsFinished { get => finished; }
-            public bool IsStarted { get => started; }
-            public bool IsConcurrent { get => true; }
-            public StoryCommandExecutionFlags ExecutionFlags => StoryCommandExecutionFlags.DiscardAlike |
-                                                                StoryCommandExecutionFlags.DiscardConcurrent;
-
-            public DropAction(Item item, Vector2 mousePos) {
-                this.item = item;
-                OnFinish = (object arg) => {
-                    DropItem(item.ID, mousePos);
-                };
-            }
-            public void Start() {
-                OnFinish.Invoke(item);
-                finished = true;
-                started = true;
-            }
-            public void Tick(float delta) {
-                // nothing
-            }
-            public object GetProgressModel() {
-                if (IsStarted && IsFinished) {
-                    return 1f;
-                }
-                return 0f;
-            }
-            public Type InstanceType => GetType();
-        }
-
-        private static void MoveThenDrop(Item item, UnityEngine.Vector2 mousePos) {
+        private static void MoveThenDrop(Item item, UnityEngine.Vector2 mousePos, int index) {
             if (!CameraToScreenspaceConverter.isInGameBounds(mousePos)) {
                 return;
             }
-            float range = 1f;
-            UnityEngine.Vector2 playerPivot = new UnityEngine.Vector2(0, 0.75f);
-
-            UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position + new UnityEngine.Vector3(playerPivot.x, playerPivot.y, 0);
+            float range = 0.25f;
+            //UnityEngine.Vector2 playerPivot = new UnityEngine.Vector2(0, 0.75f);
+            var player = UnityEngine.GameObject.FindWithTag("Player").GetComponent<Character>();
+            var world = UnityEngine.GameObject.FindWithTag("Player").GetComponentInParent<RoomGraph>();
+            UnityEngine.Vector2 playerPos = UnityEngine.GameObject.FindWithTag("Player").transform.position;// + new UnityEngine.Vector3(playerPivot.x, playerPivot.y, 0);
             UnityEngine.Vector2 dropPos = Camera.main.transform.position;
             dropPos += CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(mousePos);
-            UnityEngine.Vector2 displacement = dropPos - playerPos;
-            if (displacement.magnitude <= range) {
-                DropItem(item.ID, dropPos);
-                return;
+            ItemDrop dropAction = new ItemDrop(item, index, dropPos, range);
+
+            if (Timer.isPaused() == false) {
+                var start = UnityEngine.GameObject.FindWithTag("Player").transform.position;
+                var clickedRoom = world.GetRoomAt(dropPos);
+                if (player.CurrentRoom == null) {
+                    return;
+                }
+                if (clickedRoom == null || clickedRoom == player.CurrentRoom) {
+                    // If no room is clicked, just move in the current room.
+                    var currentRoom = player.CurrentRoom;
+                    var destination = currentRoom.ClampGlobal(dropPos);
+                    var path = currentRoom.GetInteriorPathFrom(start, destination);
+                    player.MoveAlongPath(path, dropAction);
+                }
+                else {
+                    // pathfind to other room
+                    var destination = clickedRoom.ClampGlobal(dropPos);
+                    var path = world.GetExteriorPathFrom(start, destination);
+                    player.MoveAlongPath(path, dropAction);
+                }
             }
-            displacement *= 1 - (range / displacement.magnitude);
-            List<IStoryCommand> after = new List<IStoryCommand>();
-            after.Add(new DropAction(item, dropPos));
-            UnityEngine.GameObject.FindWithTag("Player").GetComponent<ClickToMove>().OnClicked(displacement + playerPos - playerPivot, after);
-        }
-
-        public static void DropItem(int id, Vector2 dropPos) {
-            //Item item = InventoryManager.GetItemFromID(id);
-            //string name = item.GetName();
-            //Debug.Log("Dropping item with name: " + item.GetName());
-            GameObject items = GameObject.Find("Items");
-            //var generatedItem = items.Instantiate();
-            GameObject itemObject = new GameObject();
-            itemObject.AddComponent<CircleCollider2D>();
-            SpriteRenderer spriteRenderer = itemObject.AddComponent<SpriteRenderer>();
-
-            spriteRenderer.sprite = ItemLookup.GetItemFromID(id).Sprite;
-            GeneralItem generalItem = itemObject.AddComponent<GeneralItem>();
-            generalItem.OnInteract = generalItem.Action;
-            itemObject.name = generalItem.name;
-
-            InventoryManager.toggleInInventory(id);
-
-            Vector2 gameSpacePosition = dropPos;
-            gameSpacePosition = GameObject.FindWithTag("Player").GetComponent<Prototypal.SimpleActor>().CurrentPlane.ClampGlobal(gameSpacePosition);
-            itemObject.transform.position = new Vector3(gameSpacePosition.x, gameSpacePosition.y, -9.9f);
-            itemObject.name = ItemLookup.GetItemFromID(id).Name;
-            itemObject.GetComponent<GeneralItem>().id = id;
-        }
+        }/*
 
         public static void ApplyNoItem()
         {
@@ -132,6 +95,6 @@ namespace Diego
             {
                 hit.GetComponent<IInteractable>()?.OnInteract(Item.Empty);
             }
-        }
+        }*/
     }
 }

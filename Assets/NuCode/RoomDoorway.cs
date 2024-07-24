@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class RoomDoorway : MonoBehaviour
 {
+    private const float SPAZ_REMOVAL_TOLERANCE = 0.2f;
     [SerializeField]
     Room entranceOverride;
     [SerializeField]
@@ -16,6 +13,17 @@ public class RoomDoorway : MonoBehaviour
 
     public uint PathfindingID { get; protected set; }
     public RoomGraph World { get; set; }
+
+    private static uint currID = 1;
+
+    void Start()
+    {
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            Destroy(sprite);
+        }
+    }
 
     public void UseOverridenEntranceExit()
     {
@@ -63,9 +71,10 @@ public class RoomDoorway : MonoBehaviour
 
     /// <summary>
     /// Gets the path from the edge of the Entrance room and the edge of the Exit room.
+    /// uses startPosition to align the path properly.
     /// </summary>
     /// <returns>2 points: #1 is point closest to doorway on Exit room, #2 is point closest to doorway on Entrance room.</returns>
-    public Vector2[] GetTransferRoomPath()
+    public Vector2[] GetTransferRoomPathFrom(Vector2 startPosition)
     {
         // If point is in plane, make no change 
         var pointA = transform.position;
@@ -77,18 +86,45 @@ public class RoomDoorway : MonoBehaviour
         }
         if (!EntranceRoom.ContainsPoint(transform.position))
         {
-            pointB = ExitRoom.ClosestBorderPointTo(transform.position);
+            pointB = EntranceRoom.ClosestBorderPointTo(transform.position);
         }
-        return new Vector2[2]
+        var dist1 = ((Vector3)startPosition - pointA).sqrMagnitude;
+        var dist2 = ((Vector3)startPosition - pointB).sqrMagnitude;
+        if (Math.Abs(dist2 - dist1) < SPAZ_REMOVAL_TOLERANCE)
         {
-            pointA,
-            pointB
-        };
+            // if two points are very close
+            // and to avoid conflict, just return 2 copies of the same point.
+            return new Vector2[2]
+            {
+                pointA,
+                pointA
+            };
+        }
+        if (dist1 > dist2)
+        {
+            // if point b is closer...
+            return new Vector2[2]
+            {
+                pointB,
+                pointA
+            };
+        }
+        else
+        {
+            // to prevent minor spazzing, don't include 2 really close points.
+            // if point a is closer...
+            return new Vector2[2]
+            {
+                pointA,
+                pointB
+            };
+
+        }
     }
 
     void Awake()
     {
-        PathfindingID = (uint)GetHashCode();
+        PathfindingID = currID++;
         World = GetComponentInParent<RoomGraph>();
         if (World == null)
         {

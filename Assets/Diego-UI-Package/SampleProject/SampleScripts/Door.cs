@@ -25,6 +25,8 @@ namespace Diego
             }
         }
         public int ID => 0;
+        public float Range => 0.25f;
+        public Room ParentRoom => null;
         public Sprite Sprite => mySprite;
         public Action<Item> OnInteract 
         {

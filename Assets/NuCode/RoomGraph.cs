@@ -156,10 +156,16 @@ public class RoomGraph : MonoBehaviour
         if (startRoom.TryGetDoorwayTo(finishRoom, out RoomDoorway doorway))
         {
             // always 2 elements.
-            var transferRoomPath = doorway.GetTransferRoomPath();
+            var transferRoomPath = doorway.GetTransferRoomPathFrom(start);
             var pathA = startRoom.GetInteriorPathFrom(start, transferRoomPath[0], alignAxes: true);
             var pathB = finishRoom.GetInteriorPathFrom(transferRoomPath[1], finish, alignAxes: true);
-            return PathHelper.CombinePaths(pathA, transferRoomPath, pathB);
+            var semiFinal = PathHelper.CombinePaths(pathA, transferRoomPath, pathB);
+            if (finishRoom.DoesRedirect)
+            {
+                // stitch the last path with the room redirecton!
+                var redirectPath = finishRoom.Redirection.GetRedirectionPathFrom(start);
+                return redirectPath;
+            }
         }
 
         // otherwise, do pathfinding.
@@ -180,6 +186,7 @@ public class RoomGraph : MonoBehaviour
                 // The doorways should not be adjacent here.
 
                 var path = data.Dijkstra(from.PathfindingID, to.PathfindingID);
+                sprList.Add(path);
             }
         }
 
@@ -189,15 +196,24 @@ public class RoomGraph : MonoBehaviour
         if (sprList.Count < 1)
         {
             Debug.Log("no paths found!");
-            return new Vector2[] {};
+            return new Vector2[] { };
         }
-        // Sort the results by distance
-        sprList.Sort((a, b) =>
+        // // Sort the results by distance
+        // sprList.Sort((a, b) =>
+        // {
+        //     return a.Distance.CompareTo(b.Distance);
+        // });
+
+        // // Hyper-Inneficiencah!!
+        var paths = sprList.ConvertAll(item => item.GetPath().ToList());
+
+        // sort the results by path size
+        paths.Sort((a, b) =>
         {
-            return a.Distance.CompareTo(b.Distance);
+            return a.Count.CompareTo(b.Count);
         });
 
-        var doorwayIDList = sprList[0].GetPath().ToArray();
+        var doorwayIDList = paths[0];
 
         Room currentRoom = startRoom;
         Room nextRoom = finishRoom;
@@ -210,38 +226,38 @@ public class RoomGraph : MonoBehaviour
         //  starting point to first doorway
         //
 
-        var firstPath = startRoom.GetInteriorPathFrom(start, doorway.transform.position, alignAxes:true); 
+        var firstPath = startRoom.GetInteriorPathFrom(start, currentDoorway.transform.position, alignAxes: true);
         points.AddRange(firstPath);
 
-        //
+        Vector2 redirectStartPosition = Vector2.zero;
 
-        for (int i = 0; i < doorwayIDList.Length; i++)
+        for (int i = 0; i < doorwayIDList.Count; i++)
         {
             currentDoorway = data[doorwayIDList[i]].Item;
-            if (i == doorwayIDList.Length - 1)
+            if (i == doorwayIDList.Count - 1)
             {
                 // cap off with the end room.
                 nextRoom = finishRoom;
             }
             else
             {
-                if (currentDoorway.EntranceRoom == currentRoom)
+                if (currentRoom == currentDoorway.EntranceRoom)
                 {
-                    nextRoom = currentDoorway.EntranceRoom;
+                    nextRoom = currentDoorway.ExitRoom;
                 }
                 else
                 {
-                    nextRoom = currentDoorway.ExitRoom;
+                    nextRoom = currentDoorway.EntranceRoom;
                 }
             }
 
             //  doorway transfer path
-            var doorwayTransferPath = currentDoorway.GetTransferRoomPath();
+            var doorwayTransferPath = currentDoorway.GetTransferRoomPathFrom(currentPos);
             //  current position to next doorway path
-            var currentPosToDoorwayPath = currentRoom.GetInteriorPathFrom(currentPos, doorwayTransferPath[0], alignAxes:true); 
+            var currentPosToDoorwayPath = currentRoom.GetInteriorPathFrom(currentPos, doorwayTransferPath[0], alignAxes: true);
 
             // combine and add these paths
-            var bothPaths = PathHelper.CombinePaths(doorwayTransferPath, currentPosToDoorwayPath);
+            var bothPaths = PathHelper.CombinePaths(currentPosToDoorwayPath, doorwayTransferPath);
             points.AddRange(bothPaths);
 
             currentRoom = nextRoom;
@@ -252,9 +268,16 @@ public class RoomGraph : MonoBehaviour
         //
         //  last doorway to end point.
         //
-
-        var lastPath = finishRoom.GetInteriorPathFrom(doorway.transform.position, finish, alignAxes:true); 
+        var lastPath = finishRoom.GetInteriorPathFrom(currentDoorway.transform.position, finish, alignAxes: true);
         points.AddRange(lastPath);
+
+        if (finishRoom.DoesRedirect)
+        {
+            // stitch the last path with the room redirecton!
+            // currentPos = 2
+            var redirectPath = finishRoom.Redirection.GetRedirectionPathFrom(currentPos);
+            return PathHelper.CombinePaths(lastPath, redirectPath);
+        }
 
         return points.ToArray();
     }

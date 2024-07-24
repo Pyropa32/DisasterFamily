@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -7,26 +8,55 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private float walkSpeed;
-    
+
     // PERFORMANT ELEMENT: Reduce number of times this is called.
     /// <summary>
     /// Expensive
     /// </summary>
-    public Room CurrentRoom 
+    public Room CurrentRoom
     {
         get
         {
             return World.GetRoomAt(transform.position);
         }
     }
-
+    private bool isPaused = false;
+    public bool IsMoving => currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused;
     public RoomGraph World { get; protected set; }
-
-    private Queue<MoveData> moveCommandsQueue = new Queue<MoveData>();
+    private MoveDataChain currentMovementQueue;
+    private IRangeDependent currentActionQueue = null;
     void Start()
     {
-        World = GetComponent<RoomGraph>();
+        World = GetComponentInParent<RoomGraph>();
     }
+
+    public void Stop()
+    {
+        currentMovementQueue = null;
+    }
+
+    public void Resume()
+    {
+        isPaused = false;
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public Vector2 MoveDirection
+    {
+        get
+        {
+            if (!IsMoving || currentMovementQueue == null)
+            {
+                return Vector2.zero;
+            }
+            return currentMovementQueue.CurrentDirection();
+        }
+    }
+
 
     /// <summary>
     /// Moves the character to `finish`. Speed is determined by character's walk speed.
@@ -36,25 +66,19 @@ public class Character : MonoBehaviour
     public void MoveToPoint(Vector2 finish)
     {
         var startPos = transform.position;
-        var movement = new MoveData(startPos, finish, walkSpeed);
-        moveCommandsQueue.Clear();
-        moveCommandsQueue.Enqueue(movement);
+        currentMovementQueue = new MoveDataChain(startPos, new Vector2[] {finish}, walkSpeed);
     }
 
     /// <summary>
     /// Moves the character to each finish point one-by-one.
     /// </summary>
     /// <param name="points">Can be an Array, List, whatever the hell you want.</param>
-    public void MoveAlongPath(IEnumerable<Vector2> points)
-    {
+    public void MoveAlongPath(IEnumerable<Vector2> points, IRangeDependent rangeDependent = null) {
+        currentActionQueue?.cancel();
+        currentActionQueue = rangeDependent;
+        currentActionQueue?.start();
         var startPos = transform.position;
-        moveCommandsQueue.Clear();
-        foreach (var point in points)
-        {
-            var movement = new MoveData(startPos, point, walkSpeed);
-            moveCommandsQueue.Enqueue(movement);
-            startPos = point;
-        }
+        currentMovementQueue = new MoveDataChain(startPos, points.ToArray(), walkSpeed);
     }
 
 
@@ -63,16 +87,19 @@ public class Character : MonoBehaviour
     // Fixed to physics
     void FixedUpdate()
     {
-        if (moveCommandsQueue.Count < 1)
+        // movement chain context
+        // wraps a list of movement commands
+        //
+        if (currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused)
         {
-            return;
-        }
-        var currentMove = moveCommandsQueue.Peek();
-        currentMove.Tick();
-        transform.position = currentMove.Value;
-        if (currentMove.IsFinished)
-        {
-            moveCommandsQueue.Dequeue();
+            transform.position = currentMovementQueue.Value;
+            transform.position += new Vector3(0, 0, -0.5f);
+            currentMovementQueue.Tick();
+            if (currentActionQueue != null && currentActionQueue.isInRange(transform.position)) {
+                currentActionQueue.finish();
+                currentActionQueue = null;
+                currentMovementQueue = null;
+            }
         }
     }
 }

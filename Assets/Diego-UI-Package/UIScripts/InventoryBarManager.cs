@@ -14,10 +14,15 @@ namespace Diego
         void Start() {
             IM = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
             childrenSlots = transform.GetComponentsInChildren<InventorySlotOnClick>();
+            InventoryManager.OnSlotAnimationRequested += TriggerSlotAnimation;
+        }
+
+        void OnDestroy() {
+            InventoryManager.OnSlotAnimationRequested -= TriggerSlotAnimation;
         }
 
         void Update() {
-            UITextManager.Clear();
+            UITextManager.SetText("");
             for (int i = 0; i < IM.invIds.Length; i++) {
                 if (IM.invIds[i].Equals(Item.Empty)) {
                     children[i].enabled = false;
@@ -40,13 +45,13 @@ namespace Diego
                 childrenSlots[onMouse].Apply(IM.invIds[onMouse].ID);
                 onMouse = -1;
             }
-            else if (Input.GetMouseButtonUp(0)) {
+            else if (Input.GetMouseButtonDown(0)) {
                 Vector2 worldSpace = InteractGame.GetGameSpaceFromScreenSpace(Input.mousePosition);
                 bool inRange = Mathf.Abs(worldSpace.x) <= Camera.main.orthographicSize * 8 / 5;
                 inRange = inRange && Mathf.Abs(worldSpace.y) <= Camera.main.orthographicSize;
                 if (inRange) {
                     Transform hit = InteractGame.GetFromScreenSpace(Input.mousePosition);
-                    if (hit != null && hit.GetComponent<IInteractable>() != null) {
+                    if (hit != null && hit.GetComponent<IInteractable>() != null && !Timer.isPaused()) {
                         hit.GetComponent<IInteractable>().GetInRangeAndDo(Item.Empty, hit.position);
                     }
                 }
@@ -83,6 +88,14 @@ namespace Diego
             if (!IM.invIds[inventoryInd].Equals(Item.Empty))
             {
                 onMouse = inventoryInd;
+            }
+        }
+
+        private void TriggerSlotAnimation(int slotIndex)
+        {
+            if (slotIndex >= 0 && slotIndex < childrenSlots.Length) {
+                childrenSlots[slotIndex].ItemAnimation();
+                Debug.Log("Item should animate");
             }
         }
     }

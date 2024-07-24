@@ -12,27 +12,35 @@ namespace Diego
         private Action<Item> action;
         private Sprite mySprite;
         public int id;
+        public Room parentRoom;
 
         public void Start() {
             mySprite = gameObject.GetComponent<SpriteRenderer>().sprite;
             action = this.Action;
+            if (gameObject.GetComponent<Collider2D>() == null) {
+                gameObject.AddComponent<CircleCollider2D>();
+            }
+        }
+        public void Kill() {
+            Destroy(gameObject);
         }
         public void Action(Item item) {
-            Debug.Log("Clicked");
             if (item.Equals(Item.Empty)) {
                 bool success = InventoryManager.addInInventory(id);
                 if (success) {
-                    Destroy(gameObject);
+                    GameObject.FindWithTag("MainCamera")?.GetComponent<switchAudioOnStart>()?.playSound(0);
+                    transform.GetComponent<Animator>().SetTrigger("click");
                 }
                 else {
                     //display message saying inventory is full
                     //UITextManager.SetTextForSeconds("I can't pick that up my hands are full.", 5f);
-                    DialogueManager.textToLoad("Sample.me.0");
-                    Debug.Log("Inventory Full!");
+                    DialogueManager.textToLoad("Sample.Depparin.0");
                 }
             }
         }
         public int ID => 0;
+        public float Range => 1f;
+        public Room ParentRoom => parentRoom;
         public Sprite Sprite => mySprite;
         public Action<Item> OnInteract {
             get {

@@ -1,36 +1,52 @@
 ﻿<dialogue>
-	<character name="mom">
+	<character name="Depparin" default="DepparinBase">
 		<interaction id="0">
-			<page>Hello.</page>
-			<page>I am the mother.</page>
-			<page>Goodbye.</page>
+			<page avatar="DepparinTired">My inventory is full.</page>
 		</interaction>
 		<interaction id="1">
-			<page>What do you need?</page>
+			<page>The drop off box is full.</page>
 		</interaction>
 		<interaction id="2">
-			<page>Can't talk right now.</page>
+			<page>Oh no! An earthquake!</page>
+			<page>I should grab as many supplies as possible...</page>
 		</interaction>
 	</character>
-	<character name="dad">
+	<character name="Bland" default="BlandBase">
 		<interaction id="0">
-			<page>Hello.</page>
-			<page>I am the father.</page>
-			<page>Goodbye.</page>
+			<page>Moving in was a bit chaotic... We still have so much stuff laying around.</page>
+			<page>Including this emergency supply box we got.</page>
 		</interaction>
 		<interaction id="1">
-			<page>What do you need?</page>
-		</interaction>
-		<interaction id="2">
-			<page>Ask your mom.</page>
+			<page>Lucky that we had stuff at the ready.</page>
+			<page avatar="BlandCaution">But the box is only so big, be careful with what you put in it!</page>
 		</interaction>
 	</character>
-	<character name="me">
+	<character name="Isamu" default="IsamuBase">
 		<interaction id="0">
-			<page>My inventory is full.</page>
+			<page>At least my stuff has been put where it belongs.</page>
 		</interaction>
 		<interaction id="1">
-			<page>The drop off box is full!</page>
+			<page>My things won't help too much here unfortunately.</page>
+			<page avatar="IsamuAccept">There's no time or space to waste for it.</page>
+		</interaction>
+	</character>
+	<character name="Kazue" default="KazueBase">
+		<interaction id="0">
+			<page>They said earthquakes were a higher risk here...</page>
+			<page>It makes me nervous to think about.</page>
+		</interaction>
+		<interaction id="1">
+			<page avatar="KazueShock">I can't believe it's already happening so soon.</page>
+			<page>We need to pack what we need quick! Only things that will help for the after math.</page>
+			<page>There probably won't be power, so keep that in mind.</page>
+		</interaction>
+	</character>
+	<character name="Aka" default="AkaBase">
+		<interaction id="0">
+			<page>I have my rubber ducky :D</page>
+		</interaction>
+		<interaction id="1">
+			<page avatar="AkaScared">This is too scary! Can we make room for Mr. Quack?</page>
 		</interaction>
 	</character>
 </dialogue>

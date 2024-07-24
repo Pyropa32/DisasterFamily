@@ -3,14 +3,17 @@ using UnityEngine;
 using Diego;
 using System.Runtime.CompilerServices;
 using System;
+using System.Xml;
+using System.Threading;
 public static class ItemsUniverse
 {
     private static readonly Dictionary<int, Diego.Item> _data = new Dictionary<int, Diego.Item>();
-    private static readonly Dictionary<int, Diego.Item> _required = new Dictionary<int, Item>(); 
     // runs at the start of the program
     static ItemsUniverse()
     {
-        AddItem(
+        loadFromFile("ItemList");
+        //Debug.LogError("ItemList size is " + _data.Count);
+        /*AddItem(
             10000,
             "daniels",
             "Jack Daniel's Single-Barrel Tennessee Whiskey",
@@ -84,7 +87,7 @@ public static class ItemsUniverse
             "gauze",
             "Gauze",
             "Any wounds that come flying at you are stopped by a thick gauze wrapping.",
-            ItemQuality.Useless
+            ItemQuality.Required
         );
         AddItem(
             10011,
@@ -190,7 +193,34 @@ public static class ItemsUniverse
             "Medicine",
             "Your wife has a health condition. Lucky of you to bring the medicine.",
             ItemQuality.Required
-        );
+        );*/
+    }
+
+    public static void loadFromFile(string path)
+    {
+        TextAsset textAsset = (TextAsset)Resources.Load(path);
+        string asset = textAsset.text;
+        Thread IOthread = new Thread(() => loadFromFileThread(asset));
+        IOthread.Start();
+    }
+
+    public static void loadFromFileThread(string textAsset) {
+        XmlDocument xmldoc = new XmlDocument();
+        xmldoc.LoadXml(textAsset);
+        XmlNodeList itemlist = xmldoc.GetElementsByTagName("item");
+
+        //Debug.LogError("Before Loop");
+        foreach (XmlNode itemNode in itemlist)
+        {
+            //Debug.LogError("In Loop");
+            int id = int.Parse(itemNode["id"].InnerText);
+            string path = itemNode["path"].InnerText;
+            string name = itemNode["name"].InnerText;
+            string remarks = itemNode["remarks"].InnerText;
+            ItemQuality quality = (ItemQuality)Enum.Parse(typeof(ItemQuality), itemNode["item_quality"].InnerText, true);
+
+            AddItem(id, path, name, remarks, quality);
+        }
     }
 
     public static bool TryGetValue(int id, out Diego.Item item)
