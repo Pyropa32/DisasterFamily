@@ -80,7 +80,6 @@ public class PlayerAdapter : MonoBehaviour
             (consecutiveHeldFrames - FRAMES_REQUIRED_FOR_HOLD_CLICK) % FRAMES_FOR_AUTO_MOVE_FREQUENCY == 0)
         {
             //auto move
-            Debug.Log("AutoClick!");
             Vector3 CameraPos = Camera.main.transform.position;
             var dest = new Vector2(worldMousePosition.x + CameraPos.x, worldMousePosition.y + CameraPos.y);
             DoClickAndMoveTo(dest);
