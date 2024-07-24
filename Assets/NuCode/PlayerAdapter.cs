@@ -24,6 +24,11 @@ public class PlayerAdapter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (Input.GetKeyDown(KeyCode.Q)) {
+            while (Timer.getTime() > 1) {
+                Timer.countdownTimer();
+            }
+        }*/
         var currentLeftMouseDown = Input.GetMouseButtonDown(0);
         Vector2 worldMousePosition = CameraToScreenspaceConverter.GetGameSpaceFromScreenSpace(Input.mousePosition);
         bool inRange = Mathf.Abs(worldMousePosition.x) <= Camera.main.orthographicSize * 8 / 5;

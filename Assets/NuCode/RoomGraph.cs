@@ -4,7 +4,7 @@ using Dijkstra.NET.ShortestPath;
 using Dijkstra.NET.Graph;
 using System;
 using System.Linq;
-using UnityEditor.ProjectWindowCallback;
+//using UnityEditor.ProjectWindowCallback;
 
 public class RoomGraph : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class RoomGraph : MonoBehaviour
     private RoomDoorway[] doorways;
     void Start()
     {
-
+        RoomDoorway.resetStatic();
         rooms = GetComponentsInChildren<Room>();
         doorways = GetComponentsInChildren<RoomDoorway>();
 
