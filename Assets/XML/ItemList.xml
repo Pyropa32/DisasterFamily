@@ -22,14 +22,14 @@
     </item>
     <item>
         <id>10003</id>
-        <path>fosh-big</path>
+        <path>fosh</path>
         <name>Canned Tuna</name>
         <remarks>A classic snack enjoyed thoroughly by the father. He gingerly pries off the tin lid, and serves it to his children.</remarks>
         <item_quality>Required</item_quality>
     </item>
     <item>
         <id>10004</id>
-        <path>fak-big</path>
+        <path>fak</path>
         <name>First Aid Kit</name>
         <remarks>Your daughter is injured... You address it with this First Aid Kit.</remarks>
         <item_quality>Required</item_quality>
@@ -43,7 +43,7 @@
     </item>
     <item>
         <id>10006</id>
-        <path>crobebar-big</path>
+        <path>crobebar</path>
         <name>Crowbar</name>
         <remarks>The right man in the wrong place can make all the difference in the world.</remarks>
         <item_quality>Required</item_quality>
@@ -78,7 +78,7 @@
     </item>
     <item>
         <id>10011</id>
-        <path>sheck-big</path>
+        <path>sheck</path>
         <name>Suspiciously Long Pillow</name>
         <remarks>Sheck is love, Sheck is life. Dreamworks I swear, the resemblance is purely coincidential.</remarks>
         <item_quality>Useless</item_quality>
