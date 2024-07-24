@@ -9483,6 +9483,18 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 43a098a263a3b594280d5baea333a595, type: 2}
+    - target: {fileID: 8097998881567372696, guid: 4c5c8fc43a549e840a659b1df4a822a6, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097998881567372696, guid: 4c5c8fc43a549e840a659b1df4a822a6, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097998881567372696, guid: 4c5c8fc43a549e840a659b1df4a822a6, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8263400751050545408, guid: 4c5c8fc43a549e840a659b1df4a822a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.4
@@ -12487,6 +12499,18 @@ PrefabInstance:
     - target: {fileID: 6937699977188958214, guid: d0db74e0e77655b4b9bd8478cfb5ee6b, type: 3}
       propertyPath: orthographic size
       value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937699977188958214, guid: d0db74e0e77655b4b9bd8478cfb5ee6b, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937699977188958214, guid: d0db74e0e77655b4b9bd8478cfb5ee6b, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937699977188958214, guid: d0db74e0e77655b4b9bd8478cfb5ee6b, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
