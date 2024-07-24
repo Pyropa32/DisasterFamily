@@ -4,14 +4,18 @@ using Diego;
 using System.Runtime.CompilerServices;
 using System;
 using System.Xml;
+using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Collections;
 public static class ItemsUniverse
 {
     private static readonly Dictionary<int, Diego.Item> _data = new Dictionary<int, Diego.Item>();
     // runs at the start of the program
-    static ItemsUniverse()
+    /*static ItemsUniverse()
     {
-        loadFromFile("ItemList");
+        CoroutineRunner.Instance.StartCoroutine(MeasureLoadSpeed("ItemList"));
+        //loadFromFile("ItemList");
         //Debug.LogError("ItemList size is " + _data.Count);
         /*AddItem(
             10000,
@@ -193,7 +197,27 @@ public static class ItemsUniverse
             "Medicine",
             "Your wife has a health condition. Lucky of you to bring the medicine.",
             ItemQuality.Required
-        );*/
+        );
+    }*/
+
+    public static IEnumerator MeasureLoadSpeed(string path)
+    {
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        loadFromFileSingleThreaded(path);
+        stopwatch.Stop();
+        TimeSpan singleThreadedTime = stopwatch.Elapsed;
+        UnityEngine.Debug.Log($"Single-threaded load time: {singleThreadedTime.TotalMilliseconds} ms");
+
+        _data.Clear();
+        stopwatch.Reset();
+        stopwatch.Start();
+        loadFromFile(path);
+        stopwatch.Stop();
+        TimeSpan multiThreadedTime = stopwatch.Elapsed;
+        UnityEngine.Debug.Log($"Multi-threaded load time: {multiThreadedTime.TotalMilliseconds} ms");
+
+        yield return null;
     }
 
     public static void loadFromFile(string path)
@@ -202,6 +226,7 @@ public static class ItemsUniverse
         string asset = textAsset.text;
         Thread IOthread = new Thread(() => loadFromFileThread(asset));
         IOthread.Start();
+        //IOthread.Join();
     }
 
     public static void loadFromFileThread(string textAsset) {
@@ -223,6 +248,13 @@ public static class ItemsUniverse
         }
     }
 
+    public static void loadFromFileSingleThreaded(string path)
+    {
+        TextAsset textAsset = (TextAsset)Resources.Load(path);
+        string asset = textAsset.text;
+        loadFromFileThread(asset);
+    }
+
     public static bool TryGetValue(int id, out Diego.Item item)
     {
         bool result = _data.TryGetValue(id, out Item _item);
@@ -230,16 +262,46 @@ public static class ItemsUniverse
         return result;
     }
 
+    private static readonly object _lock = new object();
     // Passive-aggressively ask the C# compiler to inline the function
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static void AddItem(int id, string _path, string _name, string _remarks, ItemQuality quality=ItemQuality.Useless)
     {
-        _data.Add(id, Item.CreateWithSpritePath(
-            id,
-            _path,
-            _name,
-            _remarks,
-            quality
-        ));
+        lock (_lock)
+    {
+        if (!_data.ContainsKey(id))
+        {
+            _data.Add(id, Item.CreateWithSpritePath(
+                id,
+                _path,
+                _name,
+                _remarks,
+                quality
+            ));
+        }
+        else
+        {
+            // Handle the case where the item already exists, if needed
+            UnityEngine.Debug.LogWarning($"Item with ID {id} already exists.");
+        }
+    }
+    }
+}
+
+public class CoroutineRunner : MonoBehaviour
+{
+    public static CoroutineRunner Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
