@@ -66,6 +66,8 @@ public class PlayerAdapter : MonoBehaviour
         // use opportunity to try and move
         // for every FREQUENCY
         if (IsMouseButtonHeld &&
+            interacting == false &&
+            Timer.isPaused() == false &&
             (consecutiveHeldFrames - FRAMES_REQUIRED_FOR_HOLD_CLICK) % FRAMES_FOR_AUTO_MOVE_FREQUENCY == 0)
         {
             //auto move
