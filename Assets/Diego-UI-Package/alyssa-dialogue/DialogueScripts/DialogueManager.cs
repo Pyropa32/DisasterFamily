@@ -20,10 +20,18 @@ public class Page
     }
 }
 
-public class DialogueManager {
+public static class DialogueManager {
     // load dialogue from XML into dict
     private static Dictionary<string, Page[]> DialogueDict = new Dictionary<string, Page[]>();
     private static Dictionary<string, Sprite> SpriteDict = new Dictionary<string, Sprite>();
+
+    static DialogueManager() {
+        loadFromFile("Sample");
+    }
+
+    public static void NoOp() {
+        //idk im so tired dont come for me
+    }
 
     public static void loadFromFile(string path)
     {

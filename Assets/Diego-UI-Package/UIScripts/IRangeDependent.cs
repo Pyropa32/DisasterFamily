@@ -63,6 +63,8 @@ public class ItemDrop : IRangeDependent {
     }
 
     public static void DropItem(int id, UnityEngine.Vector2 dropPos) {
+        GameObject.FindWithTag("MainCamera")?.GetComponent<switchAudioOnStart>()?.playSound(1);
+
         GameObject items = GameObject.Find("Items");
         GameObject itemObject = new GameObject();
 

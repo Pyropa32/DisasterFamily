@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6f18329ad8c2f504589b989138922ed2
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
-    guid: 03a7247bba0ba344cbd6d784f0aa3e19
+    path: Assets/Scenes/NuMap.unity
+    guid: 80551c90aeaafa441a08aa9e3675c35a
   - enabled: 1
     path: Assets/Scenes/Evaluation.unity
     guid: aaae9f98c01a130439a0ccddb9bf4e4f

@@ -18,6 +18,7 @@ public class PlayerAdapter : MonoBehaviour
     {
         player = GetComponent<Character>();
         world = GetComponentInParent<RoomGraph>();
+        DialogueManager.NoOp();
     }
 
     // Update is called once per frame

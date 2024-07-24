@@ -38,6 +38,7 @@ namespace Diego {
             }
             else {
                 items.Add(item);
+                GameObject.FindWithTag("MainCamera")?.GetComponent<switchAudioOnStart>()?.playSound(2);
                 InventoryManager.removeInInventory(item.ID);
                 transform.GetChild(0).GetComponent<FullnessBar>().SetValue(items.Count, maxItems);
             }

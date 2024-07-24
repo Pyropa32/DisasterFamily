@@ -28,6 +28,7 @@ namespace Diego
             if (item.Equals(Item.Empty)) {
                 bool success = InventoryManager.addInInventory(id);
                 if (success) {
+                    GameObject.FindWithTag("MainCamera")?.GetComponent<switchAudioOnStart>()?.playSound(0);
                     transform.GetComponent<Animator>().SetTrigger("click");
                 }
                 else {
