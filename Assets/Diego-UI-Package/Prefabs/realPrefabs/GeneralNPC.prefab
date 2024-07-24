@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2038449607361723225}
   - component: {fileID: 1656257210607829905}
   - component: {fileID: 3083570080811135509}
-  - component: {fileID: 2760206498773287821}
+  - component: {fileID: 8918970102745276274}
   m_Layer: 0
   m_Name: GeneralNPC
   m_TagString: Untagged
@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8226884913118680487}
+  - {fileID: 5341728064068811671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2038449607361723225
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 510628975779065110, guid: b2b6adef92f78bc4a821888f565aa969, type: 3}
+  m_Sprite: {fileID: 5042619058563414290, guid: 962df9584704d9e44b8c219be4193c10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.27, y: 0.41}
+  m_Size: {x: 0.28, y: 0.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 4819228671796960912}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 6271318429607066293, guid: b2b6adef92f78bc4a821888f565aa969, type: 3}
+  m_Controller: {fileID: 6056691610296146889, guid: 962df9584704d9e44b8c219be4193c10, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -122,15 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePaths:
-  - Sample.Aka.0
-  - Sample.Aka.1
+  - Sample.Bland.0
+  - Sample.Bland.1
   incrementBy1: 0
   loop: 0
   infinite: 1
   steps: 0000000000000000
   changeIndOnStart: 1
   parentRoom: {fileID: 0}
---- !u!114 &2760206498773287821
+--- !u!114 &8918970102745276274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,9 +140,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 4819228671796960912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 153a02c3ef0aeab409a628d79b35dfd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 469f4055792d8144eaf03881e81a9cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 0
+--- !u!1 &6029668081228235516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5341728064068811671}
+  m_Layer: 0
+  m_Name: DropKickSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5341728064068811671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029668081228235516}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.86, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2892357476073903531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6752063609583370793
 GameObject:
   m_ObjectHideFlags: 0

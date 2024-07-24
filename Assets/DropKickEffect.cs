@@ -6,13 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public class DropKickEffect : MonoBehaviour, IRangeDependent
 {
-    const float OPTION_AVAILABILITY_MAX_DISTANCE = 1.5f;
+    const float OPTION_AVAILABILITY_MAX_DISTANCE = 0.8f;
     PlayerAdapter playerAdapter;
     Character myDropKickableCharacter;
     SpriteRenderer dropKickOptionUI;
+    Animator dropKickEffectAnimator;
     RoomGraph world;
-    public bool IsRelevant => inRange && !isPrepared;
-    private bool inRange = false;
+    public bool IsRelevant => InRange && !isPrepared;
+    private bool InRange =>  (new Vector3(4.17f, 3.0f, playerAdapter.transform.position.z) - playerAdapter.transform.position).magnitude
+             < OPTION_AVAILABILITY_MAX_DISTANCE;
+    private bool active = false; 
     private bool isPrepared = false;
     bool awaitingMoveToKickPos = false;
     // Start is called before the first frame update
@@ -31,10 +34,13 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
         }
         myDropKickableCharacter = GetComponent<Character>();
         world = myDropKickableCharacter.World;
+        dropKickOptionUI.enabled = false;
+
     }
 
     void Abort()
     {
+        active = false;
         isPrepared = false;
         awaitingMoveToKickPos = false;
     }
@@ -42,10 +48,19 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
     // Update is called once per frame
     void Update()
     {
+        if (!InRange)
+        {
+            dropKickOptionUI.enabled = false;
+        }
         // try to get the world
         if (world == null)
         {
             world = myDropKickableCharacter.World;
+            dropKickEffectAnimator = world.GetComponent<Animator>();
+        }
+        if (playerAdapter.PressedEButtonThisFrame)
+        {
+            int a = 4;
         }
 
         PollOptionAvailability();
@@ -55,6 +70,26 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
         {
             isPrepared = true;
             PrepareDropKickEffect();
+        }
+        PollDropKickAnimDone();
+    }
+
+    void PollDropKickAnimDone()
+    {
+        if (!active)
+        {
+            return;
+        }
+        if (dropKickEffectAnimator == null)
+        {
+            return;
+        }
+        Debug.Log("time:" + dropKickEffectAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        if (dropKickEffectAnimator.GetCurrentAnimatorStateInfo(0).IsName("Exit") ||
+            dropKickEffectAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.80f)
+        {
+            Debug.Log("Finished!");
+            Finish();
         }
     }
 
@@ -92,30 +127,47 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
     }
     void ExecuteDropKickEffect()
     {
+        dropKickEffectAnimator.enabled = true;
+        dropKickEffectAnimator.Rebind();
+        dropKickEffectAnimator.Update(0f);
+        dropKickEffectAnimator.Play("DoDropKick",0);
+        active = true;
+        playerAdapter.enabled = false;
+        dropKickEffectAnimator.SetTrigger("dropKick");
+    }
 
+    public void Finish()
+    {
+        active = false;
+        playerAdapter.enabled = true;
+        dropKickEffectAnimator.enabled = false;
+        myDropKickableCharacter.enabled = false;
+        // JANK!
+        myDropKickableCharacter.GetComponent<SpriteRenderer>().color = Color.clear;
+        Destroy(myDropKickableCharacter);
     }
 
     void PollOptionAvailability()
     {
         if (playerAdapter != null)
         {
-            var inRange = (transform.position - playerAdapter.transform.position).magnitude
+            var whatTheFuckIsWrongWithTheTransform = new Vector3(4.17f, 3.0f, playerAdapter.transform.position.z);
+            var inRange = (whatTheFuckIsWrongWithTheTransform - playerAdapter.transform.position).magnitude
              < OPTION_AVAILABILITY_MAX_DISTANCE;
             if (inRange)
             {
                 dropKickOptionUI.enabled = true;
-                inRange = true;
             }
             else
             {
                 dropKickOptionUI.enabled = false;
-                inRange = false;
             }
         }
     }
 
     public void finish()
     {
+        ExecuteDropKickEffect();
     }
 
     public void cancel()
@@ -125,7 +177,7 @@ public class DropKickEffect : MonoBehaviour, IRangeDependent
 
     public void start()
     {
-        ExecuteDropKickEffect();
+        
     }
 
     public bool isInRange(Vector2 player)
