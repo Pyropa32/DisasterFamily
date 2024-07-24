@@ -17,7 +17,7 @@ public class Builder {
                 "Assets/Scenes/Evaluation.unity"
             },
             // Change to location the output should go
-            locationPathName = "./BuiltGame/",
+            locationPathName = "./../../BuiltGame/DisasterFamily.exe",
             options = BuildOptions.CleanBuildCache | BuildOptions.StrictMode,
             target = BuildTarget.StandaloneWindows64
         };
