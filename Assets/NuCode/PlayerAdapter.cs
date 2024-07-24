@@ -15,7 +15,10 @@ public class PlayerAdapter : MonoBehaviour
     private const uint FRAMES_REQUIRED_FOR_HOLD_CLICK = 8;
     private const uint FRAMES_FOR_AUTO_MOVE_FREQUENCY = 5;
     private uint consecutiveHeldFrames = 0;
+    public Character Player => player;
     private bool IsMouseButtonHeld => consecutiveHeldFrames >= FRAMES_REQUIRED_FOR_HOLD_CLICK;
+
+    public bool PressedEButtonThisFrame { get; private set; }
 
     bool previousLeftMouseDown = false;
     // Start is called before the first frame update
@@ -31,6 +34,12 @@ public class PlayerAdapter : MonoBehaviour
     // Consistency!
     void FixedUpdate()
     {
+
+        // did I press the interact button?
+        var pressedE = Input.GetKeyDown(KeyCode.E);
+        PressedEButtonThisFrame = pressedE;
+
+
         var currentLeftMouseDownNow = Input.GetMouseButtonDown(0);
         var currentLeftMouseDown = Input.GetMouseButton(0);
         // update consecutiveness

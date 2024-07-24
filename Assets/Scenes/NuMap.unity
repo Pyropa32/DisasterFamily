@@ -11253,26 +11253,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1825875446}
     m_Modifications:
-    - target: {fileID: 1656257210607829905, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 6271318429607066293, guid: b2b6adef92f78bc4a821888f565aa969, type: 3}
-    - target: {fileID: 2038449607361723225, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: m_Size.x
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2038449607361723225, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: m_Size.y
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2038449607361723225, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 510628975779065110, guid: b2b6adef92f78bc4a821888f565aa969, type: 3}
-    - target: {fileID: 2038449607361723225, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2892357476073903531, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.27
@@ -11314,37 +11294,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: infinite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
       propertyPath: parentRoom
       value: 
       objectReference: {fileID: 1400225679}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: incrementBy1
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: changeIndOnStart
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: steps.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: dialoguePaths.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: dialoguePaths.Array.data[0]
-      value: Sample.Aka.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083570080811135509, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
-      propertyPath: dialoguePaths.Array.data[1]
-      value: Sample.Aka.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4819228671796960912, guid: 9765b9337a4971b41a78bedb2e812b44, type: 3}
       propertyPath: m_Name
       value: Aka

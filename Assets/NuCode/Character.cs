@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,9 @@ public class Character : MonoBehaviour
             return World.GetRoomAt(transform.position);
         }
     }
+
+    public event Action OnFinishedMovementNoInterrupt = delegate () {};
+    public event Action OnFinishedMovementInterrupted = delegate () {};
     private bool isPaused = false;
     public bool IsMoving => currentMovementQueue != null && !currentMovementQueue.IsFinished && !isPaused;
     public RoomGraph World { get; protected set; }
@@ -33,6 +37,7 @@ public class Character : MonoBehaviour
     public void Stop()
     {
         currentMovementQueue = null;
+        OnFinishedMovementInterrupted?.Invoke();
     }
 
     public void Resume()
