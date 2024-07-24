@@ -49,7 +49,7 @@ public class MoveDataChain
         var currentData = data[dataIndex];
         var speedModifier = 1f;
         var decelBegin = Math.Abs((pathLength) - FULL_DECEL_STOP_DISTANCE);
-        Debug.Log("percent there: " + decimal.Round((decimal)(totalProgressedLength / decelBegin * 100)));
+        //Debug.Log("percent there: " + decimal.Round((decimal)(totalProgressedLength / decelBegin * 100)));
         if (totalProgressedLength < FULL_ACCEL_STOP_DISTANCE)
         {
             speedModifier = Mathf.Lerp(0.5f, 1f, totalProgressedLength / FULL_ACCEL_STOP_DISTANCE);
@@ -59,7 +59,7 @@ public class MoveDataChain
         {
             var start = (pathLength) - FULL_DECEL_STOP_DISTANCE;
             speedModifier = Mathf.Lerp(1f, 0f, (totalProgressedLength - start) / pathLength - start);
-            Debug.Log("DECREASING!");
+            //Debug.Log("DECREASING!");
         }
         if (speedModifier < 0.1f)
         {

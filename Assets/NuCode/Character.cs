@@ -95,7 +95,7 @@ public class Character : MonoBehaviour
             transform.position = currentMovementQueue.Value;
             transform.position += new Vector3(0, 0, -0.5f);
             currentMovementQueue.Tick();
-            if (currentActionQueue != null && currentActionQueue.isInRange(transform.position)) {
+            if (currentActionQueue != null && currentActionQueue.isInRange(transform.position) && GetComponentInParent<RoomGraph>().GetRoomAt(GameObject.FindWithTag("Player").transform.position) != null) {
                 currentActionQueue.finish();
                 currentActionQueue = null;
                 currentMovementQueue = null;

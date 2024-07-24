@@ -16,6 +16,10 @@ public class RoomDoorway : MonoBehaviour
 
     private static uint currID = 1;
 
+    public static void resetStatic() {
+        currID = 1;
+    }
+
     void Start()
     {
         var sprite = GetComponent<SpriteRenderer>();

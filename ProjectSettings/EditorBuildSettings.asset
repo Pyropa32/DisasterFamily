@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NuMap.unity
     guid: 80551c90aeaafa441a08aa9e3675c35a
   - enabled: 1
-    path: Assets/Scenes/End Scene.unity
-    guid: 9e2ad99368f1d26419d101bb00a9cd9f
+    path: Assets/Scenes/Evaluation.unity
+    guid: aaae9f98c01a130439a0ccddb9bf4e4f
   m_configObjects: {}
